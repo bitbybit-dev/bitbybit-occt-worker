@@ -4,7 +4,7 @@ import { OCCTWorkerManager } from '../../occ-worker/occ-worker-manager';
 export class OCCTIO {
 
     constructor(
-        private readonly occWorkerManager: OCCTWorkerManager,
+        readonly occWorkerManager: OCCTWorkerManager,
     ) {
     }
 

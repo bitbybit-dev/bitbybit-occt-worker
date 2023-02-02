@@ -20,10 +20,10 @@ export class OCCT {
     public readonly transforms: OCCTTransforms;
     public readonly operations: OCCTOperations;
     public readonly booleans: OCCTBooleans;
-    public readonly io: OCCTIO;
+    public io: OCCTIO;
 
     constructor(
-        private readonly occWorkerManager: OCCTWorkerManager,
+        public readonly occWorkerManager: OCCTWorkerManager,
     ) {
         this.shapes = new OCCTShapes(occWorkerManager);
         this.geom = new OCCTGeom(occWorkerManager);
