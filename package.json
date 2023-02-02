@@ -1,11 +1,11 @@
 {
     "name": "bitbybit-occt-worker",
-    "version": "0.9.21",
+    "version": "0.9.22",
     "description": "Bit By Bit Developers CAD algorithms using OpenCascade Technology kernel adapted for WebWorker",
     "main": "index.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/bitbybit-dev/bitbybit-occt"
+        "url": "https://github.com/bitbybit-dev/bitbybit-occt-worker"
     },
     "directories": {
         "lib": "lib"
@@ -17,10 +17,10 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.bitbybit.json",
-        "build-p": "npm run build && npm run copy-package && npm run copy-readme && npm run delete-tsdoc",
+        "build-p": "npm run build && npm run copy-package && npm run copy-readme-license && npm run delete-tsdoc",
         "copy-package": "cp -R ./package.json ./dist",
-        "copy-readme": "cp -R ./README.md ./dist",
-        "delete-tsdoc": "rm -R ./dist/ts-api-docs && rm -R ./dist/ts-doc-theme && rm -R ./dist/coverage",
+        "copy-readme-license": "cp -R ./README.md ./dist && cp -R ./LICENSE ./dist",
+        "delete-tsdoc": "rm -R ./dist/coverage",
         "docs": "./node_modules/.bin/sass ts-doc-theme/assets/css/main.sass ts-doc-theme/assets/css/main.css && node_modules/.bin/typedoc --out ts-api-docs/ lib/api --theme ./ts-doc-theme --excludePrivate --tsconfig lib/api/tsconfig.bbb.json --media assets/images/blockly-block-images/ && node mvdocpictures",
         "test": "NODE_OPTIONS=--experimental-specifier-resolution=node jest --watchAll=true",
         "test-c": "NODE_OPTIONS=--experimental-specifier-resolution=node jest --coverage --watchAll=false",
@@ -29,7 +29,9 @@
     "author": "Bit by bit developers",
     "license": "MIT",
     "types": "./index.d.ts",
-    "dependencies": {},
+    "dependencies": {
+        "bitbybit-occt": "0.9.22"
+    },
     "devDependencies": {
         "typedoc": "0.21.9",
         "@microsoft/tsdoc": "0.13.2",
