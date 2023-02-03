@@ -55,7 +55,7 @@
     "license": "MIT",
     "types": "./index.d.ts",
     "dependencies": {
-        "bitbybit-occt": "0.9.23",
+        "bitbybit-occt": "0.9.24",
         "rxjs": "7.5.5"
     },
     "devDependencies": {
