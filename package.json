@@ -1,6 +1,6 @@
 {
     "name": "bitbybit-occt-worker",
-    "version": "0.9.23",
+    "version": "0.9.24",
     "description": "Bit By Bit Developers CAD algorithms using OpenCascade Technology kernel adapted for WebWorker",
     "main": "index.js",
     "repository": {
@@ -11,9 +11,34 @@
         "lib": "lib"
     },
     "keywords": [
-        "Bit By Bit Developers", "bitbybit", "bitbybit.dev", "Geometry", "CAD", "3D", "OCCT", "OpenCascade", "Parametric", "Modeling",
-        "Browser", "Node", "3D algorithms", "STEP", "STP", "3D modeling", "3D printing", "3D printing algorithms", "3D software", "OpenCascade Technology", "AEC", "Automotive", "Engineering",
-        "CAE", "CAM", "Worker", "WebWorker", "WASM"
+        "Bit By Bit Developers",
+        "bitbybit",
+        "bitbybit.dev",
+        "Geometry",
+        "CAD",
+        "3D",
+        "OCCT",
+        "OpenCascade",
+        "Parametric",
+        "Modeling",
+        "Browser",
+        "Node",
+        "3D algorithms",
+        "STEP",
+        "STP",
+        "3D modeling",
+        "3D printing",
+        "3D printing algorithms",
+        "3D software",
+        "OpenCascade Technology",
+        "AEC",
+        "Automotive",
+        "Engineering",
+        "CAE",
+        "CAM",
+        "Worker",
+        "WebWorker",
+        "WASM"
     ],
     "scripts": {
         "build": "tsc -p tsconfig.bitbybit.json",
@@ -30,7 +55,8 @@
     "license": "MIT",
     "types": "./index.d.ts",
     "dependencies": {
-        "bitbybit-occt": "0.9.23"
+        "bitbybit-occt": "0.9.23",
+        "rxjs": "7.5.5"
     },
     "devDependencies": {
         "typedoc": "0.21.9",
