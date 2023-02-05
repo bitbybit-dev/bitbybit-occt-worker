@@ -42,6 +42,8 @@ export const onMessageInput = (d: DataInput, postMessage) => {
         // as we don't need to render things and when we do need, we call tessellation methods with these hashes
         // and receive real objects. This cache is useful in modeling operations throughout 'run' sessions.
         if (d.action.functionName !== 'shapeToMesh' &&
+            d.action.functionName !== 'deleteShape' &&
+            d.action.functionName !== 'deleteShapes' &&
             d.action.functionName !== 'startedTheRun' &&
             d.action.functionName !== 'cleanAllCache' &&
             d.action.functionName !== 'saveShapeSTEP') {
@@ -80,6 +82,14 @@ export const onMessageInput = (d: DataInput, postMessage) => {
         if (d.action.functionName === 'shapeToMesh') {
             d.action.inputs.shape = cacheHelper.checkCache(d.action.inputs.shape.hash);
             result = openCascade.shapeToMesh(d.action.inputs.shape, d.action.inputs.precision, d.action.inputs.adjustYtoZ);
+        }
+        if (d.action.functionName === 'deleteShape') {
+            cacheHelper.cleanCacheForHash(d.action.inputs.shape.hash);
+            result = {};
+        }
+        if (d.action.functionName === 'deleteShapes') {
+            d.action.inputs.shapes.forEach(shape => cacheHelper.cleanCacheForHash(shape.hash));
+            result = {};
         }
         // Only the cache that was created in previous run has to be kept, the rest needs to go
         if (d.action.functionName === 'startedTheRun') {

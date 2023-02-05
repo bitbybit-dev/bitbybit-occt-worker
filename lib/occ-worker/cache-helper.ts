@@ -26,6 +26,19 @@ export class CacheHelper {
         this.hashesFromPreviousRun = {};
     }
 
+    cleanCacheForHash(hash: string): void {
+        if (this.argCache[hash]) {
+            try {
+                this.argCache[hash].delete();
+            }
+            catch {
+            }
+        }
+        delete this.argCache[hash];
+        delete this.usedHashes[hash];
+        delete this.hashesFromPreviousRun[hash];
+    }
+
     cleanUpCache(): void {
         // TODO seems to have problems, not exactly sure what is the real cause. For now users will build up cache during the whole session.
         // and will be able to manually clean it up if it gets out of hand.

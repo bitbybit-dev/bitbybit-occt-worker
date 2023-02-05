@@ -38,4 +38,12 @@ export class OCCT {
     async shapeToMesh(inputs: Inputs.OCCT.ShapeToMeshDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.DecomposedMeshDto> {
         return await this.occWorkerManager.genericCallToWorkerPromise('shapeToMesh', inputs);
     }
+
+    async deleteShape(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<void> {
+        return await this.occWorkerManager.genericCallToWorkerPromise('deleteShape', inputs);
+    }
+
+    async deleteShapes(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<void> {
+        return await this.occWorkerManager.genericCallToWorkerPromise('deleteShapes', inputs);
+    }
 }
