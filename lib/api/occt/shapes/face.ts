@@ -121,7 +121,7 @@ export class OCCTFace {
      * @param inputs rectangle parameters
      * @returns OpenCascade rectangle
      */
-    createRectangleFace(inputs: Inputs.OCCT.SquareDto): Promise<Inputs.OCCT.TopoDSFacePointer> {
+    createRectangleFace(inputs: Inputs.OCCT.RectangleDto): Promise<Inputs.OCCT.TopoDSFacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createRectangleFace', inputs);
     }
 

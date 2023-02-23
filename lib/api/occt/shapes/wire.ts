@@ -290,7 +290,7 @@ export class OCCTWire {
      * @param inputs rectangle parameters
      * @returns OpenCascade rectangle
      */
-    createRectangleWire(inputs: Inputs.OCCT.SquareDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
+    createRectangleWire(inputs: Inputs.OCCT.RectangleDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.createRectangleWire', inputs);
     }
 
