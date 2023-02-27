@@ -269,12 +269,25 @@ export class OCCTWire {
     }
 
     /**
-     * Creates OpenCascade parallelogram wire
+     * Creates OpenCascade n-gon wire
+     * <div>
+     *  <img src="../assets/images/blockly-images/occt/shapes/wire/createNGonWire.svg" alt="Blockly Image"/>
+     * </div>
+     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_wire.OCCTWire.html#createNGonWire
+     * @param inputs ngon parameters
+     * @returns OpenCascade ngon wire
+     */
+    createNGonWire(inputs: Inputs.OCCT.NGonWireDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.createNGonWire', inputs);
+    }
+
+    /**
+     * Creates n  parallelogram wire
      * <div>
      *  <img src="../assets/images/blockly-images/occt/shapes/wire/createParallelogramWire.svg" alt="Blockly Image"/>
      * </div>
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_wire.OCCTWire.html#createParallelogramWire
-     * @param inputs star parameters
+     * @param inputs parallelogram parameters
      * @returns OpenCascade star wire
      */
     createParallelogramWire(inputs: Inputs.OCCT.ParallelogramDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
