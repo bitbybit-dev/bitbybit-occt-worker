@@ -178,6 +178,19 @@ export class OCCTFace {
     }
 
     /**
+     * Subdivides a face to point grid with shifts and removals on nth uv rows or columns
+     * <div>
+     *  <img src="../assets/images/blockly-images/occt/shapes/face/subdivideToPointsControlled.svg" alt="Blockly Image"/>
+     * </div>
+     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#subdivideToPointsControlled
+     * @param inputs Face and params for subdivision
+     * @returns points
+     */
+    subdivideToPointsControlled(inputs: Inputs.OCCT.FaceSubdivisionControlledDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.subdivideToPointsControlled', inputs);
+    }
+
+    /**
      * Subdivides a face to normals grid
      * <div>
      *  <img src="../assets/images/blockly-images/occt/shapes/face/subdivideToNormals.svg" alt="Blockly Image"/>
