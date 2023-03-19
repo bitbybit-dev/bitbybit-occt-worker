@@ -79,6 +79,7 @@ export class OCCTCurves {
      * @returns Opencascade Geom_Circle curve
      * @group primitives
      * @shortname circle
+     * @drawable false
      */
     geomCircleCurve(inputs: Inputs.OCCT.CircleDto): Promise<Inputs.OCCT.GeomCurvePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('geom.curves.geomCircleCurve', inputs);
@@ -94,6 +95,7 @@ export class OCCTCurves {
      * @returns Opencascade Geom_Ellipse curve
      * @group primitives
      * @shortname ellipse
+     * @drawable false
      */
     geomEllipseCurve(inputs: Inputs.OCCT.EllipseDto): Promise<Inputs.OCCT.GeomCurvePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('geom.curves.geomEllipseCurve', inputs);

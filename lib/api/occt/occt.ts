@@ -43,6 +43,7 @@ export class OCCT {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt.OCCT.html#shapeToMesh
      * @param inputs shape
      * @shortname shape to mesh
+     * @drawable false
      */
     async shapeToMesh(inputs: Inputs.OCCT.ShapeToMeshDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.DecomposedMeshDto> {
         return await this.occWorkerManager.genericCallToWorkerPromise('shapeToMesh', inputs);

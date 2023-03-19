@@ -18,6 +18,7 @@ export class OCCTShell {
      * @returns OpenCascade shell
      * @group create
      * @shortname sew
+     * @drawable true
      */
     sewFaces(inputs: Inputs.OCCT.SewDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSShellPointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.shell.sewFaces', inputs);
@@ -33,6 +34,7 @@ export class OCCTShell {
      * @returns Surface area
      * @group get
      * @shortname area
+     * @drawable false
      */
      getShellSurfaceArea(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShellPointer>): Promise<number> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.shell.getShellSurfaceArea', inputs);

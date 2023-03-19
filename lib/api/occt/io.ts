@@ -17,6 +17,7 @@ export class OCCTIO {
      * @param inputs STEP filename and shape to be saved
      * @returns String of a step file
      * @shortname save step
+     * @drawable false
      */
     saveShapeSTEP(inputs: Inputs.OCCT.SaveStepDto<Inputs.OCCT.TopoDSShapePointer>): Promise<string> {
         return this.occWorkerManager.genericCallToWorkerPromise('io.saveShapeSTEP', inputs).then(s => {

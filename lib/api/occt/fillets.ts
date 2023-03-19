@@ -18,6 +18,7 @@ export class OCCTFillets {
     * @returns OpenCascade shape with filleted edges
     * @group 3d
     * @shortname fillet
+    * @drawable true
     */
     filletEdges(inputs: Inputs.OCCT.FilletDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('fillets.filletEdges', inputs);
@@ -33,6 +34,7 @@ export class OCCTFillets {
      * @returns OpenCascade shape with chamfered edges
      * @group 3d
      * @shortname chamfer
+    * @drawable true
      */
     chamferEdges(inputs: Inputs.OCCT.ChamferDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('fillets.chamferEdges', inputs);
@@ -49,6 +51,7 @@ export class OCCTFillets {
      * @returns OpenCascade filleted shape result
      * @group 2d
      * @shortname fillet
+     * @drawable true
      */
     fillet2d(inputs: Inputs.OCCT.FilletDto<Inputs.OCCT.TopoDSWirePointer | Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSWirePointer | Inputs.OCCT.TopoDSFacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('fillets.fillet2d', inputs);
@@ -64,6 +67,7 @@ export class OCCTFillets {
      * @returns OpenCascade wire shape if solution is found
      * @group 2d
      * @shortname fillet 2 edges
+     * @drawable true
      */
     filletTwoEdgesInPlaneIntoAWire(inputs: Inputs.OCCT.FilletTwoEdgesInPlaneDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
         inputs.shapes = [inputs.edge1, inputs.edge2];

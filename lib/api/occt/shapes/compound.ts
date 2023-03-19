@@ -16,8 +16,9 @@ export class OCCTCompound {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_compound.OCCTCompound.html#makeCompound
      * @param inputs OpenCascade shapes
      * @returns OpenCascade compounded shape
-    * @group create
-    * @shortname make
+     * @group create
+     * @shortname make
+     * @drawable true
      */
     makeCompound(inputs: Inputs.OCCT.CompoundShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSCompoundPointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.compound.makeCompound', inputs);

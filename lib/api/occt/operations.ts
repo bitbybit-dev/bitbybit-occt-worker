@@ -18,6 +18,7 @@ export class OCCTOperations {
      * @param inputs Loft wires
      * @returns Resulting loft shape
      * @shortname loft
+     * @drawable true
      */
     loft(inputs: Inputs.OCCT.LoftDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.loft', inputs);
@@ -32,6 +33,7 @@ export class OCCTOperations {
      * @param inputs Advanced loft parameters
      * @returns Resulting loft shell
      * @shortname loft adv.
+     * @drawable true
      */
     loftAdvanced(inputs: Inputs.OCCT.LoftAdvancedDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.loftAdvanced', inputs);
@@ -46,6 +48,7 @@ export class OCCTOperations {
      * @param inputs Shape to offset and distance with tolerance
      * @returns Resulting offset shape
      * @shortname offset
+     * @drawable true
      */
     offset(inputs: Inputs.OCCT.OffsetDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.offset', inputs);
@@ -60,6 +63,7 @@ export class OCCTOperations {
      * @param inputs Shape to extrude and direction parameter with tolerance
      * @returns Resulting extruded shape
      * @shortname extrude
+     * @drawable true
      */
     extrude(inputs: Inputs.OCCT.ExtrudeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.extrude', inputs);
@@ -74,6 +78,7 @@ export class OCCTOperations {
      * @param inputs Shapes to extrude and direction parameter with tolerance
      * @returns Resulting extruded shapes
      * @shortname extrusions
+     * @drawable true
      */
     extrudeShapes(inputs: Inputs.OCCT.ExtrudeShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.extrudeShapes', inputs);
@@ -88,6 +93,7 @@ export class OCCTOperations {
      * @param inputs Face to split and edges to split with
      * @returns Resulting split shape
      * @shortname split
+     * @drawable true
      */
     splitShapeWithShapes(inputs: Inputs.OCCT.SplitDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.splitShapeWithShapes', inputs);
@@ -102,6 +108,7 @@ export class OCCTOperations {
      * @param inputs Revolve parameters
      * @returns Resulting revolved shape
      * @shortname revolve
+     * @drawable true
      */
     revolve(inputs: Inputs.OCCT.RevolveDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.revolve', inputs);
@@ -116,6 +123,7 @@ export class OCCTOperations {
      * @param inputs Rotated extrusion inputs
      * @returns OpenCascade shape
      * @shortname rotated extrude
+     * @drawable true
      */
     rotatedExtrude(inputs: Inputs.OCCT.RotationExtrudeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.rotatedExtrude', inputs);
@@ -130,6 +138,7 @@ export class OCCTOperations {
      * @param inputs Path wire and shapes along the path
      * @returns OpenCascade shape
      * @shortname pipe
+     * @drawable true
      */
     pipe(inputs: Inputs.OCCT.ShapeShapesDto<Inputs.OCCT.TopoDSWirePointer, Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.pipe', inputs);
@@ -144,6 +153,7 @@ export class OCCTOperations {
      * @param inputs OpenCascade shape
      * @returns OpenCascade solid shape
      * @shortname thicken
+     * @drawable true
      */
     makeThickSolidSimple(inputs: Inputs.OCCT.ThisckSolidSimpleDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.makeThickSolidSimple', inputs);
@@ -158,6 +168,7 @@ export class OCCTOperations {
      * @param inputs OpenCascade shape and options for thickening
      * @returns OpenCascade solid shape
      * @shortname joined thicken
+     * @drawable true
      */
     makeThickSolidByJoin(inputs: Inputs.OCCT.ThickSolidByJoinDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.makeThickSolidByJoin', inputs);
