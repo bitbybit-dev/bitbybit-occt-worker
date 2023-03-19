@@ -35,14 +35,41 @@ export class OCCT {
         this.io = new OCCTIO(occWorkerManager);
     }
 
+    /**
+     * Creates mesh from the shape
+     * <div>
+     *  <img src="../assets/images/blockly-images/occt/shapeToMesh.svg" alt="Blockly Image"/>
+     * </div>
+     * @link https://docs.bitbybit.dev/classes/bitbybit_occt.OCCT.html#shapeToMesh
+     * @param inputs shape
+     * @shortname shape to mesh
+     */
     async shapeToMesh(inputs: Inputs.OCCT.ShapeToMeshDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.DecomposedMeshDto> {
         return await this.occWorkerManager.genericCallToWorkerPromise('shapeToMesh', inputs);
     }
 
+    /**
+     * Deletes shape from the cache to keep memory usage low
+     * <div>
+     *  <img src="../assets/images/blockly-images/occt/deleteShape.svg" alt="Blockly Image"/>
+     * </div>
+     * @link https://docs.bitbybit.dev/classes/bitbybit_occt.OCCT.html#deleteShape
+     * @param inputs shape
+     * @shortname delete shape
+     */
     async deleteShape(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<void> {
         return await this.occWorkerManager.genericCallToWorkerPromise('deleteShape', inputs);
     }
 
+    /**
+     * Deletes shapes from the cache to keep memory usage low
+     * <div>
+     *  <img src="../assets/images/blockly-images/occt/deleteShapes.svg" alt="Blockly Image"/>
+     * </div>
+     * @link https://docs.bitbybit.dev/classes/bitbybit_occt.OCCT.html#deleteShapes
+     * @param inputs shape
+     * @shortname delete shapes
+     */
     async deleteShapes(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<void> {
         return await this.occWorkerManager.genericCallToWorkerPromise('deleteShapes', inputs);
     }

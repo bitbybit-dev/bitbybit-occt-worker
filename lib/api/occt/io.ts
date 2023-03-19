@@ -16,6 +16,7 @@ export class OCCTIO {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_io.OCCTIO.html#saveShapeSTEP
      * @param inputs STEP filename and shape to be saved
      * @returns String of a step file
+     * @shortname save step
      */
     saveShapeSTEP(inputs: Inputs.OCCT.SaveStepDto<Inputs.OCCT.TopoDSShapePointer>): Promise<string> {
         return this.occWorkerManager.genericCallToWorkerPromise('io.saveShapeSTEP', inputs).then(s => {

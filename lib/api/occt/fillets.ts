@@ -16,6 +16,8 @@ export class OCCTFillets {
     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_fillets.OCCTFillets.html#filletEdges
     * @param inputs Shape, radius and edge indexes to fillet
     * @returns OpenCascade shape with filleted edges
+    * @group 3d
+    * @shortname fillet
     */
     filletEdges(inputs: Inputs.OCCT.FilletDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('fillets.filletEdges', inputs);
@@ -29,6 +31,8 @@ export class OCCTFillets {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_fillets.OCCTFillets.html#chamferEdges
      * @param inputs Shape, distance and edge indexes to chamfer
      * @returns OpenCascade shape with chamfered edges
+     * @group 3d
+     * @shortname chamfer
      */
     chamferEdges(inputs: Inputs.OCCT.ChamferDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('fillets.chamferEdges', inputs);
@@ -43,6 +47,8 @@ export class OCCTFillets {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_fillets.OCCTFillets.html#fillet2d
      * @param inputs Shape
      * @returns OpenCascade filleted shape result
+     * @group 2d
+     * @shortname fillet
      */
     fillet2d(inputs: Inputs.OCCT.FilletDto<Inputs.OCCT.TopoDSWirePointer | Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSWirePointer | Inputs.OCCT.TopoDSFacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('fillets.fillet2d', inputs);
@@ -56,6 +62,8 @@ export class OCCTFillets {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_fillets.OCCTFillets.html#filletTwoEdgesInPlaneIntoAWire
      * @param inputs Definition for fillets
      * @returns OpenCascade wire shape if solution is found
+     * @group 2d
+     * @shortname fillet 2 edges
      */
     filletTwoEdgesInPlaneIntoAWire(inputs: Inputs.OCCT.FilletTwoEdgesInPlaneDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
         inputs.shapes = [inputs.edge1, inputs.edge2];

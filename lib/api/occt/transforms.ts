@@ -17,6 +17,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#transform
      * @param inputs Transformation description
      * @returns OpenCascade shape
+     * @shortname transform
      */
     transform(inputs: Inputs.OCCT.TransformDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.transform', inputs);
@@ -30,6 +31,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#rotate
      * @param inputs Rotation description
      * @returns OpenCascade shape
+     * @shortname rotate
      */
     rotate(inputs: Inputs.OCCT.RotateDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.rotate', inputs);
@@ -43,6 +45,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#align
      * @param inputs Align description
      * @returns OpenCascade shape
+     * @shortname align
      */
     align(inputs: Inputs.OCCT.AlignDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.align', inputs);
@@ -56,6 +59,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#translate
      * @param inputs Translation description
      * @returns OpenCascade shape
+     * @shortname translate
      */
     translate(inputs: Inputs.OCCT.TranslateDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.translate', inputs);
@@ -69,6 +73,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#scale
      * @param inputs Scale description
      * @returns OpenCascade shape
+     * @shortname scale
      */
     scale(inputs: Inputs.OCCT.ScaleDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.scale', inputs);
@@ -82,6 +87,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#scale3d
      * @param inputs Scale 3D description
      * @returns OpenCascade scaled shape
+     * @shortname scale 3d
      */
     scale3d(inputs: Inputs.OCCT.Scale3DDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.scale3d', inputs);
@@ -95,6 +101,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#mirror
      * @param inputs Mirror axis origin, axis direction and shape
      * @returns OpenCascade shape
+     * @shortname mirror
      */
     mirror(inputs: Inputs.OCCT.MirrorDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.mirror', inputs);
@@ -108,6 +115,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#mirrorAlongNormal
      * @param inputs Normal for mirroring with origin
      * @returns OpenCascade shape
+     * @shortname mirror normal
      */
     mirrorAlongNormal(inputs: Inputs.OCCT.MirrorAlongNormalDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.mirrorAlongNormal', inputs);
@@ -121,6 +129,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#transformShapes
      * @param inputs Transformation descriptions
      * @returns OpenCascade shapes
+     * @shortname transforms
      */
     transformShapes(inputs: Inputs.OCCT.TransformShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.transformShapes', inputs);
@@ -134,6 +143,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#rotateShapes
      * @param inputs Rotation descriptions
      * @returns OpenCascade shapes
+     * @shortname rotations
      */
     rotateShapes(inputs: Inputs.OCCT.RotateShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.rotateShapes', inputs);
@@ -147,6 +157,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#alignShapes
      * @param inputs Align descriptions
      * @returns OpenCascade shapes
+     * @shortname alignments
      */
     alignShapes(inputs: Inputs.OCCT.AlignShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.alignShapes', inputs);
@@ -160,6 +171,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#translateShapes
      * @param inputs Translation descriptions
      * @returns OpenCascade shapes
+     * @shortname translations
      */
     translateShapes(inputs: Inputs.OCCT.TranslateShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.translateShapes', inputs);
@@ -173,6 +185,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#scaleShapes
      * @param inputs Scale descriptions
      * @returns OpenCascade shapes
+     * @shortname scales
      */
     scaleShapes(inputs: Inputs.OCCT.ScaleShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.scaleShapes', inputs);
@@ -186,6 +199,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#scale3dShapes
      * @param inputs Scale 3D descriptions
      * @returns OpenCascade scaled shapes
+     * @shortname scales 3d
      */
     scale3dShapes(inputs: Inputs.OCCT.Scale3DShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.scale3dShapes', inputs);
@@ -199,6 +213,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#mirrorShapes
      * @param inputs Mirror axis origins, axis directions and shapes
      * @returns OpenCascade shapes
+     * @shortname mirrors
      */
     mirrorShapes(inputs: Inputs.OCCT.MirrorShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.mirrorShapes', inputs);
@@ -212,6 +227,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#mirrorAlongNormalShapes
      * @param inputs Normals for mirroring with origins
      * @returns OpenCascade shapes
+     * @shortname mirrors normal
      */
     mirrorAlongNormalShapes(inputs: Inputs.OCCT.MirrorAlongNormalShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('transforms.mirrorAlongNormalShapes', inputs);

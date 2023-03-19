@@ -16,6 +16,7 @@ export class OCCTBooleans {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_booleans.OCCTBooleans.html#union
      * @param inputs Objects to join
      * @returns OpenCascade joined shape
+     * @shortname union
      */
     union(inputs: Inputs.OCCT.UnionDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('booleans.union', inputs);
@@ -29,6 +30,7 @@ export class OCCTBooleans {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_booleans.OCCTBooleans.html#difference
      * @param inputs Main shape and shapes to differ
      * @returns OpenCascade difference shape
+     * @shortname difference
      */
     difference(inputs: Inputs.OCCT.DifferenceDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('booleans.difference', inputs);
@@ -42,6 +44,7 @@ export class OCCTBooleans {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_booleans.OCCTBooleans.html#intersection
      * @param inputs Main shape and shapes to differ
      * @returns OpenCascade intersection of shapes
+     * @shortname intersection
      */
     intersection(inputs: Inputs.OCCT.IntersectionDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('booleans.intersection', inputs);

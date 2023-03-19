@@ -16,8 +16,9 @@ export class OCCTSolid {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createBox
      * @param inputs Closed shell to make into solid
      * @returns OpenCascade Solid
+     * @group from
+     * @shortname shell
      */
-
     fromClosedShell(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShellPointer>): Promise<Inputs.OCCT.TopoDSSolidPointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.fromClosedShell', inputs);
     }
@@ -30,6 +31,8 @@ export class OCCTSolid {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createBox
      * @param inputs Box size and center
      * @returns OpenCascade Box
+     * @group primitives
+     * @shortname box
      */
     createBox(inputs: Inputs.OCCT.BoxDto): Promise<Inputs.OCCT.TopoDSSolidPointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.createBox', inputs);
@@ -43,6 +46,8 @@ export class OCCTSolid {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createBoxFromCorner
      * @param inputs Box size and corner coordinates
      * @returns OpenCascade Box
+     * @group primitives
+     * @shortname box corner
      */
     createBoxFromCorner(inputs: Inputs.OCCT.BoxFromCornerDto): Promise<Inputs.OCCT.TopoDSSolidPointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.createBoxFromCorner', inputs);
@@ -56,6 +61,8 @@ export class OCCTSolid {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createCylinder
      * @param inputs Cylinder parameters
      * @returns OpenCascade Cylinder
+     * @group primitives
+     * @shortname cylinder
      */
     createCylinder(inputs: Inputs.OCCT.CylinderDto): Promise<Inputs.OCCT.TopoDSSolidPointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.createCylinder', inputs);
@@ -69,6 +76,8 @@ export class OCCTSolid {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createCylindersOnLines
      * @param inputs Cylinder parameters
      * @returns OpenCascade Cylinder
+     * @group primitives
+     * @shortname cylinders on lines
      */
     createCylindersOnLines(inputs: Inputs.OCCT.CylindersOnLinesDto): Promise<Inputs.OCCT.TopoDSSolidPointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.createCylindersOnLines', inputs);
@@ -82,6 +91,8 @@ export class OCCTSolid {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createSphere
      * @param inputs Sphere radius and center
      * @returns OpenCascade Sphere
+     * @group primitives
+     * @shortname sphere
      */
     createSphere(inputs: Inputs.OCCT.SphereDto): Promise<Inputs.OCCT.TopoDSSolidPointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.createSphere', inputs);
@@ -95,6 +106,8 @@ export class OCCTSolid {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createCone
      * @param inputs Cone parameters
      * @returns OpenCascade cone shape
+     * @group primitives
+     * @shortname cone
      */
     createCone(inputs: Inputs.OCCT.ConeDto): Promise<Inputs.OCCT.TopoDSSolidPointer> {
         inputs.angle = inputs.angle * (Math.PI / 180);
@@ -109,6 +122,8 @@ export class OCCTSolid {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#getSolidSurfaceArea
      * @param inputs Closed solid shape
      * @returns Surface area
+     * @group get
+     * @shortname area
      */
     getSolidSurfaceArea(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSSolidPointer>): Promise<number> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.getSolidSurfaceArea', inputs);
@@ -122,6 +137,8 @@ export class OCCTSolid {
     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#getSolidVolume
     * @param inputs Closed solid shape
     * @returns volume
+    * @group get
+    * @shortname volume
     */
     getSolidVolume(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSSolidPointer>): Promise<number> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.getSolidVolume', inputs);
@@ -135,6 +152,8 @@ export class OCCTSolid {
     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#getSolidsVolumes
     * @param inputs Closed solid shapes
     * @returns volumes
+    * @group get
+    * @shortname volumes
     */
     getSolidsVolumes(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSSolidPointer>): Promise<number[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.getSolidsVolumes', inputs);
@@ -148,6 +167,8 @@ export class OCCTSolid {
     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#getSolidCenterOfMass
     * @param inputs Closed solid shape
     * @returns center of mass point
+    * @group get
+    * @shortname center of mass
     */
     getSolidCenterOfMass(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSSolidPointer>): Promise<Inputs.Base.Point3> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.getSolidCenterOfMass', inputs);
@@ -161,6 +182,8 @@ export class OCCTSolid {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#getSolidsCentersOfMass
      * @param inputs Closed solid shapes
      * @returns Points indicating centers of mass
+    * @group get
+    * @shortname centers of mass
      */
     getSolidsCentersOfMass(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSSolidPointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.getSolidsCentersOfMass', inputs);

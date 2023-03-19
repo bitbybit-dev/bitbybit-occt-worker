@@ -17,6 +17,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#line
      * @param inputs Two points between which edge should be created
      * @returns OpenCascade edge
+     * @group primitives
+     * @shortname line
      */
     line(inputs: Inputs.OCCT.LineDto): Promise<Inputs.OCCT.TopoDSEdgePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.line', inputs);
@@ -30,6 +32,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#arcThroughThreePoints
      * @param inputs Shape, radius and edge indexes to fillet
      * @returns OpenCascade edge
+     * @group primitives
+     * @shortname arc 3 points
      */
     arcThroughThreePoints(inputs: Inputs.OCCT.ArcEdgeThreePointsDto): Promise<Inputs.OCCT.TopoDSEdgePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.arcThroughThreePoints', inputs);
@@ -43,6 +47,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#createCircleEdge
      * @param inputs Circle parameters
      * @returns OpenCascade circle edge
+     * @group primitives
+     * @shortname circle
      */
     createCircleEdge(inputs: Inputs.OCCT.CircleDto): Promise<Inputs.OCCT.TopoDSEdgePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.createCircleEdge', inputs);
@@ -56,6 +62,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#createEllipseEdge
      * @param inputs Ellipse parameters
      * @returns OpenCascade ellipse edge
+     * @group primitives
+     * @shortname ellipse
      */
     createEllipseEdge(inputs: Inputs.OCCT.EllipseDto): Promise<Inputs.OCCT.TopoDSEdgePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.createEllipseEdge', inputs);
@@ -67,6 +75,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#removeInternalEdges
      * @param inputs Shape
      * @returns OpenCascade shape with no internal edges
+     * @group shapes
+     * @shortname remove internal
      */
     removeInternalEdges(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.removeInternalEdges', inputs);
@@ -80,6 +90,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getEdge
      * @param inputs Shape
      * @returns OpenCascade edge
+     * @group shapes
+     * @shortname get edge
      */
     getEdge(inputs: Inputs.OCCT.ShapeIndexDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getEdge', inputs);
@@ -93,6 +105,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getEdges
      * @param inputs Shape
      * @returns OpenCascade edge list
+     * @group shapes
+     * @shortname get edges
      */
     getEdges(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getEdges', inputs);
@@ -106,6 +120,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#makeEdgeFromGeom2dCurveAndSurface
      * @param inputs shapes are expected to contain 2 array elements - first is geom curve, second geom surface
      * @returns OpenCascade TopoDS_Edge
+     * @group from
+     * @shortname 2d curve and surface
      */
     makeEdgeFromGeom2dCurveAndSurface(inputs: Inputs.OCCT.EdgeFromGeom2dCurveAndSurfaceDto<Inputs.OCCT.Geom2dCurvePointer, Inputs.OCCT.GeomSurfacePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
         inputs.shapes = [inputs.curve, inputs.surface];
@@ -120,6 +136,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getCornerPointsOfEdgesForShape
      * @param inputs Shape that contains edges - wire, face, shell, solid
      * @returns List of points
+     * @group get
+     * @shortname corners
      */
     getCornerPointsOfEdgesForShape(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getCornerPointsOfEdgesForShape', inputs);
@@ -133,6 +151,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getEdgeLength
      * @param inputs edge
      * @returns Length
+     * @group get
+     * @shortname length
      */
     getEdgeLength(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<number> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getEdgeLength', inputs);
@@ -146,6 +166,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getEdgesLengths
      * @param inputs edges
      * @returns Lengths
+     * @group get
+     * @shortname lengths
      */
     getEdgesLengths(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<number[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getEdgesLengths', inputs);
@@ -159,6 +181,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getEdgeCenterOfMass
      * @param inputs edge
      * @returns Point representing center of mass
+     * @group get
+     * @shortname center of mass
      */
     getEdgeCenterOfMass(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getEdgeCenterOfMass', inputs);
@@ -172,6 +196,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getEdgesCentersOfMass
      * @param inputs edges
      * @returns Points representing centers of mass
+     * @group get
+     * @shortname centers of mass
      */
     getEdgesCentersOfMass(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getEdgesCentersOfMass', inputs);
@@ -185,6 +211,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#pointOnEdgeAtParam
      * @param input edge
      * @returns Point on param
+     * @group extract
+     * @shortname point at param
      */
     pointOnEdgeAtParam(inputs: Inputs.OCCT.DataOnGeometryAtParamDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.pointOnEdgeAtParam', inputs);
@@ -198,6 +226,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#tangentOnEdgeAtParam
      * @param input edge
      * @returns Tangent vector on param
+     * @group extract
+     * @shortname tangent at param
      */
     tangentOnEdgeAtParam(inputs: Inputs.OCCT.DataOnGeometryAtParamDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.tangentOnEdgeAtParam', inputs);
@@ -211,6 +241,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#pointOnEdgeAtLength
      * @param input edge and length
      * @returns Point on edge
+     * @group extract
+     * @shortname point at length
      */
     pointOnEdgeAtLength(inputs: Inputs.OCCT.DataOnGeometryAtLengthDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.pointOnEdgeAtLength', inputs);
@@ -224,6 +256,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#tangentOnEdgeAtLength
      * @param input edge and length
      * @returns Tangent vector on edge
+     * @group extract
+     * @shortname tangent at length
      */
     tangentOnEdgeAtLength(inputs: Inputs.OCCT.DataOnGeometryAtLengthDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.tangentOnEdgeAtLength', inputs);
@@ -237,6 +271,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#startPointOnEdge
      * @param input edge
      * @returns Start point
+     * @group extract
+     * @shortname start point
      */
     startPointOnEdge(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.startPointOnEdge', inputs);
@@ -250,6 +286,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#endPointOnEdge
      * @param input edge
      * @returns End point
+     * @group extract
+     * @shortname end point
      */
     endPointOnEdge(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.endPointOnEdge', inputs);
@@ -263,6 +301,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#divideEdgeByParamsToPoints
      * @param input edge and division params
      * @returns Points
+     * @group extract
+     * @shortname points by params
      */
     divideEdgeByParamsToPoints(inputs: Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.divideEdgeByParamsToPoints', inputs);
@@ -276,6 +316,8 @@ export class OCCTEdge {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#divideEdgeByEqualDistanceToPoints
      * @param input edge and division params
      * @returns Points
+     * @group extract
+     * @shortname points by distance
      */
     divideEdgeByEqualDistanceToPoints(inputs: Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.divideEdgeByEqualDistanceToPoints', inputs);

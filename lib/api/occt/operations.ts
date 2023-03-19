@@ -17,6 +17,7 @@ export class OCCTOperations {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_operations.OCCTOperations.html#loft
      * @param inputs Loft wires
      * @returns Resulting loft shape
+     * @shortname loft
      */
     loft(inputs: Inputs.OCCT.LoftDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.loft', inputs);
@@ -30,6 +31,7 @@ export class OCCTOperations {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_operations.OCCTOperations.html#loftAdvanced
      * @param inputs Advanced loft parameters
      * @returns Resulting loft shell
+     * @shortname loft adv.
      */
     loftAdvanced(inputs: Inputs.OCCT.LoftAdvancedDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.loftAdvanced', inputs);
@@ -43,6 +45,7 @@ export class OCCTOperations {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_operations.OCCTOperations.html#offset
      * @param inputs Shape to offset and distance with tolerance
      * @returns Resulting offset shape
+     * @shortname offset
      */
     offset(inputs: Inputs.OCCT.OffsetDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.offset', inputs);
@@ -56,6 +59,7 @@ export class OCCTOperations {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_operations.OCCTOperations.html#extrude
      * @param inputs Shape to extrude and direction parameter with tolerance
      * @returns Resulting extruded shape
+     * @shortname extrude
      */
     extrude(inputs: Inputs.OCCT.ExtrudeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.extrude', inputs);
@@ -69,6 +73,7 @@ export class OCCTOperations {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_operations.OCCTOperations.html#extrudeShapes
      * @param inputs Shapes to extrude and direction parameter with tolerance
      * @returns Resulting extruded shapes
+     * @shortname extrusions
      */
     extrudeShapes(inputs: Inputs.OCCT.ExtrudeShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.extrudeShapes', inputs);
@@ -82,6 +87,7 @@ export class OCCTOperations {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_operations.OCCTOperations.html#splitShapeWithShapes
      * @param inputs Face to split and edges to split with
      * @returns Resulting split shape
+     * @shortname split
      */
     splitShapeWithShapes(inputs: Inputs.OCCT.SplitDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.splitShapeWithShapes', inputs);
@@ -95,6 +101,7 @@ export class OCCTOperations {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_operations.OCCTOperations.html#revolve
      * @param inputs Revolve parameters
      * @returns Resulting revolved shape
+     * @shortname revolve
      */
     revolve(inputs: Inputs.OCCT.RevolveDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.revolve', inputs);
@@ -108,6 +115,7 @@ export class OCCTOperations {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_operations.OCCTOperations.html#rotatedExtrude
      * @param inputs Rotated extrusion inputs
      * @returns OpenCascade shape
+     * @shortname rotated extrude
      */
     rotatedExtrude(inputs: Inputs.OCCT.RotationExtrudeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.rotatedExtrude', inputs);
@@ -121,6 +129,7 @@ export class OCCTOperations {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_operations.OCCTOperations.html#pipe
      * @param inputs Path wire and shapes along the path
      * @returns OpenCascade shape
+     * @shortname pipe
      */
     pipe(inputs: Inputs.OCCT.ShapeShapesDto<Inputs.OCCT.TopoDSWirePointer, Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.pipe', inputs);
@@ -134,6 +143,7 @@ export class OCCTOperations {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_operations.OCCTOperations.html#makeThickSolidSimple
      * @param inputs OpenCascade shape
      * @returns OpenCascade solid shape
+     * @shortname thicken
      */
     makeThickSolidSimple(inputs: Inputs.OCCT.ThisckSolidSimpleDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.makeThickSolidSimple', inputs);
@@ -147,6 +157,7 @@ export class OCCTOperations {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_operations.OCCTOperations.html#makeThickSolidByJoin
      * @param inputs OpenCascade shape and options for thickening
      * @returns OpenCascade solid shape
+     * @shortname joined thicken
      */
     makeThickSolidByJoin(inputs: Inputs.OCCT.ThickSolidByJoinDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.makeThickSolidByJoin', inputs);

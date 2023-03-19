@@ -15,6 +15,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createFaceFromWire
      * @param inputs OpenCascade wire shape and indication if face should be planar
      * @returns OpenCascade face shape
+     * @group from
+     * @shortname wire
      */
     createFaceFromWire(inputs: Inputs.OCCT.FaceFromWireDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createFaceFromWire', inputs);
@@ -28,6 +30,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createFacesFromWires
      * @param inputs OpenCascade wire shape and indication if face should be planar
      * @returns OpenCascade face shape
+     * @group from
+     * @shortname wires
      */
     createFacesFromWires(inputs: Inputs.OCCT.FaceFromWireDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSFacePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createFacesFromWires', inputs);
@@ -41,6 +45,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_geom_surfaces.OCCTSurfaces.html#faceFromSurface
      * @param inputs Face shape
      * @returns OpenCascade surface
+     * @group from
+     * @shortname surface
      */
     faceFromSurface(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.GeomSurfacePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.faceFromSurface', inputs);
@@ -54,6 +60,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_geom_surfaces.OCCTSurfaces.html#faceFromSurfaceAndWire
      * @param inputs OpenCascade surface, a wire and indication wether face should be created inside or not
      * @returns Face shape
+     * @group from
+     * @shortname surface and wire
      */
     faceFromSurfaceAndWire(inputs: Inputs.OCCT.FaceFromSurfaceAndWireDto<Inputs.OCCT.GeomSurfacePointer, Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
         inputs.shapes = [inputs.surface, inputs.wire];
@@ -68,6 +76,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createPolygonFace
      * @param inputs Polygon points
      * @returns OpenCascade polygon face
+     * @group primitives
+     * @shortname polygon
      */
     createPolygonFace(inputs: Inputs.OCCT.PolygonDto): Promise<Inputs.OCCT.TopoDSFacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createPolygonFace', inputs);
@@ -81,6 +91,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createCircleFace
      * @param inputs Circle parameters
      * @returns OpenCascade circle face
+     * @group primitives
+     * @shortname circle
      */
     createCircleFace(inputs: Inputs.OCCT.CircleDto): Promise<Inputs.OCCT.TopoDSFacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createCircleFace', inputs);
@@ -94,6 +106,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createEllipseFace
      * @param inputs Ellipse parameters
      * @returns OpenCascade ellipse face
+     * @group primitives
+     * @shortname ellipse
      */
     createEllipseFace(inputs: Inputs.OCCT.EllipseDto): Promise<Inputs.OCCT.TopoDSFacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createEllipseFace', inputs);
@@ -107,6 +121,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createSquareFace
      * @param inputs Square parameters
      * @returns OpenCascade square face
+     * @group primitives
+     * @shortname square
      */
     createSquareFace(inputs: Inputs.OCCT.SquareDto): Promise<Inputs.OCCT.TopoDSFacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createSquareFace', inputs);
@@ -120,6 +136,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createRectangleFace
      * @param inputs rectangle parameters
      * @returns OpenCascade rectangle
+     * @group primitives
+     * @shortname rectangle
      */
     createRectangleFace(inputs: Inputs.OCCT.RectangleDto): Promise<Inputs.OCCT.TopoDSFacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createRectangleFace', inputs);
@@ -133,6 +151,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getFace
      * @param inputs Shape
      * @returns OpenCascade face
+     * @group get
+     * @shortname face
      */
     getFace(inputs: Inputs.OCCT.ShapeIndexDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getFace', inputs);
@@ -146,6 +166,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getFaces
      * @param inputs Shape
      * @returns OpenCascade faces array
+     * @group get
+     * @shortname faces
      */
     getFaces(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSFacePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getFaces', inputs);
@@ -159,6 +181,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#reversedFace
      * @param inputs Face
      * @returns OpenCascade face
+     * @group get
+     * @shortname reversed
      */
     reversedFace(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.reversedFace', inputs);
@@ -172,6 +196,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#subdivideToPoints
      * @param inputs Face and params for subdivision
      * @returns points
+     * @group extract
+     * @shortname points
      */
     subdivideToPoints(inputs: Inputs.OCCT.FaceSubdivisionDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.subdivideToPoints', inputs);
@@ -185,6 +211,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#subdivideToPointsControlled
      * @param inputs Face and params for subdivision
      * @returns points
+     * @group extract
+     * @shortname points nth
      */
     subdivideToPointsControlled(inputs: Inputs.OCCT.FaceSubdivisionControlledDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.subdivideToPointsControlled', inputs);
@@ -198,6 +226,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#subdivideToNormals
      * @param inputs Face and params for subdivision
      * @returns normal vectors
+     * @group extract
+     * @shortname normals
      */
     subdivideToNormals(inputs: Inputs.OCCT.FaceSubdivisionDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Vector3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.subdivideToNormals', inputs);
@@ -211,6 +241,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#subdivideToUV
      * @param inputs Face and params for subdivision
      * @returns uv params in array
+     * @group extract
+     * @shortname uvs
      */
     subdivideToUV(inputs: Inputs.OCCT.FaceSubdivisionDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point2[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.subdivideToUV', inputs);
@@ -224,6 +256,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#pointOnUV
      * @param inputs Face and params for subdivision
      * @returns point
+     * @group extract
+     * @shortname point on uv
      */
     pointOnUV(inputs: Inputs.OCCT.DataOnUVDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.pointOnUV', inputs);
@@ -237,6 +271,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#normalOnUV
      * @param inputs Face and params for subdivision
      * @returns normal vector
+     * @group extract
+     * @shortname normal on uv
      */
     normalOnUV(inputs: Inputs.OCCT.DataOnUVDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Vector3> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.normalOnUV', inputs);
@@ -250,6 +286,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#pointOnUV
      * @param inputs Face and params for subdivision
      * @returns points
+     * @group extract
+     * @shortname points on uvs
      */
     pointsOnUVs(inputs: Inputs.OCCT.DataOnUVsDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.pointsOnUVs', inputs);
@@ -263,6 +301,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#normalsOnUVs
      * @param inputs Face and params for subdivision
      * @returns normals
+     * @group extract
+     * @shortname normals on uvs
      */
     normalsOnUVs(inputs: Inputs.OCCT.DataOnUVsDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Vector3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.normalsOnUVs', inputs);
@@ -276,6 +316,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#subdivideToPointsOnParam
      * @param inputs Face and params for subdivision
      * @returns points
+     * @group extract
+     * @shortname points on param
      */
     subdivideToPointsOnParam(inputs: Inputs.OCCT.FaceLinearSubdivisionDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.subdivideToPointsOnParam', inputs);
@@ -289,6 +331,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getUMinBound
      * @param inputs OCCT Face
      * @returns u min bound
+     * @group get
+     * @shortname u min
      */
     getUMinBound(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<number> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getUMinBound', inputs);
@@ -302,6 +346,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getUMaxBound
      * @param inputs OCCT Face
      * @returns u max bound
+     * @group get
+     * @shortname u max
      */
     getUMaxBound(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<number> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getUMaxBound', inputs);
@@ -315,6 +361,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getVMinBound
      * @param inputs OCCT Face
      * @returns v min bound
+     * @group get
+     * @shortname v min
      */
     getVMinBound(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<number> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getVMinBound', inputs);
@@ -328,6 +376,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getVMaxBound
      * @param inputs OCCT Face
      * @returns v max bound
+     * @group get
+     * @shortname v max
      */
     getVMaxBound(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<number> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getVMaxBound', inputs);
@@ -341,6 +391,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getFaceArea
      * @param inputs OCCT Face
      * @returns area
+     * @group get
+     * @shortname face area
      */
     getFaceArea(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<number> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getFaceArea', inputs);
@@ -354,6 +406,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getFacesAreas
      * @param inputs OCCT Faces
      * @returns areas
+     * @group get
+     * @shortname areas of faces
      */
     getFacesAreas(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSFacePointer>): Promise<number[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getFacesAreas', inputs);
@@ -367,6 +421,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getFaceCenterOfMass
      * @param inputs OCCT Face
      * @returns point
+     * @group get
+     * @shortname center of mass
      */
     getFaceCenterOfMass(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getFaceCenterOfMass', inputs);
@@ -380,6 +436,8 @@ export class OCCTFace {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getFaceCenterOfMass
      * @param inputs OCCT Faces
      * @returns points
+     * @group get
+     * @shortname centers of mass
      */
     getFacesCentersOfMass(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getFacesCentersOfMass', inputs);

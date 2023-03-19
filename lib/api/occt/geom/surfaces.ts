@@ -17,6 +17,7 @@ export class OCCTSurfaces {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_geom_surfaces.OCCTSurfaces.html#cylindricalSurface
      * @param inputs Cylinder parameters
      * @returns OpenCascade cylindrical surface
+     * @shortname cylindrical
      */
     cylindricalSurface(inputs: Inputs.OCCT.GeomCylindricalSurfaceDto): Promise<Inputs.OCCT.GeomSurfacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('geom.surfaces.cylindricalSurface', inputs);
@@ -30,6 +31,7 @@ export class OCCTSurfaces {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_geom_surfaces.OCCTSurfaces.html#surfaceFromFace
      * @param inputs Face shape
      * @returns OpenCascade geom surface
+     * @shortname from face
      */
     surfaceFromFace(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.GeomSurfacePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('geom.surfaces.surfaceFromFace', inputs);

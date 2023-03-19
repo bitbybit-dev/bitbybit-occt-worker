@@ -16,6 +16,8 @@ export class OCCTShell {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_shell.OCCTShell.html#sewFaces
      * @param inputs OpenCascade shell and faces
      * @returns OpenCascade shell
+     * @group create
+     * @shortname sew
      */
     sewFaces(inputs: Inputs.OCCT.SewDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSShellPointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.shell.sewFaces', inputs);
@@ -29,6 +31,8 @@ export class OCCTShell {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_shell.OCCTShell.html#getShellSurfaceArea
      * @param inputs shell shape
      * @returns Surface area
+     * @group get
+     * @shortname area
      */
      getShellSurfaceArea(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShellPointer>): Promise<number> {
         return this.occWorkerManager.genericCallToWorkerPromise('shapes.shell.getShellSurfaceArea', inputs);
