@@ -45,6 +45,7 @@ export class OCCT {
      * @group drawing
      * @shortname shape to mesh
      * @drawable false
+     * @ignore true
      */
     async shapeToMesh(inputs: Inputs.OCCT.ShapeToMeshDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.DecomposedMeshDto> {
         return await this.occWorkerManager.genericCallToWorkerPromise('shapeToMesh', inputs);
@@ -57,7 +58,7 @@ export class OCCT {
      * </div>
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt.OCCT.html#deleteShape
      * @param inputs shape
-     * @group memory management
+     * @group memory
      * @shortname delete shape
      */
     async deleteShape(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<void> {
@@ -71,7 +72,7 @@ export class OCCT {
      * </div>
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt.OCCT.html#deleteShapes
      * @param inputs shape
-     * @group memory management
+     * @group memory
      * @shortname delete shapes
      */
     async deleteShapes(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<void> {
