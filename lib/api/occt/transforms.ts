@@ -17,6 +17,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#transform
      * @param inputs Transformation description
      * @returns OpenCascade shape
+     * @group on single shape
      * @shortname transform
      * @drawable true
      */
@@ -32,6 +33,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#rotate
      * @param inputs Rotation description
      * @returns OpenCascade shape
+     * @group on single shape
      * @shortname rotate
      * @drawable true
      */
@@ -47,6 +49,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#align
      * @param inputs Align description
      * @returns OpenCascade shape
+     * @group on single shape
      * @shortname align
      * @drawable true
      */
@@ -62,6 +65,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#translate
      * @param inputs Translation description
      * @returns OpenCascade shape
+     * @group on single shape
      * @shortname translate
      * @drawable true
      */
@@ -77,6 +81,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#scale
      * @param inputs Scale description
      * @returns OpenCascade shape
+     * @group on single shape
      * @shortname scale
      * @drawable true
      */
@@ -92,6 +97,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#scale3d
      * @param inputs Scale 3D description
      * @returns OpenCascade scaled shape
+     * @group on single shape
      * @shortname scale 3d
      * @drawable true
      */
@@ -107,6 +113,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#mirror
      * @param inputs Mirror axis origin, axis direction and shape
      * @returns OpenCascade shape
+     * @group on single shape
      * @shortname mirror
      * @drawable true
      */
@@ -122,6 +129,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#mirrorAlongNormal
      * @param inputs Normal for mirroring with origin
      * @returns OpenCascade shape
+     * @group on single shape
      * @shortname mirror normal
      * @drawable true
      */
@@ -137,6 +145,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#transformShapes
      * @param inputs Transformation descriptions
      * @returns OpenCascade shapes
+     * @group on multiple shapes
      * @shortname transforms
      * @drawable true
      */
@@ -152,6 +161,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#rotateShapes
      * @param inputs Rotation descriptions
      * @returns OpenCascade shapes
+     * @group on multiple shapes
      * @shortname rotations
      * @drawable true
      */
@@ -167,6 +177,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#alignShapes
      * @param inputs Align descriptions
      * @returns OpenCascade shapes
+     * @group on multiple shapes
      * @shortname alignments
      * @drawable true
      */
@@ -182,6 +193,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#translateShapes
      * @param inputs Translation descriptions
      * @returns OpenCascade shapes
+     * @group on multiple shapes
      * @shortname translations
      * @drawable true
      */
@@ -197,6 +209,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#scaleShapes
      * @param inputs Scale descriptions
      * @returns OpenCascade shapes
+     * @group on multiple shapes
      * @shortname scales
      * @drawable true
      */
@@ -212,6 +225,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#scale3dShapes
      * @param inputs Scale 3D descriptions
      * @returns OpenCascade scaled shapes
+     * @group on multiple shapes
      * @shortname scales 3d
      * @drawable true
      */
@@ -227,6 +241,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#mirrorShapes
      * @param inputs Mirror axis origins, axis directions and shapes
      * @returns OpenCascade shapes
+     * @group on multiple shapes
      * @shortname mirrors
      * @drawable true
      */
@@ -242,6 +257,7 @@ export class OCCTTransforms {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_transforms.OCCTTransforms.html#mirrorAlongNormalShapes
      * @param inputs Normals for mirroring with origins
      * @returns OpenCascade shapes
+     * @group on multiple shapes
      * @shortname mirrors normal
      * @drawable true
      */

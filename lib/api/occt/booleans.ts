@@ -16,6 +16,7 @@ export class OCCTBooleans {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_booleans.OCCTBooleans.html#union
      * @param inputs Objects to join
      * @returns OpenCascade joined shape
+     * @group booleans
      * @shortname union
      * @drawable true
      */
@@ -31,6 +32,7 @@ export class OCCTBooleans {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_booleans.OCCTBooleans.html#difference
      * @param inputs Main shape and shapes to differ
      * @returns OpenCascade difference shape
+     * @group booleans
      * @shortname difference
      * @drawable true
      */
@@ -46,6 +48,7 @@ export class OCCTBooleans {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_booleans.OCCTBooleans.html#intersection
      * @param inputs Main shape and shapes to differ
      * @returns OpenCascade intersection of shapes
+     * @group booleans
      * @shortname intersection
      * @drawable true
      */

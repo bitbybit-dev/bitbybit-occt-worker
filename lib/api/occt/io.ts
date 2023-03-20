@@ -16,6 +16,7 @@ export class OCCTIO {
      * @link https://docs.bitbybit.dev/classes/bitbybit_occt_io.OCCTIO.html#saveShapeSTEP
      * @param inputs STEP filename and shape to be saved
      * @returns String of a step file
+     * @group io
      * @shortname save step
      * @drawable false
      */
