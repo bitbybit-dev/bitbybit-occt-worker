@@ -11,10 +11,6 @@ export class OCCTCurves {
 
     /**
      * Creates a 2d ellipse. Be sure to use this geometry only for constructive purposes of modeling, but not for representation. You need to transform these curves to edges in order to draw them.
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/geom/curves/geom2dEllipse.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_geom_curves.OCCTCurves.html#geom2dEllipse
      * @param inputs 2D Ellipse parameters
      * @returns OpenCascade Geom2d_ellipse
      * @group primitives
@@ -26,10 +22,6 @@ export class OCCTCurves {
 
     /**
      * Creates a trimmed curve from the basis curve limited between U1 and U2. This curve can't be drawn.
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/geom/curves/geom2dTrimmedCurve.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_geom_curves.OCCTCurves.html#geom2dTrimmedCurve
      * @param inputs Bounds and strategy for trimming the curve
      * @returns OpenCascade Geom2d_TrimmedCurve
      * @group create
@@ -41,10 +33,6 @@ export class OCCTCurves {
 
     /**
      * Creates a trimmed 2d curve segment between two 2d points. This curve can't be drawn.
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/geom/curves/geom2dSegment.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_geom_curves.OCCTCurves.html#geom2dSegment
      * @param inputs Two 2d points for start and end
      * @returns OpenCascade Geom2d_Segment
      * @group primitives
@@ -56,10 +44,6 @@ export class OCCTCurves {
 
     /**
      * Gets 2d point represented by [number, number] on a curve at parameter.
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/geom/curves/get2dPointFrom2dCurveOnParam.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_geom_curves.OCCTCurves.html#get2dPointFrom2dCurveOnParam
      * @param inputs 2D Curve shape and parameter
      * @returns Point as array of 2 numbers
      * @group get
@@ -71,10 +55,6 @@ export class OCCTCurves {
 
     /**
      * Creates a circle geom curve
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/geom/curves/geomCircleCurve.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_geom_curves.OCCTCurves.html#geomCircleCurve
      * @param inputs Axis information and radius
      * @returns Opencascade Geom_Circle curve
      * @group primitives
@@ -87,10 +67,6 @@ export class OCCTCurves {
 
     /**
      * Creates an ellipse geom curve
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/geom/curves/geomEllipseCurve.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_geom_curves.OCCTCurves.html#geomEllipseCurve
      * @param inputs Axis information and radius
      * @returns Opencascade Geom_Ellipse curve
      * @group primitives

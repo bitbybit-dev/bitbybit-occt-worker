@@ -9,10 +9,6 @@ export class OCCTFace {
     }
     /**
      * Creates a face from wire
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/createFaceFromWire.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createFaceFromWire
      * @param inputs OpenCascade wire shape and indication if face should be planar
      * @returns OpenCascade face shape
      * @group from
@@ -25,10 +21,6 @@ export class OCCTFace {
 
     /**
      * Creates faces from wires
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/createFacesFromWires.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createFacesFromWires
      * @param inputs OpenCascade wire shape and indication if face should be planar
      * @returns OpenCascade face shape
      * @group from
@@ -41,10 +33,6 @@ export class OCCTFace {
 
     /**
      * Creates a face from the surface
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/faceFromSurface.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_geom_surfaces.OCCTSurfaces.html#faceFromSurface
      * @param inputs Face shape
      * @returns OpenCascade surface
      * @group from
@@ -57,10 +45,6 @@ export class OCCTFace {
 
     /**
      * Creates a face from the surface and a wire
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/faceFromSurfaceAndWire.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_geom_surfaces.OCCTSurfaces.html#faceFromSurfaceAndWire
      * @param inputs OpenCascade surface, a wire and indication wether face should be created inside or not
      * @returns Face shape
      * @group from
@@ -74,10 +58,6 @@ export class OCCTFace {
 
     /**
      * Creates OpenCascade Polygon face
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/createPolygonFace.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createPolygonFace
      * @param inputs Polygon points
      * @returns OpenCascade polygon face
      * @group primitives
@@ -90,10 +70,6 @@ export class OCCTFace {
 
     /**
      * Creates OpenCascade circle face
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/createCircleFace.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createCircleFace
      * @param inputs Circle parameters
      * @returns OpenCascade circle face
      * @group primitives
@@ -106,10 +82,6 @@ export class OCCTFace {
 
     /**
      * Creates OpenCascade ellipse face
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/createEllipseFace.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createEllipseFace
      * @param inputs Ellipse parameters
      * @returns OpenCascade ellipse face
      * @group primitives
@@ -122,10 +94,6 @@ export class OCCTFace {
 
     /**
      * Creates OpenCascade square face
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/createSquareFace.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createSquareFace
      * @param inputs Square parameters
      * @returns OpenCascade square face
      * @group primitives
@@ -138,10 +106,6 @@ export class OCCTFace {
 
     /**
      * Creates OpenCascade rectangle face
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/createRectangleFace.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#createRectangleFace
      * @param inputs rectangle parameters
      * @returns OpenCascade rectangle
      * @group primitives
@@ -154,10 +118,6 @@ export class OCCTFace {
 
     /**
      * Gets the face by providing an index from the shape
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/getFace.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getFace
      * @param inputs Shape
      * @returns OpenCascade face
      * @group get
@@ -170,10 +130,6 @@ export class OCCTFace {
 
     /**
      * Gets the faces of the shape in a list
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/getFaces.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getFaces
      * @param inputs Shape
      * @returns OpenCascade faces array
      * @group get
@@ -186,10 +142,6 @@ export class OCCTFace {
 
     /**
      * Computes reversed face from input face
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/reversedFace.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#reversedFace
      * @param inputs Face
      * @returns OpenCascade face
      * @group get
@@ -202,10 +154,6 @@ export class OCCTFace {
 
     /**
      * Subdivides a face to point grid
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/subdivideToPoints.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#subdivideToPoints
      * @param inputs Face and params for subdivision
      * @returns points
      * @group extract
@@ -218,10 +166,6 @@ export class OCCTFace {
 
     /**
      * Subdivides a face to point grid with shifts and removals on nth uv rows or columns
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/subdivideToPointsControlled.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#subdivideToPointsControlled
      * @param inputs Face and params for subdivision
      * @returns points
      * @group extract
@@ -234,10 +178,6 @@ export class OCCTFace {
 
     /**
      * Subdivides a face to normals grid
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/subdivideToNormals.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#subdivideToNormals
      * @param inputs Face and params for subdivision
      * @returns normal vectors
      * @group extract
@@ -250,10 +190,6 @@ export class OCCTFace {
 
     /**
      * Subdivides a face to uv grid
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/subdivideToUV.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#subdivideToUV
      * @param inputs Face and params for subdivision
      * @returns uv params in array
      * @group extract
@@ -266,10 +202,6 @@ export class OCCTFace {
 
     /**
      * Get point on UV where U and V are described between 0 and 1. These will be mapped to real bounds.
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/pointOnUV.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#pointOnUV
      * @param inputs Face and params for subdivision
      * @returns point
      * @group extract
@@ -282,10 +214,6 @@ export class OCCTFace {
 
     /**
      * Get normal on UV where U and V are described between 0 and 1. These will be mapped to real bounds.
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/normalOnUV.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#normalOnUV
      * @param inputs Face and params for subdivision
      * @returns normal vector
      * @group extract
@@ -298,10 +226,6 @@ export class OCCTFace {
 
     /**
      * Get points on UVs where U and V are described between 0 and 1 in two dimensional arrays. These will be mapped to real bounds.
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/pointOnUV.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#pointOnUV
      * @param inputs Face and params for subdivision
      * @returns points
      * @group extract
@@ -314,10 +238,6 @@ export class OCCTFace {
 
     /**
      * Get normals on UVs where U and V are described between 0 and 1 in two dimensional arrays. These will be mapped to real bounds.
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/normalsOnUVs.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#normalsOnUVs
      * @param inputs Face and params for subdivision
      * @returns normals
      * @group extract
@@ -330,10 +250,6 @@ export class OCCTFace {
 
     /**
      * Subdivides a face to points along a line on parameter
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/subdivideToPointsOnParam.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#subdivideToPointsOnParam
      * @param inputs Face and params for subdivision
      * @returns points
      * @group extract
@@ -346,10 +262,6 @@ export class OCCTFace {
 
     /**
      * Gets the U min bound of the face
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/getUMinBound.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getUMinBound
      * @param inputs OCCT Face
      * @returns u min bound
      * @group get
@@ -362,10 +274,6 @@ export class OCCTFace {
 
     /**
      * Gets the U max bound of the face
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/getUMaxBound.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getUMaxBound
      * @param inputs OCCT Face
      * @returns u max bound
      * @group get
@@ -378,10 +286,6 @@ export class OCCTFace {
 
     /**
      * Gets the V min bound of the face
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/getVMinBound.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getVMinBound
      * @param inputs OCCT Face
      * @returns v min bound
      * @group get
@@ -394,10 +298,6 @@ export class OCCTFace {
 
     /**
      * Gets the V max bound of the face
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/getVMaxBound.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getVMaxBound
      * @param inputs OCCT Face
      * @returns v max bound
      * @group get
@@ -410,10 +310,6 @@ export class OCCTFace {
 
     /**
      * Get the area of the face
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/getFaceArea.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getFaceArea
      * @param inputs OCCT Face
      * @returns area
      * @group get
@@ -426,10 +322,6 @@ export class OCCTFace {
 
     /**
      * Get the areas of the faces
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/getFacesAreas.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getFacesAreas
      * @param inputs OCCT Faces
      * @returns areas
      * @group get
@@ -442,10 +334,6 @@ export class OCCTFace {
 
     /**
      * Get the face center of mass point
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/getFaceCenterOfMass.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getFaceCenterOfMass
      * @param inputs OCCT Face
      * @returns point
      * @group get
@@ -458,10 +346,6 @@ export class OCCTFace {
 
     /**
      * Get the face center of mass point
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/face/getFaceCenterOfMass.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_face.OCCTFace.html#getFaceCenterOfMass
      * @param inputs OCCT Faces
      * @returns points
      * @group get

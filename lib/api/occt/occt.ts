@@ -37,10 +37,6 @@ export class OCCT {
 
     /**
      * Creates mesh from the shape
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapeToMesh.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt.OCCT.html#shapeToMesh
      * @param inputs shape
      * @group drawing
      * @shortname shape to mesh
@@ -53,10 +49,6 @@ export class OCCT {
 
     /**
      * Deletes shape from the cache to keep memory usage low
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/deleteShape.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt.OCCT.html#deleteShape
      * @param inputs shape
      * @group memory
      * @shortname delete shape
@@ -67,10 +59,6 @@ export class OCCT {
 
     /**
      * Deletes shapes from the cache to keep memory usage low
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/deleteShapes.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt.OCCT.html#deleteShapes
      * @param inputs shape
      * @group memory
      * @shortname delete shapes

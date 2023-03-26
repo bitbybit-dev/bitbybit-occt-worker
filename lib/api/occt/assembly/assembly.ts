@@ -11,10 +11,6 @@ export class OCCTAssembly {
 
     /**
      * Scans assembly
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/assembly/scan.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_assembly.OCCTAssembly.html#scan
      * @param inputs Shape to scan
      * @returns Data for assembly preview
      */

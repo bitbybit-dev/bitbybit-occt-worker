@@ -10,10 +10,6 @@ export class OCCTShell {
 
     /**
      * Creates a shell from faces
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/shell/sewFaces.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_shell.OCCTShell.html#sewFaces
      * @param inputs OpenCascade shell and faces
      * @returns OpenCascade shell
      * @group create
@@ -26,10 +22,6 @@ export class OCCTShell {
 
     /**
      * Get shell surface area
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/shell/getShellSurfaceArea.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_shell.OCCTShell.html#getShellSurfaceArea
      * @param inputs shell shape
      * @returns Surface area
      * @group get

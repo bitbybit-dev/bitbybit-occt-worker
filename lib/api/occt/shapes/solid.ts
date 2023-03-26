@@ -10,10 +10,6 @@ export class OCCTSolid {
 
     /**
      * Creates Solid From shell that must be closed
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/solid/createBox.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createBox
      * @param inputs Closed shell to make into solid
      * @returns OpenCascade Solid
      * @group from
@@ -26,10 +22,6 @@ export class OCCTSolid {
 
     /**
      * Creates OpenCascade Box
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/solid/createBox.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createBox
      * @param inputs Box size and center
      * @returns OpenCascade Box
      * @group primitives
@@ -42,10 +34,6 @@ export class OCCTSolid {
 
     /**
      * Creates OpenCascade Box from corner
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/solid/createBoxFromCorner.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createBoxFromCorner
      * @param inputs Box size and corner coordinates
      * @returns OpenCascade Box
      * @group primitives
@@ -58,10 +46,6 @@ export class OCCTSolid {
 
     /**
      * Creates OpenCascade Cylinder
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/solid/createCylinder.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createCylinder
      * @param inputs Cylinder parameters
      * @returns OpenCascade Cylinder
      * @group primitives
@@ -74,10 +58,6 @@ export class OCCTSolid {
 
     /**
      * Creates OpenCascade Cylinders on simple bit by bit lines represented by two points
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/solid/createCylindersOnLines.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createCylindersOnLines
      * @param inputs Cylinder parameters
      * @returns OpenCascade Cylinder
      * @group primitives
@@ -90,10 +70,6 @@ export class OCCTSolid {
 
     /**
      * Creates OpenCascade Sphere
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/solid/createSphere.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createSphere
      * @param inputs Sphere radius and center
      * @returns OpenCascade Sphere
      * @group primitives
@@ -106,10 +82,6 @@ export class OCCTSolid {
 
     /**
      * Creates OpenCascade Cone
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/solid/createCone.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#createCone
      * @param inputs Cone parameters
      * @returns OpenCascade cone shape
      * @group primitives
@@ -123,10 +95,6 @@ export class OCCTSolid {
 
     /**
      * Get solid surface area
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/solid/getSolidSurfaceArea.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#getSolidSurfaceArea
      * @param inputs Closed solid shape
      * @returns Surface area
      * @group get
@@ -139,10 +107,6 @@ export class OCCTSolid {
 
     /**
     * Get solid volume
-    * <div>
-    *  <img src="../assets/images/blockly-images/occt/shapes/solid/getSolidVolume.svg" alt="Blockly Image"/>
-    * </div>
-    * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#getSolidVolume
     * @param inputs Closed solid shape
     * @returns volume
     * @group get
@@ -155,10 +119,6 @@ export class OCCTSolid {
 
     /**
     * Get solids volumes
-    * <div>
-    *  <img src="../assets/images/blockly-images/occt/shapes/solid/getSolidsVolumes.svg" alt="Blockly Image"/>
-    * </div>
-    * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#getSolidsVolumes
     * @param inputs Closed solid shapes
     * @returns volumes
     * @group get
@@ -171,10 +131,6 @@ export class OCCTSolid {
 
     /**
     * Get solid center of mass
-    * <div>
-    *  <img src="../assets/images/blockly-images/occt/shapes/solid/getSolidCenterOfMass.svg" alt="Blockly Image"/>
-    * </div>
-    * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#getSolidCenterOfMass
     * @param inputs Closed solid shape
     * @returns center of mass point
     * @group get
@@ -187,10 +143,6 @@ export class OCCTSolid {
 
     /**
      * Get centers of mass of solids
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/solid/getSolidsCentersOfMass.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_solid.OCCTSolid.html#getSolidsCentersOfMass
      * @param inputs Closed solid shapes
      * @returns Points indicating centers of mass
     * @group get

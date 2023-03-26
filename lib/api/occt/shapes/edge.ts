@@ -11,10 +11,6 @@ export class OCCTEdge {
 
     /**
      * Creates linear edge between two points
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/line.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#line
      * @param inputs Two points between which edge should be created
      * @returns OpenCascade edge
      * @group primitives
@@ -27,10 +23,6 @@ export class OCCTEdge {
 
     /**
      * Creates arc edge between three points
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/arcThroughThreePoints.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#arcThroughThreePoints
      * @param inputs Shape, radius and edge indexes to fillet
      * @returns OpenCascade edge
      * @group primitives
@@ -43,10 +35,6 @@ export class OCCTEdge {
 
     /**
      * Creates OpenCascade circle edge
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/createCircleEdge.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#createCircleEdge
      * @param inputs Circle parameters
      * @returns OpenCascade circle edge
      * @group primitives
@@ -59,10 +47,6 @@ export class OCCTEdge {
 
     /**
      * Creates OpenCascade ellipse edge
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/createEllipseEdge.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#createEllipseEdge
      * @param inputs Ellipse parameters
      * @returns OpenCascade ellipse edge
      * @group primitives
@@ -76,7 +60,6 @@ export class OCCTEdge {
 
     /**
      * Removes internal faces for the shape
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#removeInternalEdges
      * @param inputs Shape
      * @returns OpenCascade shape with no internal edges
      * @group shapes
@@ -89,10 +72,6 @@ export class OCCTEdge {
 
     /**
      * Gets the edge by providing an index from the shape
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/getEdge.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getEdge
      * @param inputs Shape
      * @returns OpenCascade edge
      * @group shapes
@@ -105,10 +84,6 @@ export class OCCTEdge {
 
     /**
      * Gets the edges of a shape in a list
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/getEdges.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getEdges
      * @param inputs Shape
      * @returns OpenCascade edge list
      * @group shapes
@@ -121,10 +96,6 @@ export class OCCTEdge {
 
     /**
      * Creates an edge from geom curve and geom surface
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/makeEdgeFromGeom2dCurveAndSurface.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#makeEdgeFromGeom2dCurveAndSurface
      * @param inputs shapes are expected to contain 2 array elements - first is geom curve, second geom surface
      * @returns OpenCascade TopoDS_Edge
      * @group from
@@ -138,10 +109,6 @@ export class OCCTEdge {
 
     /**
      * Gets corner points of edges for a shape. There's no order guarantee here. All duplicates are removed, so when three edges form one corner, that will be represented by a single point in the list. 
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/getCornerPointsOfEdgesForShape.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getCornerPointsOfEdgesForShape
      * @param inputs Shape that contains edges - wire, face, shell, solid
      * @returns List of points
      * @group get
@@ -154,10 +121,6 @@ export class OCCTEdge {
 
     /**
      * Gets the edge length
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/getEdgeLength.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getEdgeLength
      * @param inputs edge
      * @returns Length
      * @group get
@@ -170,10 +133,6 @@ export class OCCTEdge {
 
     /**
      * Gets the lengths of the edges
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/getEdgesLengths.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getEdgesLengths
      * @param inputs edges
      * @returns Lengths
      * @group get
@@ -186,10 +145,6 @@ export class OCCTEdge {
 
     /**
      * Gets the center of mass for the edge
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/getEdgeCenterOfMass.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getEdgeCenterOfMass
      * @param inputs edge
      * @returns Point representing center of mass
      * @group get
@@ -202,10 +157,6 @@ export class OCCTEdge {
 
     /**
      * Gets the centers of mass for the edges
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/getEdgesCentersOfMass.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#getEdgesCentersOfMass
      * @param inputs edges
      * @returns Points representing centers of mass
      * @group get
@@ -218,10 +169,6 @@ export class OCCTEdge {
 
     /**
      * Gets the point on edge at param
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/pointOnEdgeAtParam.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#pointOnEdgeAtParam
      * @param input edge
      * @returns Point on param
      * @group extract
@@ -234,10 +181,6 @@ export class OCCTEdge {
 
     /**
      * Gets the tangent vector on edge at param
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/tangentOnEdgeAtParam.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#tangentOnEdgeAtParam
      * @param input edge
      * @returns Tangent vector on param
      * @group extract
@@ -250,10 +193,6 @@ export class OCCTEdge {
 
     /**
      * Gets the point on edge at length
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/pointOnEdgeAtLength.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#pointOnEdgeAtLength
      * @param input edge and length
      * @returns Point on edge
      * @group extract
@@ -266,10 +205,6 @@ export class OCCTEdge {
 
     /**
      * Gets the tangent vector on edge at length
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/tangentOnEdgeAtLength.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#tangentOnEdgeAtLength
      * @param input edge and length
      * @returns Tangent vector on edge
      * @group extract
@@ -282,10 +217,6 @@ export class OCCTEdge {
 
     /**
      * Gets the start point on edge
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/startPointOnEdge.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#startPointOnEdge
      * @param input edge
      * @returns Start point
      * @group extract
@@ -298,10 +229,6 @@ export class OCCTEdge {
 
     /**
      * Gets the end point on edge
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/endPointOnEdge.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#endPointOnEdge
      * @param input edge
      * @returns End point
      * @group extract
@@ -314,10 +241,6 @@ export class OCCTEdge {
 
     /**
      * Divides edge by params to points
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/divideEdgeByParamsToPoints.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#divideEdgeByParamsToPoints
      * @param input edge and division params
      * @returns Points
      * @group extract
@@ -330,10 +253,6 @@ export class OCCTEdge {
 
     /**
      * Divides edge by length to points
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/divideEdgeByEqualDistanceToPoints.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_shapes_edge.OCCTEdge.html#divideEdgeByEqualDistanceToPoints
      * @param input edge and division params
      * @returns Points
      * @group extract

@@ -10,10 +10,6 @@ export class OCCTFillets {
     }
     /**
     * Fillets OpenCascade Shapes
-    * <div>
-    *  <img src="../assets/images/blockly-images/occt/shapes/edge/filletEdges.svg" alt="Blockly Image"/>
-    * </div>
-    * @link https://docs.bitbybit.dev/classes/bitbybit_occt_fillets.OCCTFillets.html#filletEdges
     * @param inputs Shape, radius and edge indexes to fillet
     * @returns OpenCascade shape with filleted edges
     * @group 3d
@@ -26,10 +22,6 @@ export class OCCTFillets {
 
     /**
      * Chamfer OpenCascade Shape edges
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/shapes/edge/chamferEdges.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_fillets.OCCTFillets.html#chamferEdges
      * @param inputs Shape, distance and edge indexes to chamfer
      * @returns OpenCascade shape with chamfered edges
      * @group 3d
@@ -43,10 +35,6 @@ export class OCCTFillets {
 
     /**
      * Fillets 2d wires or faces
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/fillets/fillet2d.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_fillets.OCCTFillets.html#fillet2d
      * @param inputs Shape
      * @returns OpenCascade filleted shape result
      * @group 2d
@@ -59,10 +47,6 @@ export class OCCTFillets {
 
     /**
      * Fillets two planar edges into a wire by providing a radius, plane, edges and possible solution index if more than one result exists
-     * <div>
-     *  <img src="../assets/images/blockly-images/occt/fillets/filletTwoEdgesInPlaneIntoAWire.svg" alt="Blockly Image"/>
-     * </div>
-     * @link https://docs.bitbybit.dev/classes/bitbybit_occt_fillets.OCCTFillets.html#filletTwoEdgesInPlaneIntoAWire
      * @param inputs Definition for fillets
      * @returns OpenCascade wire shape if solution is found
      * @group 2d
