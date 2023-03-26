@@ -15,7 +15,7 @@ import * as Inputs from 'bitbybit-occt/lib/api/inputs/inputs';
 export class OCCT {
     public readonly shapes: OCCTShapes;
     public readonly geom: OCCTGeom;
-    public readonly assembly: OCCTAssembly;
+    // public readonly assembly: OCCTAssembly;
     public readonly fillets: OCCTFillets;
     public readonly transforms: OCCTTransforms;
     public readonly operations: OCCTOperations;
@@ -27,7 +27,7 @@ export class OCCT {
     ) {
         this.shapes = new OCCTShapes(occWorkerManager);
         this.geom = new OCCTGeom(occWorkerManager);
-        this.assembly = new OCCTAssembly(occWorkerManager);
+        // this.assembly = new OCCTAssembly(occWorkerManager);
         this.transforms = new OCCTTransforms(occWorkerManager);
         this.operations = new OCCTOperations(occWorkerManager);
         this.booleans = new OCCTBooleans(occWorkerManager);
