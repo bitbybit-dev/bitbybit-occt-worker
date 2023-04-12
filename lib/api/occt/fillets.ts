@@ -21,6 +21,18 @@ export class OCCTFillets {
     }
 
     /**
+    * Fillets OpenCascade 3d wire, this algorithm takes one guiding direction for fillets to be formed. It does not respect tangent directions on each filleted corner.
+    * @param inputs Shape, radius and edge indexes to fillet
+    * @returns OpenCascade shape with filleted edges
+    * @group 3d
+    * @shortname fillet wire
+    * @drawable true
+    */
+    fillet3DWire(inputs: Inputs.OCCT.Fillet3DWireDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise('fillets.fillet3DWire', inputs);
+    }
+
+    /**
      * Chamfer OpenCascade Shape edges
      * @param inputs Shape, distance and edge indexes to chamfer
      * @returns OpenCascade shape with chamfered edges
@@ -31,7 +43,6 @@ export class OCCTFillets {
     chamferEdges(inputs: Inputs.OCCT.ChamferDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('fillets.chamferEdges', inputs);
     }
-
 
     /**
      * Fillets 2d wires or faces

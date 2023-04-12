@@ -144,6 +144,42 @@ export class OCCTOperations {
     }
 
     /**
+     * Pipes polyline wire with ngon profile.
+     * @param inputs Path polyline wire
+     * @returns OpenCascade piped shapes
+     * @group pipeing
+     * @shortname pipe polyline ngon
+     * @drawable true
+     */
+    pipePolylineWireNGon(inputs: Inputs.OCCT.PipePolygonWireNGonDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise('operations.pipePolylineWireNGon', inputs);
+    }
+
+    /**
+     * Pipe wires with cylindrical shape
+     * @param inputs Path wires and radius
+     * @returns OpenCascade piped shapes
+     * @group pipeing
+     * @shortname pipe wires cylindrical
+     * @drawable true
+     */
+    pipeWiresCylindrical(inputs: Inputs.OCCT.PipeWiresCylindricalDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise('operations.pipeWiresCylindrical', inputs);
+    }
+
+    /**
+     * Pipe wire with cylindrical shape
+     * @param inputs Path wire and radius
+     * @returns OpenCascade piped shapes
+     * @group pipeing
+     * @shortname pipe wire cylindrical
+     * @drawable true
+     */
+    pipeWireCylindrical(inputs: Inputs.OCCT.PipeWireCylindricalDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise('operations.pipeWireCylindrical', inputs);
+    }
+
+    /**
      * Offset for various shapes
      * @param inputs Shape to offset and distance with tolerance
      * @returns Resulting offset shape
@@ -153,6 +189,18 @@ export class OCCTOperations {
      */
     offset(inputs: Inputs.OCCT.OffsetDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise('operations.offset', inputs);
+    }
+
+    /**
+     * Offset advanced that give more options for offset, such as joinType for edges and corners
+     * @param inputs Shape to offset and advanced parameters
+     * @returns Resulting offset shape
+     * @group offsets
+     * @shortname offset adv.
+     * @drawable true
+     */
+    offsetAdv(inputs: Inputs.OCCT.OffsetAdvancedDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise('operations.offsetAdv', inputs);
     }
 
     /**
