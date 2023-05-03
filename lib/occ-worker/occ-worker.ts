@@ -8,12 +8,15 @@ import { OCCTService } from 'bitbybit-occt/lib/occ-service';
 let openCascade: OCCTService;
 let cacheHelper: CacheHelper;
 
-export const initializationComplete = (occ: OpenCascadeInstance, doNotPost?: boolean) => {
+export const initializationComplete = (occ: OpenCascadeInstance, plugins: any, doNotPost?: boolean) => {
     cacheHelper = new CacheHelper(occ);
     const vecService = new VectorHelperService();
     const shapesService = new ShapesHelperService();
 
     openCascade = new OCCTService(occ, new OccHelper(vecService, shapesService, occ));
+    if(plugins){
+        openCascade.plugins = plugins;
+    }
     if (!doNotPost) {
         postMessage('occ-initialised');
     }
