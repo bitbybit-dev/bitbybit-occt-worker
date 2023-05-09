@@ -4,6 +4,7 @@ import { VectorHelperService } from 'bitbybit-occt/lib/api/vector-helper.service
 import { CacheHelper } from './cache-helper';
 import { OccHelper } from 'bitbybit-occt/lib/occ-helper';
 import { OCCTService } from 'bitbybit-occt/lib/occ-service';
+import { ObjectDefinition } from 'bitbybit-occt/lib/api/outputs';
 
 let openCascade: OCCTService;
 let cacheHelper: CacheHelper;
@@ -14,7 +15,7 @@ export const initializationComplete = (occ: OpenCascadeInstance, plugins: any, d
     const shapesService = new ShapesHelperService();
 
     openCascade = new OCCTService(occ, new OccHelper(vecService, shapesService, occ));
-    if(plugins){
+    if (plugins) {
         openCascade.plugins = plugins;
     }
     if (!doNotPost) {
@@ -70,7 +71,15 @@ export const onMessageInput = (d: DataInput, postMessage) => {
             }
 
             if (!cacheHelper.isOCCTObject(res)) {
-                result = res;
+                if (res.compound && res.data && res.shapes && res.shapes.length > 0) {
+                    const r: ObjectDefinition<any, any> = res;
+                    r.shapes = r.shapes.map(s => ({ id: s.id, shape: { hash: s.shape.hash, type: 'occ-shape' } }));
+                    r.compound = { hash: r.compound.hash, type: 'occ-shape' };
+                    result = r;
+                } else {
+                    result = res;
+                }
+
             }
             else if (Array.isArray(res)) {
                 result = res.map(r => ({ hash: r.hash, type: 'occ-shape' })); // if we return multiple shapes we should return array of cached hashes

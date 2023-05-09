@@ -1,4 +1,5 @@
 import { OpenCascadeInstance } from 'bitbybit-occt/bitbybit-dev-occt/bitbybit-dev-occt';
+import { ObjectDefinition } from 'bitbybit-occt';
 
 export class CacheHelper {
 
@@ -106,7 +107,19 @@ export class CacheHelper {
                 if (this.isOCCTObject(toReturn)) {
                     toReturn.hash = curHash;
                     this.addToCache(curHash, toReturn);
-                } else {
+                } else if (toReturn.compound && toReturn.data && toReturn.shapes && toReturn.shapes.length > 0) {
+                    let objDef: ObjectDefinition<any, any> = toReturn;
+                    const compoundHash = this.computeHash({ ...args, index: 'compound' });
+                    objDef.compound.hash = compoundHash;
+                    this.addToCache(compoundHash, objDef.compound);
+                    objDef.shapes.forEach((s, index) => {
+                        const itemHash = this.computeHash({ ...args, index });
+                        s.shape.hash = itemHash;
+                        this.addToCache(itemHash, s.shape);
+                    })
+                    this.addToCache(curHash, { value: objDef });
+                }
+                else {
                     this.addToCache(curHash, { value: toReturn });
                 }
             }
