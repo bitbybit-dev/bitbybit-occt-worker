@@ -9,6 +9,8 @@ import { ObjectDefinition } from 'bitbybit-occt/lib/api/outputs';
 let openCascade: OCCTService;
 let cacheHelper: CacheHelper;
 
+let dependencies;
+
 export const initializationComplete = (occ: OpenCascadeInstance, plugins: any, doNotPost?: boolean) => {
     cacheHelper = new CacheHelper(occ);
     const vecService = new VectorHelperService();
@@ -17,6 +19,11 @@ export const initializationComplete = (occ: OpenCascadeInstance, plugins: any, d
     openCascade = new OCCTService(occ, new OccHelper(vecService, shapesService, occ));
     if (plugins) {
         openCascade.plugins = plugins;
+        if(dependencies){
+            Object.keys(dependencies).forEach(c => {
+                openCascade.plugins.dependencies[c] = dependencies[c];
+            });
+        }
     }
     if (!doNotPost) {
         postMessage('occ-initialised');
@@ -50,6 +57,7 @@ export const onMessageInput = (d: DataInput, postMessage) => {
             d.action.functionName !== 'deleteShapes' &&
             d.action.functionName !== 'startedTheRun' &&
             d.action.functionName !== 'cleanAllCache' &&
+            d.action.functionName !== 'addOc' &&
             d.action.functionName !== 'saveShapeSTEP') {
             // if inputs have shape or shapes properties, these are hashes on which the operations need to be performed.
             // We thus replace these hashes to real objects from the cache before functions are called,
@@ -90,6 +98,15 @@ export const onMessageInput = (d: DataInput, postMessage) => {
         if (d.action.functionName === 'saveShapeSTEP') {
             d.action.inputs.shape = cacheHelper.checkCache(d.action.inputs.shape.hash);
             result = openCascade.io.saveShapeSTEP(d.action.inputs);
+        }
+        if (d.action.functionName === 'addOc') {
+            if (openCascade && openCascade.plugins) {
+                Object.keys(d.action.inputs).forEach(c => {
+                    openCascade.plugins.dependencies[c] = d.action.inputs[c];
+                });
+            } else {
+                dependencies = d.action.inputs;
+            }
         }
         if (d.action.functionName === 'shapeToMesh') {
             d.action.inputs.shape = cacheHelper.checkCache(d.action.inputs.shape.hash);
@@ -147,7 +164,7 @@ export const onMessageInput = (d: DataInput, postMessage) => {
             postMessage({
                 uid: d.uid,
                 result: undefined,
-                error: `OCCT computation failed. ${e}. While executing function ${fun}. ${props}`
+                error: `OCCT computation failed. ${e} While executing function ${fun}. ${props}`
             });
     }
 };
