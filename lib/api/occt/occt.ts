@@ -7,7 +7,7 @@ import { OCCTIO } from './io';
 import { OCCTGeom } from './geom/geom';
 // import { OCCTAssembly } from './assembly/assembly';
 import { OCCTFillets } from './fillets';
-import * as Inputs from 'bitbybit-occt/lib/api/inputs/inputs';
+import { Inputs } from 'bitbybit-occt';
 
 /**
  * Contains various methods for OpenCascade implementation

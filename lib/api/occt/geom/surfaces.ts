@@ -1,5 +1,5 @@
 
-import * as Inputs from 'bitbybit-occt/lib/api/inputs/inputs';
+import { Inputs } from 'bitbybit-occt';
 import { OCCTWorkerManager } from '../../../occ-worker/occ-worker-manager';
 
 export class OCCTSurfaces {

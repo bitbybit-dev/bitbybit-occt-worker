@@ -1,10 +1,6 @@
 import { OpenCascadeInstance } from 'bitbybit-occt/bitbybit-dev-occt/bitbybit-dev-occt';
-import { ShapesHelperService } from 'bitbybit-occt/lib/api/shapes-helper.service';
-import { VectorHelperService } from 'bitbybit-occt/lib/api/vector-helper.service';
+import { ShapesHelperService, VectorHelperService, OccHelper, OCCTService, ObjectDefinition } from 'bitbybit-occt';
 import { CacheHelper } from './cache-helper';
-import { OccHelper } from 'bitbybit-occt/lib/occ-helper';
-import { OCCTService } from 'bitbybit-occt/lib/occ-service';
-import { ObjectDefinition } from 'bitbybit-occt/lib/api/outputs';
 
 let openCascade: OCCTService;
 let cacheHelper: CacheHelper;
