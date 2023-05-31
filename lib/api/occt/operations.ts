@@ -1,7 +1,6 @@
 import * as Inputs from 'bitbybit-occt/lib/api/inputs/inputs';
 import { OCCTWorkerManager } from '../../occ-worker/occ-worker-manager';
 
-
 export class OCCTOperations {
 
     constructor(
