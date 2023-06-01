@@ -1,6 +1,6 @@
 export enum OccStateEnum {
-    loading,
-    loaded,
-    initialised,
-    computing,
+    loading = 'loading',
+    loaded = 'loaded',
+    initialised = 'initialised',
+    computing = 'computing',
 }
