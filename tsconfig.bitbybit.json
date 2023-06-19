@@ -3,6 +3,7 @@
     "compileOnSave": false,
     "exclude": [
         "lib/workers/occ/services/advanced/**/*",
+        "./**/*.test.ts"
     ],
     "compilerOptions": {
         "outDir": "./dist",
@@ -19,10 +20,10 @@
         "emitDeclarationOnly": false,
         "paths": {
             "@bitbybit-dev/occt": [
-                "../bitbybit-occt/dist",
+                "../bitbybit-occt/dist"
             ],
             "@bitbybit-dev/occt/*": [
-                "../bitbybit-occt/dist/*",
+                "../bitbybit-occt/dist/*"
             ],
         },
         "lib": [

@@ -1,4 +1,3 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
     "compileOnSave": false,
     "compilerOptions": {
@@ -15,12 +14,12 @@
         "emitDeclarationOnly": false,
         "declarationDir": "declarations",
         "paths": {
-            "bitbybit-occt": [
-                "../../../bitbybit-occt",
+            "@bitbybit-dev/occt": [
+                "../../../bitbybit-occt"
             ],
-            "bitbybit-occt/*": [
-                "../../../bitbybit-occt/*",
-            ],
+            "@bitbybit-dev/occt/*": [
+                "../../../bitbybit-occt/*"
+            ]
         },
         "lib": [
             "es2020",
