@@ -1,5 +1,5 @@
-import initOpenCascade, { OpenCascadeInstance } from "bitbybit-occt/bitbybit-dev-occt/bitbybit-dev-occt";
-import * as Inputs from "bitbybit-occt/lib/api/inputs";
+import initOpenCascade, { OpenCascadeInstance } from "@bitbybit-dev/occt/bitbybit-dev-occt/bitbybit-dev-occt";
+import * as Inputs from "@bitbybit-dev/occt/lib/api/inputs";
 import { CacheHelper } from "./cache-helper";
 import { initializationComplete, onMessageInput } from "./occ-worker";
 

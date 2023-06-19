@@ -1,4 +1,4 @@
-import { Inputs } from 'bitbybit-occt';
+import { Inputs } from '@bitbybit-dev/occt';
 import { OCCTWorkerManager } from '../../occ-worker/occ-worker-manager';
 
 

@@ -1,5 +1,5 @@
-import { OpenCascadeInstance } from 'bitbybit-occt/bitbybit-dev-occt/bitbybit-dev-occt';
-import { ShapesHelperService, VectorHelperService, OccHelper, OCCTService, ObjectDefinition } from 'bitbybit-occt';
+import { OpenCascadeInstance } from '@bitbybit-dev/occt/bitbybit-dev-occt/bitbybit-dev-occt';
+import { ShapesHelperService, VectorHelperService, OccHelper, OCCTService, ObjectDefinition } from '@bitbybit-dev/occt';
 import { CacheHelper } from './cache-helper';
 
 let openCascade: OCCTService;

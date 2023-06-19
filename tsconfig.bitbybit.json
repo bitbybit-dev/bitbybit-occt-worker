@@ -18,10 +18,10 @@
         "allowJs": true,
         "emitDeclarationOnly": false,
         "paths": {
-            "bitbybit-occt": [
+            "@bitbybit-dev/occt": [
                 "../bitbybit-occt/dist",
             ],
-            "bitbybit-occt/*": [
+            "@bitbybit-dev/occt/*": [
                 "../bitbybit-occt/dist/*",
             ],
         },

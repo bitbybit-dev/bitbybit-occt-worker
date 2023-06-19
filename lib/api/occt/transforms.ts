@@ -1,6 +1,6 @@
 
 import { OCCTWorkerManager } from '../../occ-worker/occ-worker-manager';
-import { Inputs } from 'bitbybit-occt';
+import { Inputs } from '@bitbybit-dev/occt';
 
 export class OCCTTransforms {
 

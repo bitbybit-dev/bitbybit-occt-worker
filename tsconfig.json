@@ -2,7 +2,7 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
-        "outDir": "./dist/bitbybit-core",
+        "outDir": "./dist/bitbybit-dev",
         "baseUrl": "./",
         "sourceMap": false,
         "declaration": true,
@@ -16,10 +16,10 @@
         "allowJs": true,
         "emitDeclarationOnly": false,
         "paths": {
-            "bitbybit-occt": [
+            "@bitbybit-dev/occt": [
                 "../bitbybit-occt",
             ],
-            "bitbybit-occt/*": [
+            "@bitbybit-dev/occt/*": [
                 "../bitbybit-occt/*",
             ],
         },

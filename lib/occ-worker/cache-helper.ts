@@ -1,5 +1,5 @@
-import { OpenCascadeInstance } from 'bitbybit-occt/bitbybit-dev-occt/bitbybit-dev-occt';
-import { ObjectDefinition } from 'bitbybit-occt';
+import { OpenCascadeInstance } from '@bitbybit-dev/occt/bitbybit-dev-occt/bitbybit-dev-occt';
+import { ObjectDefinition } from '@bitbybit-dev/occt';
 
 export class CacheHelper {
 
