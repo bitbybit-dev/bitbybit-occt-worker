@@ -9,7 +9,7 @@ Visit https://bitbybit.dev to use our full cloud platform.
 # Github
 https://github.com/bitbybit-dev
 # NPM
-https://www.npmjs.com/package/bitbybit-occt-worker
+https://www.npmjs.com/package/@bitbybit-dev/occt-worker
 
 # Example Applications
 Laptop Holder  
