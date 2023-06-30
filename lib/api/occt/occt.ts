@@ -1,13 +1,13 @@
-import { OCCTWorkerManager } from '../../occ-worker/occ-worker-manager';
-import { OCCTShapes } from './shapes/shapes';
-import { OCCTTransforms } from './transforms';
-import { OCCTOperations } from './operations';
-import { OCCTBooleans } from './booleans';
-import { OCCTIO } from './io';
-import { OCCTGeom } from './geom/geom';
+import { OCCTWorkerManager } from "../../occ-worker/occ-worker-manager";
+import { OCCTShapes } from "./shapes/shapes";
+import { OCCTTransforms } from "./transforms";
+import { OCCTOperations } from "./operations";
+import { OCCTBooleans } from "./booleans";
+import { OCCTIO } from "./io";
+import { OCCTGeom } from "./geom/geom";
 // import { OCCTAssembly } from './assembly/assembly';
-import { OCCTFillets } from './fillets';
-import { Inputs } from '@bitbybit-dev/occt';
+import { OCCTFillets } from "./fillets";
+import { Inputs } from "@bitbybit-dev/occt";
 
 /**
  * Contains various methods for OpenCascade implementation
@@ -44,7 +44,7 @@ export class OCCT {
      * @ignore true
      */
     async shapeToMesh(inputs: Inputs.OCCT.ShapeToMeshDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.DecomposedMeshDto> {
-        return await this.occWorkerManager.genericCallToWorkerPromise('shapeToMesh', inputs);
+        return await this.occWorkerManager.genericCallToWorkerPromise("shapeToMesh", inputs);
     }
 
     /**
@@ -54,7 +54,7 @@ export class OCCT {
      * @shortname delete shape
      */
     async deleteShape(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<void> {
-        return await this.occWorkerManager.genericCallToWorkerPromise('deleteShape', inputs);
+        return await this.occWorkerManager.genericCallToWorkerPromise("deleteShape", inputs);
     }
 
     /**
@@ -64,6 +64,6 @@ export class OCCT {
      * @shortname delete shapes
      */
     async deleteShapes(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<void> {
-        return await this.occWorkerManager.genericCallToWorkerPromise('deleteShapes', inputs);
+        return await this.occWorkerManager.genericCallToWorkerPromise("deleteShapes", inputs);
     }
 }

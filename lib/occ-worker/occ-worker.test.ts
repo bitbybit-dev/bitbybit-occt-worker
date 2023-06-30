@@ -3,7 +3,7 @@ import * as Inputs from "@bitbybit-dev/occt/lib/api/inputs";
 import { CacheHelper } from "./cache-helper";
 import { initializationComplete, onMessageInput } from "./occ-worker";
 
-describe('OCCT wire unit tests', () => {
+describe("OCCT wire unit tests", () => {
     let occt: OpenCascadeInstance;
 
     let cacheHelper: CacheHelper;
@@ -16,47 +16,47 @@ describe('OCCT wire unit tests', () => {
         cacheHelper.cleanAllCache();
     });
 
-    it('should', () => {
+    it("should", () => {
         expect(true).toBe(true);
     });
 
-    it('should create a wire', async () => {
+    it("should create a wire", async () => {
         const cdto = new Inputs.OCCT.CircleDto(1, [0, 0, 0], [0, 1, 0]);
-        const wire = await callAction<Inputs.OCCT.CircleDto>('shapes.wire.createCircleWire', cdto);
+        const wire = await callAction<Inputs.OCCT.CircleDto>("shapes.wire.createCircleWire", cdto);
         expect(wire.hash).toEqual(1646405596);
-        expect(wire.type).toEqual('occ-shape');
+        expect(wire.type).toEqual("occ-shape");
     });
 
-    it('should get length of a wire', async () => {
+    it("should get length of a wire", async () => {
         const cdto = new Inputs.OCCT.CircleDto(1, [0, 0, 0], [0, 1, 0]);
-        const wire = await callAction<Inputs.OCCT.CircleDto>('shapes.wire.createCircleWire', cdto);
+        const wire = await callAction<Inputs.OCCT.CircleDto>("shapes.wire.createCircleWire", cdto);
         expect(wire.hash).toEqual(1646405596);
-        expect(wire.type).toEqual('occ-shape');
-        const length = await callAction<Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>>('shapes.wire.getWireLength', { shape: wire });
+        expect(wire.type).toEqual("occ-shape");
+        const length = await callAction<Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>>("shapes.wire.getWireLength", { shape: wire });
         expect(length).toBe(6.283185307179586);
-        const length2 = await callAction<Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>>('shapes.wire.getWireLength', { shape: wire });
+        const length2 = await callAction<Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>>("shapes.wire.getWireLength", { shape: wire });
         expect(length2).toBe(6.283185307179586);
     });
 
-    it('should create advanced loft through straight sections', async () => {
+    it("should create advanced loft through straight sections", async () => {
         const loft = await createLoft(callAction);
         expect(loft.hash).toBeDefined();
-        expect(loft.type).toBe('occ-shape');
+        expect(loft.type).toBe("occ-shape");
     });
 
-    it('should loft advanced and use cache', async () => {
+    it("should loft advanced and use cache", async () => {
         const loft1 = await createLoft(callAction);
         const loft2 = await createLoft(callAction);
 
         expect(loft1.hash).toBe(loft2.hash);
-        expect(loft2.type).toBe('occ-shape');
+        expect(loft2.type).toBe("occ-shape");
     });
 
-    it('should subdivide wire into points', async () => {
+    it("should subdivide wire into points", async () => {
         const cdto1 = new Inputs.OCCT.CircleDto(1, [0, 0, 0], [0, 1, 0]);
-        const wire1 = await callAction<Inputs.OCCT.CircleDto>('shapes.wire.createCircleWire', cdto1);
+        const wire1 = await callAction<Inputs.OCCT.CircleDto>("shapes.wire.createCircleWire", cdto1);
         const divDto = new Inputs.OCCT.DivideDto(wire1, 10);
-        const points = await callAction<Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSWirePointer>>('shapes.wire.divideWireByParamsToPoints', divDto);
+        const points = await callAction<Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSWirePointer>>("shapes.wire.divideWireByParamsToPoints", divDto);
         expect(points.length).toBe(11);
         expect(points).toEqual([
             [0, 0, 1],
@@ -73,12 +73,12 @@ describe('OCCT wire unit tests', () => {
         ]);
     });
 
-    it('should subdivide wire into points', async () => {
+    it("should subdivide wire into points", async () => {
         const cdto1 = new Inputs.OCCT.CircleDto(1, [0, 0, 0], [0, 1, 0]);
-        const wire1 = await callAction<Inputs.OCCT.CircleDto>('shapes.wire.createCircleWire', cdto1);
+        const wire1 = await callAction<Inputs.OCCT.CircleDto>("shapes.wire.createCircleWire", cdto1);
         const divDto = new Inputs.OCCT.DivideDto(wire1, 10);
-        await callAction<Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSWirePointer>>('shapes.wire.divideWireByParamsToPoints', divDto);
-        const points2 = await callAction<Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSWirePointer>>('shapes.wire.divideWireByParamsToPoints', divDto);
+        await callAction<Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSWirePointer>>("shapes.wire.divideWireByParamsToPoints", divDto);
+        const points2 = await callAction<Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSWirePointer>>("shapes.wire.divideWireByParamsToPoints", divDto);
         expect(points2.length).toBe(11);
         expect(points2).toEqual([
             [0, 0, 1],
@@ -95,20 +95,20 @@ describe('OCCT wire unit tests', () => {
         ]);
     });
 
-    it('should get lengths of edges', async () => {
+    it("should get lengths of edges", async () => {
         const boxDto = new Inputs.OCCT.BoxDto(1, 1, 1);
-        const box = await callAction<Inputs.OCCT.BoxDto>('shapes.solid.createBox', boxDto);
+        const box = await callAction<Inputs.OCCT.BoxDto>("shapes.solid.createBox", boxDto);
         expect(box.hash).toBeDefined();
-        expect(box.type).toBe('occ-shape');
-        const edges = await callAction<Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>>('shapes.edge.getEdges', { shape: box });
-        const lengths = await callAction<Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSShapePointer>>('shapes.edge.getEdgesLengths', { shapes: edges });
+        expect(box.type).toBe("occ-shape");
+        const edges = await callAction<Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>>("shapes.edge.getEdges", { shape: box });
+        const lengths = await callAction<Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSShapePointer>>("shapes.edge.getEdgesLengths", { shapes: edges });
         expect(lengths.length).toBe(12);
         expect(lengths).toEqual([
             1, 1, 1, 1, 1,
             1, 1, 1, 1, 1,
             1, 1
         ]);
-        const lengths2 = await callAction<Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSShapePointer>>('shapes.edge.getEdgesLengths', { shapes: edges });
+        const lengths2 = await callAction<Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSShapePointer>>("shapes.edge.getEdgesLengths", { shapes: edges });
         expect(lengths2.length).toBe(12);
         expect(lengths2).toEqual([
             1, 1, 1, 1, 1,
@@ -117,21 +117,21 @@ describe('OCCT wire unit tests', () => {
         ]);
     });
 
-    it('should get edges of a box and subdivide them into points', async () => {
+    it("should get edges of a box and subdivide them into points", async () => {
         const boxDto = new Inputs.OCCT.BoxDto(1, 1, 1);
-        const box = await callAction<Inputs.OCCT.BoxDto>('shapes.solid.createBox', boxDto);
+        const box = await callAction<Inputs.OCCT.BoxDto>("shapes.solid.createBox", boxDto);
         expect(box.hash).toBeDefined();
-        expect(box.type).toBe('occ-shape');
-        const edges = await callAction<Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>>('shapes.edge.getEdges', { shape: box });
+        expect(box.type).toBe("occ-shape");
+        const edges = await callAction<Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>>("shapes.edge.getEdges", { shape: box });
         expect(edges.length).toBe(12);
         const expectedEdgesResultBeforeCache = [...edges];
-        const edgesAfterCache = await callAction<Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>>('shapes.edge.getEdges', { shape: box });
+        const edgesAfterCache = await callAction<Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>>("shapes.edge.getEdges", { shape: box });
         expect(edgesAfterCache).toEqual(expectedEdgesResultBeforeCache);
 
         const points = await Promise.all(
             edgesAfterCache.map(edge => {
                 const divDto = new Inputs.OCCT.DivideDto(edge, 4);
-                return callAction<Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSWirePointer>>('shapes.edge.divideEdgeByParamsToPoints', divDto);
+                return callAction<Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSWirePointer>>("shapes.edge.divideEdgeByParamsToPoints", divDto);
             })
         );
         expect(points).toEqual([
@@ -230,18 +230,18 @@ describe('OCCT wire unit tests', () => {
                         functionName,
                         inputs
                     },
-                    uid: 'sdadwa',
+                    uid: "sdadwa",
                 }, (data) => {
-                    if (data !== 'busy') {
+                    if (data !== "busy") {
                         resolve(data.result)
                     }
                     if (data.error) {
-                        console.error('ERROR HAPPENED: ', data.error);
+                        console.error("ERROR HAPPENED: ", data.error);
                         reject(data.error)
                     }
                 });
             } catch (err) {
-                console.error('ERROR HAPPENED: ', err);
+                console.error("ERROR HAPPENED: ", err);
                 reject(err)
             }
         });
@@ -251,18 +251,18 @@ describe('OCCT wire unit tests', () => {
 
 async function createLoft(callAction: <T>(functionName: string, inputs: T) => any) {
     const cdto1 = new Inputs.OCCT.CircleDto(1, [0, 0, 0], [0, 1, 0]);
-    const wire1 = await callAction<Inputs.OCCT.CircleDto>('shapes.wire.createCircleWire', cdto1);
+    const wire1 = await callAction<Inputs.OCCT.CircleDto>("shapes.wire.createCircleWire", cdto1);
 
     const cdto2 = new Inputs.OCCT.CircleDto(2, [0, 1, 0], [0, 1, 0]);
-    const wire2 = await callAction<Inputs.OCCT.CircleDto>('shapes.wire.createCircleWire', cdto2);
+    const wire2 = await callAction<Inputs.OCCT.CircleDto>("shapes.wire.createCircleWire", cdto2);
 
     const cdto3 = new Inputs.OCCT.CircleDto(1.5, [0, 2, 0], [0, 1, 0]);
-    const wire3 = await callAction<Inputs.OCCT.CircleDto>('shapes.wire.createCircleWire', cdto3);
+    const wire3 = await callAction<Inputs.OCCT.CircleDto>("shapes.wire.createCircleWire", cdto3);
 
     const ldto = new Inputs.OCCT.LoftAdvancedDto([wire1, wire2, wire3]);
     ldto.closed = true;
     ldto.straight = true;
-    const loft = await callAction<Inputs.OCCT.LoftAdvancedDto<Inputs.OCCT.TopoDSShapePointer>>('operations.loftAdvanced', ldto);
+    const loft = await callAction<Inputs.OCCT.LoftAdvancedDto<Inputs.OCCT.TopoDSShapePointer>>("operations.loftAdvanced", ldto);
     return loft;
 }
 

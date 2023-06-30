@@ -1,7 +1,7 @@
 
-import { OCCTCurves } from './curves';
-import { OCCTSurfaces } from './surfaces';
-import { OCCTWorkerManager } from '../../../occ-worker/occ-worker-manager';
+import { OCCTCurves } from "./curves";
+import { OCCTSurfaces } from "./surfaces";
+import { OCCTWorkerManager } from "../../../occ-worker/occ-worker-manager";
 
 export class OCCTGeom {
 

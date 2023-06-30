@@ -1,5 +1,5 @@
-import { Inputs } from '@bitbybit-dev/occt';
-import { OCCTWorkerManager } from '../../occ-worker/occ-worker-manager';
+import { Inputs } from "@bitbybit-dev/occt";
+import { OCCTWorkerManager } from "../../occ-worker/occ-worker-manager";
 
 export class OCCTOperations {
 
@@ -17,7 +17,7 @@ export class OCCTOperations {
      * @drawable true
      */
     loft(inputs: Inputs.OCCT.LoftDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.loft', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.loft", inputs);
     }
 
     /**
@@ -29,7 +29,7 @@ export class OCCTOperations {
      * @drawable true
      */
     loftAdvanced(inputs: Inputs.OCCT.LoftAdvancedDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.loftAdvanced', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.loftAdvanced", inputs);
     }
 
     /**
@@ -42,7 +42,7 @@ export class OCCTOperations {
      */
     closestPointsBetweenTwoShapes(inputs: Inputs.OCCT.ClosestPointsBetweenTwoShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.Base.Point3[]> {
         inputs.shapes = [inputs.shape1, inputs.shape2];
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.closestPointsBetweenTwoShapes', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.closestPointsBetweenTwoShapes", inputs);
     }
 
     /**
@@ -54,7 +54,7 @@ export class OCCTOperations {
      * @drawable true
      */
     closestPointsOnShapeFromPoints(inputs: Inputs.OCCT.ClosestPointsOnShapeFromPointsDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.closestPointsOnShapeFromPoints', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.closestPointsOnShapeFromPoints", inputs);
     }
 
 
@@ -67,7 +67,7 @@ export class OCCTOperations {
      * @drawable true
      */
     closestPointsOnShapesFromPoints(inputs: Inputs.OCCT.ClosestPointsOnShapesFromPointsDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.closestPointsOnShapesFromPoints', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.closestPointsOnShapesFromPoints", inputs);
     }
 
     /**
@@ -79,7 +79,7 @@ export class OCCTOperations {
      * @drawable true
      */
     extrude(inputs: Inputs.OCCT.ExtrudeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.extrude', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.extrude", inputs);
     }
 
     /**
@@ -91,7 +91,7 @@ export class OCCTOperations {
      * @drawable true
      */
     extrudeShapes(inputs: Inputs.OCCT.ExtrudeShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.extrudeShapes', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.extrudeShapes", inputs);
     }
 
     /**
@@ -103,7 +103,7 @@ export class OCCTOperations {
      * @drawable true
      */
     splitShapeWithShapes(inputs: Inputs.OCCT.SplitDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.splitShapeWithShapes', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.splitShapeWithShapes", inputs);
     }
 
     /**
@@ -115,7 +115,7 @@ export class OCCTOperations {
      * @drawable true
      */
     revolve(inputs: Inputs.OCCT.RevolveDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.revolve', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.revolve", inputs);
     }
 
     /**
@@ -127,7 +127,7 @@ export class OCCTOperations {
      * @drawable true
      */
     rotatedExtrude(inputs: Inputs.OCCT.RotationExtrudeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.rotatedExtrude', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.rotatedExtrude", inputs);
     }
 
     /**
@@ -139,7 +139,7 @@ export class OCCTOperations {
      * @drawable true
      */
     pipe(inputs: Inputs.OCCT.ShapeShapesDto<Inputs.OCCT.TopoDSWirePointer, Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.pipe', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.pipe", inputs);
     }
 
     /**
@@ -151,7 +151,7 @@ export class OCCTOperations {
      * @drawable true
      */
     pipePolylineWireNGon(inputs: Inputs.OCCT.PipePolygonWireNGonDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.pipePolylineWireNGon', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.pipePolylineWireNGon", inputs);
     }
 
     /**
@@ -163,7 +163,7 @@ export class OCCTOperations {
      * @drawable true
      */
     pipeWiresCylindrical(inputs: Inputs.OCCT.PipeWiresCylindricalDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.pipeWiresCylindrical', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.pipeWiresCylindrical", inputs);
     }
 
     /**
@@ -175,7 +175,7 @@ export class OCCTOperations {
      * @drawable true
      */
     pipeWireCylindrical(inputs: Inputs.OCCT.PipeWireCylindricalDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.pipeWireCylindrical', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.pipeWireCylindrical", inputs);
     }
 
     /**
@@ -187,7 +187,7 @@ export class OCCTOperations {
      * @drawable true
      */
     offset(inputs: Inputs.OCCT.OffsetDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.offset', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.offset", inputs);
     }
 
     /**
@@ -199,7 +199,7 @@ export class OCCTOperations {
      * @drawable true
      */
     offsetAdv(inputs: Inputs.OCCT.OffsetAdvancedDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.offsetAdv', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.offsetAdv", inputs);
     }
 
     /**
@@ -211,7 +211,7 @@ export class OCCTOperations {
      * @drawable true
      */
     makeThickSolidSimple(inputs: Inputs.OCCT.ThisckSolidSimpleDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.makeThickSolidSimple', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.makeThickSolidSimple", inputs);
     }
 
     /**
@@ -223,6 +223,6 @@ export class OCCTOperations {
      * @drawable true
      */
     makeThickSolidByJoin(inputs: Inputs.OCCT.ThickSolidByJoinDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('operations.makeThickSolidByJoin', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.makeThickSolidByJoin", inputs);
     }
 }

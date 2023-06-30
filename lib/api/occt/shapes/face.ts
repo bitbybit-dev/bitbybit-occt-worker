@@ -1,5 +1,5 @@
-import { Inputs } from '@bitbybit-dev/occt';
-import { OCCTWorkerManager } from '../../../occ-worker/occ-worker-manager';
+import { Inputs } from "@bitbybit-dev/occt";
+import { OCCTWorkerManager } from "../../../occ-worker/occ-worker-manager";
 
 export class OCCTFace {
 
@@ -16,7 +16,7 @@ export class OCCTFace {
      * @drawable true
      */
     createFaceFromWire(inputs: Inputs.OCCT.FaceFromWireDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createFaceFromWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createFaceFromWire", inputs);
     }
 
     /**
@@ -28,7 +28,7 @@ export class OCCTFace {
      * @drawable true
      */
     createFacesFromWires(inputs: Inputs.OCCT.FaceFromWireDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSFacePointer[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createFacesFromWires', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createFacesFromWires", inputs);
     }
 
     /**
@@ -40,7 +40,7 @@ export class OCCTFace {
      * @drawable true
      */
     faceFromSurface(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.GeomSurfacePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.faceFromSurface', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.faceFromSurface", inputs);
     }
 
     /**
@@ -53,7 +53,7 @@ export class OCCTFace {
      */
     faceFromSurfaceAndWire(inputs: Inputs.OCCT.FaceFromSurfaceAndWireDto<Inputs.OCCT.GeomSurfacePointer, Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
         inputs.shapes = [inputs.surface, inputs.wire];
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.faceFromSurfaceAndWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.faceFromSurfaceAndWire", inputs);
     }
 
     /**
@@ -65,7 +65,7 @@ export class OCCTFace {
      * @drawable true
      */
     createPolygonFace(inputs: Inputs.OCCT.PolygonDto): Promise<Inputs.OCCT.TopoDSFacePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createPolygonFace', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createPolygonFace", inputs);
     }
 
     /**
@@ -77,7 +77,7 @@ export class OCCTFace {
      * @drawable true
      */
     createCircleFace(inputs: Inputs.OCCT.CircleDto): Promise<Inputs.OCCT.TopoDSFacePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createCircleFace', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createCircleFace", inputs);
     }
 
     /**
@@ -89,7 +89,7 @@ export class OCCTFace {
      * @drawable true
      */
     createEllipseFace(inputs: Inputs.OCCT.EllipseDto): Promise<Inputs.OCCT.TopoDSFacePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createEllipseFace', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createEllipseFace", inputs);
     }
 
     /**
@@ -101,7 +101,7 @@ export class OCCTFace {
      * @drawable true
      */
     createSquareFace(inputs: Inputs.OCCT.SquareDto): Promise<Inputs.OCCT.TopoDSFacePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createSquareFace', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createSquareFace", inputs);
     }
 
     /**
@@ -113,7 +113,7 @@ export class OCCTFace {
      * @drawable true
      */
     createRectangleFace(inputs: Inputs.OCCT.RectangleDto): Promise<Inputs.OCCT.TopoDSFacePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.createRectangleFace', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createRectangleFace", inputs);
     }
 
     /**
@@ -125,7 +125,7 @@ export class OCCTFace {
      * @drawable true
      */
     getFace(inputs: Inputs.OCCT.ShapeIndexDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getFace', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.getFace", inputs);
     }
 
     /**
@@ -137,7 +137,7 @@ export class OCCTFace {
      * @drawable true
      */
     getFaces(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSFacePointer[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getFaces', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.getFaces", inputs);
     }
 
     /**
@@ -149,7 +149,7 @@ export class OCCTFace {
      * @drawable true
      */
     reversedFace(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.reversedFace', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.reversedFace", inputs);
     }
 
     /**
@@ -161,7 +161,7 @@ export class OCCTFace {
      * @drawable true
      */
     subdivideToPoints(inputs: Inputs.OCCT.FaceSubdivisionDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.subdivideToPoints', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.subdivideToPoints", inputs);
     }
 
     /**
@@ -173,7 +173,7 @@ export class OCCTFace {
      * @drawable true
      */
     subdivideToPointsControlled(inputs: Inputs.OCCT.FaceSubdivisionControlledDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.subdivideToPointsControlled', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.subdivideToPointsControlled", inputs);
     }
 
     /**
@@ -185,7 +185,7 @@ export class OCCTFace {
      * @drawable true
      */
     subdivideToNormals(inputs: Inputs.OCCT.FaceSubdivisionDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Vector3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.subdivideToNormals', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.subdivideToNormals", inputs);
     }
 
     /**
@@ -197,7 +197,7 @@ export class OCCTFace {
      * @drawable true
      */
     subdivideToUV(inputs: Inputs.OCCT.FaceSubdivisionDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point2[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.subdivideToUV', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.subdivideToUV", inputs);
     }
 
     /**
@@ -209,7 +209,7 @@ export class OCCTFace {
      * @drawable true
      */
     pointOnUV(inputs: Inputs.OCCT.DataOnUVDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.pointOnUV', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.pointOnUV", inputs);
     }
 
     /**
@@ -221,7 +221,7 @@ export class OCCTFace {
      * @drawable true
      */
     normalOnUV(inputs: Inputs.OCCT.DataOnUVDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Vector3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.normalOnUV', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.normalOnUV", inputs);
     }
 
     /**
@@ -233,7 +233,7 @@ export class OCCTFace {
      * @drawable true
      */
     pointsOnUVs(inputs: Inputs.OCCT.DataOnUVsDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.pointsOnUVs', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.pointsOnUVs", inputs);
     }
 
     /**
@@ -245,7 +245,7 @@ export class OCCTFace {
      * @drawable true
      */
     normalsOnUVs(inputs: Inputs.OCCT.DataOnUVsDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Vector3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.normalsOnUVs', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.normalsOnUVs", inputs);
     }
 
     /**
@@ -257,7 +257,7 @@ export class OCCTFace {
      * @drawable true
      */
     subdivideToPointsOnParam(inputs: Inputs.OCCT.FaceLinearSubdivisionDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.subdivideToPointsOnParam', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.subdivideToPointsOnParam", inputs);
     }
 
     /**
@@ -269,7 +269,7 @@ export class OCCTFace {
      * @drawable false
      */
     getUMinBound(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<number> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getUMinBound', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.getUMinBound", inputs);
     }
 
     /**
@@ -281,7 +281,7 @@ export class OCCTFace {
      * @drawable false
      */
     getUMaxBound(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<number> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getUMaxBound', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.getUMaxBound", inputs);
     }
 
     /**
@@ -293,7 +293,7 @@ export class OCCTFace {
      * @drawable false
      */
     getVMinBound(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<number> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getVMinBound', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.getVMinBound", inputs);
     }
 
     /**
@@ -305,7 +305,7 @@ export class OCCTFace {
      * @drawable false
      */
     getVMaxBound(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<number> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getVMaxBound', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.getVMaxBound", inputs);
     }
 
     /**
@@ -317,7 +317,7 @@ export class OCCTFace {
      * @drawable false
      */
     getFaceArea(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<number> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getFaceArea', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.getFaceArea", inputs);
     }
 
     /**
@@ -329,7 +329,7 @@ export class OCCTFace {
      * @drawable false
      */
     getFacesAreas(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSFacePointer>): Promise<number[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getFacesAreas', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.getFacesAreas", inputs);
     }
 
     /**
@@ -341,7 +341,7 @@ export class OCCTFace {
      * @drawable true
      */
     getFaceCenterOfMass(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getFaceCenterOfMass', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.getFaceCenterOfMass", inputs);
     }
 
     /**
@@ -353,7 +353,7 @@ export class OCCTFace {
      * @drawable true
      */
     getFacesCentersOfMass(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.face.getFacesCentersOfMass', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.getFacesCentersOfMass", inputs);
     }
 
 }

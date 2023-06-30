@@ -1,5 +1,5 @@
-import { Inputs } from '@bitbybit-dev/occt';
-import { OCCTWorkerManager } from '../../occ-worker/occ-worker-manager';
+import { Inputs } from "@bitbybit-dev/occt";
+import { OCCTWorkerManager } from "../../occ-worker/occ-worker-manager";
 
 export class OCCTIO {
 
@@ -17,15 +17,15 @@ export class OCCTIO {
      * @drawable false
      */
     saveShapeSTEP(inputs: Inputs.OCCT.SaveStepDto<Inputs.OCCT.TopoDSShapePointer>): Promise<string> {
-        return this.occWorkerManager.genericCallToWorkerPromise('io.saveShapeSTEP', inputs).then(s => {
-            const blob = new Blob([s], { type: 'text/plain' });
+        return this.occWorkerManager.genericCallToWorkerPromise("io.saveShapeSTEP", inputs).then(s => {
+            const blob = new Blob([s], { type: "text/plain" });
             const blobUrl = URL.createObjectURL(blob);
 
-            const fileName = inputs.filename ? inputs.filename : 'bitbybit-dev.step';
+            const fileName = inputs.filename ? inputs.filename : "bitbybit-dev.step";
 
-            const fileLink = document.createElement('a');
+            const fileLink = document.createElement("a");
             fileLink.href = blobUrl;
-            fileLink.target = '_self';
+            fileLink.target = "_self";
             fileLink.download = fileName;
             fileLink.click();
             fileLink.remove();

@@ -1,6 +1,6 @@
-import { Subject } from 'rxjs';
-import { OccInfo } from './occ-info';
-import { OccStateEnum } from './occ-state.enum';
+import { Subject } from "rxjs";
+import { OccInfo } from "./occ-info";
+import { OccStateEnum } from "./occ-state.enum";
 
 /**
  * This is a manager of OpenCascade worker. Promisified API allows to deal with the worker in a more natural way
@@ -25,11 +25,11 @@ export class OCCTWorkerManager {
     setOccWorker(worker: Worker): void {
         this.occWorker = worker;
         this.occWorker.onmessage = ({ data }) => {
-            if (data === 'occ-initialised') {
+            if (data === "occ-initialised") {
                 this.occWorkerState$.next({
                     state: OccStateEnum.initialised,
                 });
-            } else if (data === 'busy') {
+            } else if (data === "busy") {
                 this.occWorkerState$.next({
                     state: OccStateEnum.computing,
                 });
@@ -89,7 +89,7 @@ export class OCCTWorkerManager {
      * In this way it is possible to hace the cache of manageable size
      */
     startedTheRun(): Promise<any> {
-        return this.genericCallToWorkerPromise('startedTheRun', {});
+        return this.genericCallToWorkerPromise("startedTheRun", {});
     }
 
     /**
@@ -98,6 +98,6 @@ export class OCCTWorkerManager {
      * In this way it is possible to hace the cache of manageable size
      */
     cleanAllCache(): Promise<any> {
-        return this.genericCallToWorkerPromise('cleanAllCache', {});
+        return this.genericCallToWorkerPromise("cleanAllCache", {});
     }
 }

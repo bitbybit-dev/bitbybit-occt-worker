@@ -1,11 +1,11 @@
 
-import { OCCTCompound } from './compound';
-import { OCCTEdge } from './edge';
-import { OCCTFace } from './face';
-import { OCCTSolid } from './solid';
-import { OCCTWire } from './wire';
-import { OCCTWorkerManager } from '../../../occ-worker/occ-worker-manager';
-import { OCCTShell } from './shell';
+import { OCCTCompound } from "./compound";
+import { OCCTEdge } from "./edge";
+import { OCCTFace } from "./face";
+import { OCCTSolid } from "./solid";
+import { OCCTWire } from "./wire";
+import { OCCTWorkerManager } from "../../../occ-worker/occ-worker-manager";
+import { OCCTShell } from "./shell";
 
 export class OCCTShapes {
     public readonly edge: OCCTEdge;

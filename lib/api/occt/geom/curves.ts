@@ -1,5 +1,5 @@
-import { Inputs } from '@bitbybit-dev/occt';
-import { OCCTWorkerManager } from '../../../occ-worker/occ-worker-manager';
+import { Inputs } from "@bitbybit-dev/occt";
+import { OCCTWorkerManager } from "../../../occ-worker/occ-worker-manager";
 
 
 export class OCCTCurves {
@@ -17,7 +17,7 @@ export class OCCTCurves {
      * @shortname ellipse 2d
      */
     geom2dEllipse(inputs: Inputs.OCCT.Geom2dEllipseDto): Promise<Inputs.OCCT.Geom2dCurvePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('geom.curves.geom2dEllipse', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("geom.curves.geom2dEllipse", inputs);
     }
 
     /**
@@ -28,7 +28,7 @@ export class OCCTCurves {
      * @shortname trimmed 2d
      */
     geom2dTrimmedCurve(inputs: Inputs.OCCT.Geom2dTrimmedCurveDto<Inputs.OCCT.Geom2dCurvePointer>): Promise<Inputs.OCCT.Geom2dCurvePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('geom.curves.geom2dTrimmedCurve', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("geom.curves.geom2dTrimmedCurve", inputs);
     }
 
     /**
@@ -39,7 +39,7 @@ export class OCCTCurves {
      * @shortname segment 2d
      */
     geom2dSegment(inputs: Inputs.OCCT.Geom2dSegmentDto): Promise<Inputs.OCCT.Geom2dCurvePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('geom.curves.geom2dSegment', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("geom.curves.geom2dSegment", inputs);
     }
 
     /**
@@ -50,7 +50,7 @@ export class OCCTCurves {
      * @shortname 2d point on curve
      */
     get2dPointFrom2dCurveOnParam(inputs: Inputs.OCCT.DataOnGeometryAtParamDto<Inputs.OCCT.Geom2dCurvePointer>): Promise<Inputs.Base.Point2> {
-        return this.occWorkerManager.genericCallToWorkerPromise('geom.curves.get2dPointFrom2dCurveOnParam', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("geom.curves.get2dPointFrom2dCurveOnParam", inputs);
     }
 
     /**
@@ -62,7 +62,7 @@ export class OCCTCurves {
      * @drawable false
      */
     geomCircleCurve(inputs: Inputs.OCCT.CircleDto): Promise<Inputs.OCCT.GeomCurvePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('geom.curves.geomCircleCurve', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("geom.curves.geomCircleCurve", inputs);
     }
 
     /**
@@ -74,6 +74,6 @@ export class OCCTCurves {
      * @drawable false
      */
     geomEllipseCurve(inputs: Inputs.OCCT.EllipseDto): Promise<Inputs.OCCT.GeomCurvePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('geom.curves.geomEllipseCurve', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("geom.curves.geomEllipseCurve", inputs);
     }
 }

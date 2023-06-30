@@ -1,5 +1,5 @@
-import { Inputs } from '@bitbybit-dev/occt';
-import { OCCTWorkerManager } from '../../../occ-worker/occ-worker-manager';
+import { Inputs } from "@bitbybit-dev/occt";
+import { OCCTWorkerManager } from "../../../occ-worker/occ-worker-manager";
 
 export class OCCTWire {
 
@@ -17,7 +17,7 @@ export class OCCTWire {
      * @drawable true
      */
     createPolygonWire(inputs: Inputs.OCCT.PolygonDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.createPolygonWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createPolygonWire", inputs);
     }
     /**
      * Creates OpenCascade polyline wire
@@ -28,7 +28,7 @@ export class OCCTWire {
      * @drawable true
      */
     createPolylineWire(inputs: Inputs.OCCT.PolylineDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.createPolylineWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createPolylineWire", inputs);
     }
     /**
     * Creates OpenCascade Bezier wire
@@ -39,7 +39,7 @@ export class OCCTWire {
     * @drawable true
     */
     createBezier(inputs: Inputs.OCCT.BezierDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.createBezier', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createBezier", inputs);
     }
 
     /**
@@ -51,7 +51,7 @@ export class OCCTWire {
      * @drawable true
      */
     interpolatePoints(inputs: Inputs.OCCT.InterpolationDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.interpolatePoints', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.interpolatePoints", inputs);
     }
 
     /**
@@ -63,7 +63,7 @@ export class OCCTWire {
      * @drawable true
      */
     createBSpline(inputs: Inputs.OCCT.BSplineDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.createBSpline', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createBSpline", inputs);
     }
 
     /**
@@ -75,7 +75,7 @@ export class OCCTWire {
      * @drawable true
      */
     combineEdgesAndWiresIntoAWire(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSWirePointer | Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.combineEdgesAndWiresIntoAWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.combineEdgesAndWiresIntoAWire", inputs);
     }
 
     /**
@@ -87,7 +87,7 @@ export class OCCTWire {
      * @drawable true
      */
     addEdgesAndWiresToWire(inputs: Inputs.OCCT.ShapeShapesDto<Inputs.OCCT.TopoDSWirePointer, Inputs.OCCT.TopoDSWirePointer | Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.addEdgesAndWiresToWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.addEdgesAndWiresToWire", inputs);
     }
 
     /**
@@ -99,7 +99,7 @@ export class OCCTWire {
     * @drawable true
     */
     divideWireByParamsToPoints(inputs: Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.divideWireByParamsToPoints', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.divideWireByParamsToPoints", inputs);
     }
 
     /**
@@ -111,7 +111,7 @@ export class OCCTWire {
     * @drawable true
     */
     divideWireByEqualDistanceToPoints(inputs: Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.divideWireByEqualDistanceToPoints', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.divideWireByEqualDistanceToPoints", inputs);
     }
 
     /**
@@ -123,7 +123,7 @@ export class OCCTWire {
     * @drawable true
     */
     pointOnWireAtParam(inputs: Inputs.OCCT.DataOnGeometryAtParamDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.pointOnWireAtParam', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.pointOnWireAtParam", inputs);
     }
 
     /**
@@ -135,7 +135,7 @@ export class OCCTWire {
     * @drawable true
     */
     pointOnWireAtLength(inputs: Inputs.OCCT.DataOnGeometryAtLengthDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.pointOnWireAtLength', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.pointOnWireAtLength", inputs);
     }
 
     /**
@@ -147,7 +147,7 @@ export class OCCTWire {
     * @drawable true
     */
     tangentOnWireAtParam(inputs: Inputs.OCCT.DataOnGeometryAtParamDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Vector3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.tangentOnWireAtParam', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.tangentOnWireAtParam", inputs);
     }
 
     /**
@@ -159,7 +159,7 @@ export class OCCTWire {
     * @drawable true
     */
     tangentOnWireAtLength(inputs: Inputs.OCCT.DataOnGeometryAtLengthDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Vector3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.tangentOnWireAtLength', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.tangentOnWireAtLength", inputs);
     }
 
     /**
@@ -171,7 +171,7 @@ export class OCCTWire {
     * @drawable false
     */
     derivativesOnWireAtLength(inputs: Inputs.OCCT.DataOnGeometryAtLengthDto<Inputs.OCCT.TopoDSWirePointer>): Promise<[Inputs.Base.Vector3, Inputs.Base.Vector3, Inputs.Base.Vector3]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.derivativesOnWireAtLength', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.derivativesOnWireAtLength", inputs);
     }
 
     /**
@@ -183,7 +183,7 @@ export class OCCTWire {
     * @drawable false
     */
     derivativesOnWireAtParam(inputs: Inputs.OCCT.DataOnGeometryAtParamDto<Inputs.OCCT.TopoDSWirePointer>): Promise<[Inputs.Base.Vector3, Inputs.Base.Vector3, Inputs.Base.Vector3]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.derivativesOnWireAtParam', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.derivativesOnWireAtParam", inputs);
     }
 
     /**
@@ -195,7 +195,7 @@ export class OCCTWire {
     * @drawable true
     */
     startPointOnWire(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.startPointOnWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.startPointOnWire", inputs);
     }
 
     /**
@@ -207,7 +207,7 @@ export class OCCTWire {
     * @drawable true
     */
     endPointOnWire(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.endPointOnWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.endPointOnWire", inputs);
     }
 
     /**
@@ -219,7 +219,7 @@ export class OCCTWire {
      * @drawable true
      */
     createCircleWire(inputs: Inputs.OCCT.CircleDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.createCircleWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createCircleWire", inputs);
     }
 
     /**
@@ -231,7 +231,7 @@ export class OCCTWire {
      * @drawable true
      */
     createSquareWire(inputs: Inputs.OCCT.SquareDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.createSquareWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createSquareWire", inputs);
     }
 
     /**
@@ -243,7 +243,7 @@ export class OCCTWire {
      * @drawable true
      */
     createStarWire(inputs: Inputs.OCCT.StarDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.createStarWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createStarWire", inputs);
     }
 
     /**
@@ -255,7 +255,7 @@ export class OCCTWire {
      * @drawable true
      */
     createNGonWire(inputs: Inputs.OCCT.NGonWireDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.createNGonWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createNGonWire", inputs);
     }
 
     /**
@@ -267,7 +267,7 @@ export class OCCTWire {
      * @drawable true
      */
     createParallelogramWire(inputs: Inputs.OCCT.ParallelogramDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.createParallelogramWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createParallelogramWire", inputs);
     }
 
     /**
@@ -279,7 +279,7 @@ export class OCCTWire {
      * @drawable true
      */
     createRectangleWire(inputs: Inputs.OCCT.RectangleDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.createRectangleWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createRectangleWire", inputs);
     }
 
     /**
@@ -291,7 +291,7 @@ export class OCCTWire {
      * @drawable true
      */
     createEllipseWire(inputs: Inputs.OCCT.EllipseDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.createEllipseWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createEllipseWire", inputs);
     }
 
     /**
@@ -303,7 +303,7 @@ export class OCCTWire {
      * @drawable true
      */
     getWire(inputs: Inputs.OCCT.ShapeIndexDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.getWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.getWire", inputs);
     }
 
     /**
@@ -315,7 +315,7 @@ export class OCCTWire {
      * @drawable true
      */
     getWires(inputs: Inputs.OCCT.ShapeIndexDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSWirePointer[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.getWires', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.getWires", inputs);
     }
 
     /**
@@ -327,7 +327,7 @@ export class OCCTWire {
      * @drawable true
      */
     reversedWire(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.reversedWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.reversedWire", inputs);
     }
 
     /**
@@ -339,7 +339,7 @@ export class OCCTWire {
      * @drawable false
      */
     getWireLength(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>): Promise<number> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.getWireLength', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.getWireLength", inputs);
     }
 
     /**
@@ -351,7 +351,7 @@ export class OCCTWire {
      * @drawable false
      */
     getWiresLengths(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSWirePointer>): Promise<number[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.getWiresLengths', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.getWiresLengths", inputs);
     }
 
     /**
@@ -364,7 +364,7 @@ export class OCCTWire {
      */
     placeWireOnFace(inputs: Inputs.OCCT.WireOnFaceDto<Inputs.OCCT.TopoDSWirePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
         inputs.shapes = [inputs.wire, inputs.face];
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.placeWireOnFace', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.placeWireOnFace", inputs);
     }
 
     /**
@@ -376,7 +376,7 @@ export class OCCTWire {
      * @drawable true
      */
     placeWiresOnFace(inputs: Inputs.OCCT.ShapeShapesDto<Inputs.OCCT.TopoDSFacePointer, Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSWirePointer[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.wire.placeWiresOnFace', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.placeWiresOnFace", inputs);
     }
 
 }

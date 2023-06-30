@@ -1,5 +1,5 @@
-import { Inputs } from '@bitbybit-dev/occt';
-import { OCCTWorkerManager } from '../../../occ-worker/occ-worker-manager';
+import { Inputs } from "@bitbybit-dev/occt";
+import { OCCTWorkerManager } from "../../../occ-worker/occ-worker-manager";
 
 export class OCCTShell {
 
@@ -17,7 +17,7 @@ export class OCCTShell {
      * @drawable true
      */
     sewFaces(inputs: Inputs.OCCT.SewDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSShellPointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.shell.sewFaces', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.shell.sewFaces", inputs);
     }
 
     /**
@@ -29,6 +29,6 @@ export class OCCTShell {
      * @drawable false
      */
      getShellSurfaceArea(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShellPointer>): Promise<number> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.shell.getShellSurfaceArea', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.shell.getShellSurfaceArea", inputs);
     }
 }

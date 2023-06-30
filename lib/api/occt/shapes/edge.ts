@@ -1,6 +1,6 @@
 
-import { Inputs } from '@bitbybit-dev/occt';
-import { OCCTWorkerManager } from '../../../occ-worker/occ-worker-manager';
+import { Inputs } from "@bitbybit-dev/occt";
+import { OCCTWorkerManager } from "../../../occ-worker/occ-worker-manager";
 
 export class OCCTEdge {
 
@@ -18,7 +18,7 @@ export class OCCTEdge {
      * @drawable true
      */
     line(inputs: Inputs.OCCT.LineDto): Promise<Inputs.OCCT.TopoDSEdgePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.line', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.line", inputs);
     }
 
     /**
@@ -30,7 +30,7 @@ export class OCCTEdge {
      * @drawable true
      */
     arcThroughThreePoints(inputs: Inputs.OCCT.ArcEdgeThreePointsDto): Promise<Inputs.OCCT.TopoDSEdgePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.arcThroughThreePoints', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.arcThroughThreePoints", inputs);
     }
 
     /**
@@ -42,7 +42,7 @@ export class OCCTEdge {
      * @drawable true
      */
     createCircleEdge(inputs: Inputs.OCCT.CircleDto): Promise<Inputs.OCCT.TopoDSEdgePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.createCircleEdge', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.createCircleEdge", inputs);
     }
 
     /**
@@ -54,7 +54,7 @@ export class OCCTEdge {
      * @drawable true
      */
     createEllipseEdge(inputs: Inputs.OCCT.EllipseDto): Promise<Inputs.OCCT.TopoDSEdgePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.createEllipseEdge', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.createEllipseEdge", inputs);
     }
 
 
@@ -67,7 +67,7 @@ export class OCCTEdge {
      * @drawable true
      */
     removeInternalEdges(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.removeInternalEdges', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.removeInternalEdges", inputs);
     }
 
     /**
@@ -79,7 +79,7 @@ export class OCCTEdge {
      * @drawable true
      */
     getEdge(inputs: Inputs.OCCT.ShapeIndexDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getEdge', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdge", inputs);
     }
 
     /**
@@ -91,7 +91,7 @@ export class OCCTEdge {
      * @drawable true
      */
     getEdges(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getEdges', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdges", inputs);
     }
 
     /**
@@ -104,7 +104,7 @@ export class OCCTEdge {
      */
     makeEdgeFromGeom2dCurveAndSurface(inputs: Inputs.OCCT.EdgeFromGeom2dCurveAndSurfaceDto<Inputs.OCCT.Geom2dCurvePointer, Inputs.OCCT.GeomSurfacePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
         inputs.shapes = [inputs.curve, inputs.surface];
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.makeEdgeFromGeom2dCurveAndSurface', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.makeEdgeFromGeom2dCurveAndSurface", inputs);
     }
 
     /**
@@ -116,7 +116,7 @@ export class OCCTEdge {
      * @drawable true
      */
     getCornerPointsOfEdgesForShape(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getCornerPointsOfEdgesForShape', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getCornerPointsOfEdgesForShape", inputs);
     }
 
     /**
@@ -128,7 +128,7 @@ export class OCCTEdge {
      * @drawable false
      */
     getEdgeLength(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<number> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getEdgeLength', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdgeLength", inputs);
     }
 
     /**
@@ -140,7 +140,7 @@ export class OCCTEdge {
      * @drawable false
      */
     getEdgesLengths(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<number[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getEdgesLengths', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdgesLengths", inputs);
     }
 
     /**
@@ -152,7 +152,7 @@ export class OCCTEdge {
      * @drawable true
      */
     getEdgeCenterOfMass(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getEdgeCenterOfMass', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdgeCenterOfMass", inputs);
     }
 
     /**
@@ -164,7 +164,7 @@ export class OCCTEdge {
      * @drawable true
      */
     getEdgesCentersOfMass(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.getEdgesCentersOfMass', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdgesCentersOfMass", inputs);
     }
 
     /**
@@ -176,7 +176,7 @@ export class OCCTEdge {
      * @drawable true
      */
     pointOnEdgeAtParam(inputs: Inputs.OCCT.DataOnGeometryAtParamDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.pointOnEdgeAtParam', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.pointOnEdgeAtParam", inputs);
     }
 
     /**
@@ -188,7 +188,7 @@ export class OCCTEdge {
      * @drawable true
      */
     tangentOnEdgeAtParam(inputs: Inputs.OCCT.DataOnGeometryAtParamDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.tangentOnEdgeAtParam', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.tangentOnEdgeAtParam", inputs);
     }
 
     /**
@@ -200,7 +200,7 @@ export class OCCTEdge {
      * @drawable true
      */
     pointOnEdgeAtLength(inputs: Inputs.OCCT.DataOnGeometryAtLengthDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.pointOnEdgeAtLength', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.pointOnEdgeAtLength", inputs);
     }
 
     /**
@@ -212,7 +212,7 @@ export class OCCTEdge {
      * @drawable true
      */
     tangentOnEdgeAtLength(inputs: Inputs.OCCT.DataOnGeometryAtLengthDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.tangentOnEdgeAtLength', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.tangentOnEdgeAtLength", inputs);
     }
 
     /**
@@ -224,7 +224,7 @@ export class OCCTEdge {
      * @drawable true
      */
     startPointOnEdge(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.startPointOnEdge', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.startPointOnEdge", inputs);
     }
 
     /**
@@ -236,7 +236,7 @@ export class OCCTEdge {
      * @drawable true
      */
     endPointOnEdge(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.endPointOnEdge', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.endPointOnEdge", inputs);
     }
 
     /**
@@ -248,7 +248,7 @@ export class OCCTEdge {
      * @drawable true
      */
     divideEdgeByParamsToPoints(inputs: Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.divideEdgeByParamsToPoints', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.divideEdgeByParamsToPoints", inputs);
     }
 
     /**
@@ -260,6 +260,6 @@ export class OCCTEdge {
      * @drawable true
      */
     divideEdgeByEqualDistanceToPoints(inputs: Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.edge.divideEdgeByEqualDistanceToPoints', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.divideEdgeByEqualDistanceToPoints", inputs);
     }
 }

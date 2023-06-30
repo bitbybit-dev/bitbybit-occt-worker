@@ -1,5 +1,5 @@
-import { OpenCascadeInstance } from '@bitbybit-dev/occt/bitbybit-dev-occt/bitbybit-dev-occt';
-import { ObjectDefinition } from '@bitbybit-dev/occt';
+import { OpenCascadeInstance } from "@bitbybit-dev/occt/bitbybit-dev-occt/bitbybit-dev-occt";
+import { ObjectDefinition } from "@bitbybit-dev/occt";
 
 export class CacheHelper {
 
@@ -108,8 +108,8 @@ export class CacheHelper {
                     toReturn.hash = curHash;
                     this.addToCache(curHash, toReturn);
                 } else if (toReturn.compound && toReturn.data && toReturn.shapes && toReturn.shapes.length > 0) {
-                    let objDef: ObjectDefinition<any, any> = toReturn;
-                    const compoundHash = this.computeHash({ ...args, index: 'compound' });
+                    const objDef: ObjectDefinition<any, any> = toReturn;
+                    const compoundHash = this.computeHash({ ...args, index: "compound" });
                     objDef.compound.hash = compoundHash;
                     this.addToCache(compoundHash, objDef.compound);
                     objDef.shapes.forEach((s, index) => {
@@ -143,9 +143,9 @@ export class CacheHelper {
      */
     computeHash(args, raw?: any): any {
         let argsString = JSON.stringify(args);
-        argsString = argsString.replace(/(\"ptr\"\:(-?[0-9]*?)\,)/g, '');
-        argsString = argsString.replace(/(\"ptr\"\:(-?[0-9]*))/g, '');
-        if (argsString.includes('ptr')) { console.error('YOU DONE MESSED UP YOUR REGEX.'); }
+        argsString = argsString.replace(/(\"ptr\"\:(-?[0-9]*?)\,)/g, "");
+        argsString = argsString.replace(/(\"ptr\"\:(-?[0-9]*))/g, "");
+        if (argsString.includes("ptr")) { console.error("YOU DONE MESSED UP YOUR REGEX."); }
         const hashString = Math.random.toString() + argsString;
         if (raw) { return hashString; }
         return this.stringToHash(hashString);

@@ -1,5 +1,5 @@
-import { Inputs } from '@bitbybit-dev/occt';
-import { OCCTWorkerManager } from '../../occ-worker/occ-worker-manager';
+import { Inputs } from "@bitbybit-dev/occt";
+import { OCCTWorkerManager } from "../../occ-worker/occ-worker-manager";
 
 export class OCCTBooleans {
 
@@ -17,7 +17,7 @@ export class OCCTBooleans {
      * @drawable true
      */
     union(inputs: Inputs.OCCT.UnionDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('booleans.union', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("booleans.union", inputs);
     }
 
     /**
@@ -29,7 +29,7 @@ export class OCCTBooleans {
      * @drawable true
      */
     difference(inputs: Inputs.OCCT.DifferenceDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('booleans.difference', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("booleans.difference", inputs);
     }
 
     /**
@@ -41,6 +41,6 @@ export class OCCTBooleans {
      * @drawable true
      */
     intersection(inputs: Inputs.OCCT.IntersectionDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('booleans.intersection', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("booleans.intersection", inputs);
     }
 }

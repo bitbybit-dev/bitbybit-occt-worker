@@ -1,5 +1,5 @@
-import { Inputs } from '@bitbybit-dev/occt';
-import { OCCTWorkerManager } from '../../occ-worker/occ-worker-manager';
+import { Inputs } from "@bitbybit-dev/occt";
+import { OCCTWorkerManager } from "../../occ-worker/occ-worker-manager";
 
 
 export class OCCTFillets {
@@ -17,7 +17,7 @@ export class OCCTFillets {
     * @drawable true
     */
     filletEdges(inputs: Inputs.OCCT.FilletDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('fillets.filletEdges', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.filletEdges", inputs);
     }
 
     /**
@@ -29,7 +29,7 @@ export class OCCTFillets {
     * @drawable true
     */
     fillet3DWire(inputs: Inputs.OCCT.Fillet3DWireDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('fillets.fillet3DWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.fillet3DWire", inputs);
     }
 
     /**
@@ -41,7 +41,7 @@ export class OCCTFillets {
     * @drawable true
      */
     chamferEdges(inputs: Inputs.OCCT.ChamferDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('fillets.chamferEdges', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.chamferEdges", inputs);
     }
 
     /**
@@ -53,7 +53,7 @@ export class OCCTFillets {
      * @drawable true
      */
     fillet2d(inputs: Inputs.OCCT.FilletDto<Inputs.OCCT.TopoDSWirePointer | Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSWirePointer | Inputs.OCCT.TopoDSFacePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('fillets.fillet2d', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.fillet2d", inputs);
     }
 
     /**
@@ -66,7 +66,7 @@ export class OCCTFillets {
      */
     filletTwoEdgesInPlaneIntoAWire(inputs: Inputs.OCCT.FilletTwoEdgesInPlaneDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
         inputs.shapes = [inputs.edge1, inputs.edge2];
-        return this.occWorkerManager.genericCallToWorkerPromise('fillets.filletTwoEdgesInPlaneIntoAWire', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.filletTwoEdgesInPlaneIntoAWire", inputs);
 
     }
 }

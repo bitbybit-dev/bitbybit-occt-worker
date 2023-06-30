@@ -1,5 +1,5 @@
-import { Inputs } from '@bitbybit-dev/occt';
-import { OCCTWorkerManager } from '../../../occ-worker/occ-worker-manager';
+import { Inputs } from "@bitbybit-dev/occt";
+import { OCCTWorkerManager } from "../../../occ-worker/occ-worker-manager";
 
 export class OCCTCompound {
 
@@ -17,7 +17,7 @@ export class OCCTCompound {
      * @drawable true
      */
     makeCompound(inputs: Inputs.OCCT.CompoundShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSCompoundPointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.compound.makeCompound', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.compound.makeCompound", inputs);
     }
 
 }

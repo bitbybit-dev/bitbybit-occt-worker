@@ -1,5 +1,5 @@
-import { Inputs } from '@bitbybit-dev/occt';
-import { OCCTWorkerManager } from '../../../occ-worker/occ-worker-manager';
+import { Inputs } from "@bitbybit-dev/occt";
+import { OCCTWorkerManager } from "../../../occ-worker/occ-worker-manager";
 
 export class OCCTSolid {
 
@@ -17,7 +17,7 @@ export class OCCTSolid {
      * @drawable true
      */
     fromClosedShell(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShellPointer>): Promise<Inputs.OCCT.TopoDSSolidPointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.fromClosedShell', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.fromClosedShell", inputs);
     }
 
     /**
@@ -29,7 +29,7 @@ export class OCCTSolid {
      * @drawable true
      */
     createBox(inputs: Inputs.OCCT.BoxDto): Promise<Inputs.OCCT.TopoDSSolidPointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.createBox', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.createBox", inputs);
     }
 
     /**
@@ -41,7 +41,7 @@ export class OCCTSolid {
      * @drawable true
      */
     createBoxFromCorner(inputs: Inputs.OCCT.BoxFromCornerDto): Promise<Inputs.OCCT.TopoDSSolidPointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.createBoxFromCorner', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.createBoxFromCorner", inputs);
     }
 
     /**
@@ -53,7 +53,7 @@ export class OCCTSolid {
      * @drawable true
      */
     createCylinder(inputs: Inputs.OCCT.CylinderDto): Promise<Inputs.OCCT.TopoDSSolidPointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.createCylinder', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.createCylinder", inputs);
     }
 
     /**
@@ -65,7 +65,7 @@ export class OCCTSolid {
      * @drawable true
      */
     createCylindersOnLines(inputs: Inputs.OCCT.CylindersOnLinesDto): Promise<Inputs.OCCT.TopoDSSolidPointer[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.createCylindersOnLines', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.createCylindersOnLines", inputs);
     }
 
     /**
@@ -77,7 +77,7 @@ export class OCCTSolid {
      * @drawable true
      */
     createSphere(inputs: Inputs.OCCT.SphereDto): Promise<Inputs.OCCT.TopoDSSolidPointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.createSphere', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.createSphere", inputs);
     }
 
     /**
@@ -90,7 +90,7 @@ export class OCCTSolid {
      */
     createCone(inputs: Inputs.OCCT.ConeDto): Promise<Inputs.OCCT.TopoDSSolidPointer> {
         inputs.angle = inputs.angle * (Math.PI / 180);
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.createCone', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.createCone", inputs);
     }
 
     /**
@@ -102,7 +102,7 @@ export class OCCTSolid {
      * @drawable false
      */
     getSolidSurfaceArea(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSSolidPointer>): Promise<number> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.getSolidSurfaceArea', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.getSolidSurfaceArea", inputs);
     }
 
     /**
@@ -114,7 +114,7 @@ export class OCCTSolid {
     * @drawable false
     */
     getSolidVolume(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSSolidPointer>): Promise<number> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.getSolidVolume', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.getSolidVolume", inputs);
     }
 
     /**
@@ -126,7 +126,7 @@ export class OCCTSolid {
     * @drawable false
     */
     getSolidsVolumes(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSSolidPointer>): Promise<number[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.getSolidsVolumes', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.getSolidsVolumes", inputs);
     }
 
     /**
@@ -138,7 +138,7 @@ export class OCCTSolid {
     * @drawable true
     */
     getSolidCenterOfMass(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSSolidPointer>): Promise<Inputs.Base.Point3> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.getSolidCenterOfMass', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.getSolidCenterOfMass", inputs);
     }
 
     /**
@@ -150,6 +150,6 @@ export class OCCTSolid {
     * @drawable true
      */
     getSolidsCentersOfMass(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSSolidPointer>): Promise<Inputs.Base.Point3[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise('shapes.solid.getSolidsCentersOfMass', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.getSolidsCentersOfMass", inputs);
     }
 }

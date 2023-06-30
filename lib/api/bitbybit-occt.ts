@@ -1,5 +1,5 @@
-import { OCCT } from './occt/occt';
-import { OCCTWorkerManager } from '../occ-worker/occ-worker-manager';
+import { OCCT } from "./occt/occt";
+import { OCCTWorkerManager } from "../occ-worker/occ-worker-manager";
 
 export class BitByBitOCCT {
 

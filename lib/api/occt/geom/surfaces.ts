@@ -1,6 +1,6 @@
 
-import { Inputs } from '@bitbybit-dev/occt';
-import { OCCTWorkerManager } from '../../../occ-worker/occ-worker-manager';
+import { Inputs } from "@bitbybit-dev/occt";
+import { OCCTWorkerManager } from "../../../occ-worker/occ-worker-manager";
 
 export class OCCTSurfaces {
 
@@ -18,7 +18,7 @@ export class OCCTSurfaces {
      * @drawable false
      */
     cylindricalSurface(inputs: Inputs.OCCT.GeomCylindricalSurfaceDto): Promise<Inputs.OCCT.GeomSurfacePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('geom.surfaces.cylindricalSurface', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("geom.surfaces.cylindricalSurface", inputs);
     }
 
     /**
@@ -30,7 +30,7 @@ export class OCCTSurfaces {
      * @drawable false
      */
     surfaceFromFace(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.GeomSurfacePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise('geom.surfaces.surfaceFromFace', inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("geom.surfaces.surfaceFromFace", inputs);
     }
 
 }
