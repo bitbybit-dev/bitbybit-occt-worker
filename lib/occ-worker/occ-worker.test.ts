@@ -222,7 +222,7 @@ describe("OCCT wire unit tests", () => {
         ])
     });
 
-    const callAction: <T>(functionName: string, inputs: T) => any = (functionName, inputs) => {
+    const callAction: <T>(functionName: string, inputs: T) => Promise<any> = (functionName, inputs) => {
         return new Promise((resolve, reject) => {
             try {
                 onMessageInput({

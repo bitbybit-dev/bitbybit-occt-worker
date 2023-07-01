@@ -14,10 +14,6 @@ export class OCCTWorkerManager {
     private occWorker: Worker;
     private promisesMade: { promise?: Promise<any>, uid: string, resolve?, reject?}[] = [];
 
-    constructor(
-    ) {
-    }
-
     occWorkerAlreadyInitialised(): boolean {
         return this.occWorker ? true : false;
     }
