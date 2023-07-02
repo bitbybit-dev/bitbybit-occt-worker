@@ -283,6 +283,18 @@ export class OCCTWire {
     }
 
     /**
+     * Creates OpenCascade L polygon wire
+     * @param inputs L polygon parameters
+     * @returns OpenCascade polygon
+     * @group primitives
+     * @shortname L polygon
+     * @drawable true
+     */
+    createLPolygonWire(inputs: Inputs.OCCT.LPolygonDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createLPolygonWire", inputs);
+    }
+
+    /**
      * Creates OpenCascade ellipse wire
      * @param inputs Ellipse parameters
      * @returns OpenCascade ellipse wire
