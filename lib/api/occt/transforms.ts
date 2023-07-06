@@ -46,6 +46,18 @@ export class OCCTTransforms {
     }
 
     /**
+     * Align and translates the shape
+     * @param inputs Align description
+     * @returns OpenCascade shape
+     * @group on single shape
+     * @shortname align and translate
+     * @drawable true
+     */
+    alignAndTranslate(inputs: Inputs.OCCT.AlignAndTranslateDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("transforms.alignAndTranslate", inputs);
+    }
+
+    /**
      * Translates the shape
      * @param inputs Translation description
      * @returns OpenCascade shape
@@ -139,6 +151,18 @@ export class OCCTTransforms {
      */
     alignShapes(inputs: Inputs.OCCT.AlignShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("transforms.alignShapes", inputs);
+    }
+
+    /**
+     * Align and translate the shapes
+     * @param inputs Align descriptions
+     * @returns OpenCascade shapes
+     * @group on shapes
+     * @shortname align and translate
+     * @drawable true
+     */
+    alignAndTranslateShapes(inputs: Inputs.OCCT.AlignAndTranslateShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("transforms.alignAndTranslateShapes", inputs);
     }
 
     /**
