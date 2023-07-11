@@ -34,6 +34,18 @@ export class OCCTTransforms {
     }
 
     /**
+     * Rotate the shape around the provided center
+     * @param inputs Rotation description
+     * @returns OpenCascade shape
+     * @group on single shape
+     * @shortname rotate around center
+     * @drawable true
+     */
+    rotateAroundCenter(inputs: Inputs.OCCT.RotateAroundCenterDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("transforms.rotateAroundCenter", inputs);
+    }
+
+    /**
      * Align the shape
      * @param inputs Align description
      * @returns OpenCascade shape
@@ -139,6 +151,18 @@ export class OCCTTransforms {
      */
     rotateShapes(inputs: Inputs.OCCT.RotateShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("transforms.rotateShapes", inputs);
+    }
+
+    /**
+     * Rotate the shapes around the center and an axis
+     * @param inputs Rotation descriptions
+     * @returns OpenCascade shapes
+     * @group on shapes
+     * @shortname rotations around center
+     * @drawable true
+     */
+    rotateAroundCenterShapes(inputs: Inputs.OCCT.RotateAroundCenterShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("transforms.rotateAroundCenterShapes", inputs);
     }
 
     /**
