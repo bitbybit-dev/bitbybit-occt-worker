@@ -259,15 +259,27 @@ export class OCCTWire {
     }
 
     /**
-     * Creates n  parallelogram wire
+     * Creates n parallelogram wire
      * @param inputs parallelogram parameters
-     * @returns OpenCascade star wire
+     * @returns OpenCascade parallelogram wire
      * @group primitives
      * @shortname parallelogram
      * @drawable true
      */
     createParallelogramWire(inputs: Inputs.OCCT.ParallelogramDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createParallelogramWire", inputs);
+    }
+
+    /**
+     * Creates a heart wire
+     * @param inputs heart parameters
+     * @returns OpenCascade heart shaped wire
+     * @group primitives
+     * @shortname heart
+     * @drawable true
+     */
+    createHeartWire(inputs: Inputs.OCCT.Heart2DDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createHeartWire", inputs);
     }
 
     /**
