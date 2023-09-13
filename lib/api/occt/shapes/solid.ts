@@ -152,4 +152,16 @@ export class OCCTSolid {
     getSolidsCentersOfMass(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSSolidPointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.getSolidsCentersOfMass", inputs);
     }
+
+    /**
+     * Gets the solids of the shape in a list
+     * @param inputs Shape
+     * @returns OpenCascade solids array
+     * @group get
+     * @shortname solids
+     * @drawable true
+     */
+    getSolids(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSSolidPointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.getSolids", inputs);
+    }
 }
