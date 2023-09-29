@@ -219,7 +219,7 @@ describe("OCCT wire unit tests", () => {
                 [0.25, 0.5, 0.5],
                 [0.5, 0.5, 0.5]
             ]
-        ])
+        ]);
     });
 
     const callAction: <T>(functionName: string, inputs: T) => Promise<any> = (functionName, inputs) => {
@@ -233,19 +233,19 @@ describe("OCCT wire unit tests", () => {
                     uid: "sdadwa",
                 }, (data) => {
                     if (data !== "busy") {
-                        resolve(data.result)
+                        resolve(data.result);
                     }
                     if (data.error) {
                         console.error("ERROR HAPPENED: ", data.error);
-                        reject(data.error)
+                        reject(data.error);
                     }
                 });
             } catch (err) {
                 console.error("ERROR HAPPENED: ", err);
-                reject(err)
+                reject(err);
             }
         });
-    }
+    };
 
 });
 

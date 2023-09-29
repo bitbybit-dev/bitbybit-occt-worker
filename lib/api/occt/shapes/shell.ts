@@ -28,7 +28,7 @@ export class OCCTShell {
      * @shortname area
      * @drawable false
      */
-     getShellSurfaceArea(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShellPointer>): Promise<number> {
+    getShellSurfaceArea(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShellPointer>): Promise<number> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.shell.getShellSurfaceArea", inputs);
     }
 }
