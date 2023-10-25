@@ -150,7 +150,7 @@ export const onMessageInput = (d: DataInput, postMessage) => {
     } catch (e) {
         let props;
         if (d && d.action && d.action.inputs) {
-            props = `Input values were: {${Object.keys(d.action.inputs).map(key => `${key}: ${d.action.inputs[key]}`).join(",")}}. `;
+            props = `Input values were: {${Object.keys(d.action.inputs).map(key => `${key}: ${JSON.stringify(d.action.inputs[key])}`).join(",")}}. `;
         }
         let fun;
         if (d && d.action && d.action.functionName) {
