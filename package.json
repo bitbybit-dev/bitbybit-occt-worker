@@ -1,6 +1,6 @@
 {
     "name": "@bitbybit-dev/occt-worker",
-    "version": "0.11.16",
+    "version": "0.11.17",
     "description": "Bit By Bit Developers CAD algorithms using OpenCascade Technology kernel adapted for WebWorker",
     "main": "index.js",
     "repository": {
@@ -42,10 +42,10 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.bitbybit.json",
-        "build-p": "npm run build && npm run copy-package && npm run copy-readme-license && npm run delete-tsdoc",
+        "build-p": "npm run build && npm run copy-package && npm run copy-readme-license && npm run delete-coverage",
         "copy-package": "cp -R ./package.json ./dist",
         "copy-readme-license": "cp -R ./README.md ./dist && cp -R ./LICENSE ./dist",
-        "delete-tsdoc": "rm -R ./dist/coverage",
+        "delete-coverage": "rm -R ./dist/coverage",
         "docs": "./node_modules/.bin/sass ts-doc-theme/assets/css/main.sass ts-doc-theme/assets/css/main.css && node_modules/.bin/typedoc --out ts-api-docs/ lib/api --theme ./ts-doc-theme --excludePrivate --tsconfig lib/api/tsconfig.bbb.json --media assets/images/blockly-block-images/",
         "test": "set NODE_OPTIONS=--experimental-specifier-resolution=node && jest --watchAll=true",
         "test-c": "set NODE_OPTIONS=--experimental-specifier-resolution=node && jest --coverage --watchAll=false",
@@ -55,13 +55,10 @@
     "license": "MIT",
     "types": "./index.d.ts",
     "dependencies": {
-        "@bitbybit-dev/occt": "0.11.16",
+        "@bitbybit-dev/occt": "0.11.17",
         "rxjs": "7.5.5"
     },
     "devDependencies": {
-        "typedoc": "0.21.9",
-        "@microsoft/tsdoc": "0.13.2",
-        "@microsoft/tsdoc-config": "0.15.2",
         "sass": "1.57.1",
         "@testing-library/jest-dom": "5.14.1",
         "mvdir": "1.0.21",
