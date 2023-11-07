@@ -33,6 +33,18 @@ export class OCCTSolid {
     }
 
     /**
+     * Creates OpenCascade Cube
+     * @param inputs Cube size and center
+     * @returns OpenCascade Cube
+     * @group primitives
+     * @shortname cube
+     * @drawable true
+     */
+    createCube(inputs: Inputs.OCCT.CubeDto): Promise<Inputs.OCCT.TopoDSSolidPointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.createCube", inputs);
+    }
+
+    /**
      * Creates OpenCascade Box from corner
      * @param inputs Box size and corner coordinates
      * @returns OpenCascade Box

@@ -46,6 +46,18 @@ export class OCCT {
     }
 
     /**
+     * Creates mesh from the shape
+     * @param inputs shape
+     * @group drawing
+     * @shortname shape to mesh
+     * @drawable false
+     * @ignore true
+     */
+    async shapesToMeshes(inputs: Inputs.OCCT.ShapesToMeshesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.DecomposedMeshDto[]> {
+        return await this.occWorkerManager.genericCallToWorkerPromise("shapesToMeshes", inputs);
+    }
+
+    /**
      * Deletes shape from the cache to keep memory usage low
      * @param inputs shape
      * @group memory
@@ -63,5 +75,14 @@ export class OCCT {
      */
     async deleteShapes(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<void> {
         return await this.occWorkerManager.genericCallToWorkerPromise("deleteShapes", inputs);
+    }
+    /**
+     * Cleans all cache and all shapes from the memory
+     * @param inputs shape
+     * @group memory
+     * @shortname clean all cache
+     */
+    async cleanAllCache(): Promise<void> {
+        return await this.occWorkerManager.genericCallToWorkerPromise("cleanAllCache", {});
     }
 }

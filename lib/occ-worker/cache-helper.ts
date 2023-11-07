@@ -15,7 +15,10 @@ export class CacheHelper {
         usedHashKeys.forEach(hash => {
             if (this.argCache[hash]) {
                 try {
-                    this.argCache[hash].delete();
+                    const shape = this.argCache[hash];
+                    this.occ.BRepTools.Clean(shape, true);
+                    this.occ.BRepTools.CleanGeometry(shape);
+                    shape.delete();
                 }
                 catch {
                 }
@@ -30,7 +33,10 @@ export class CacheHelper {
     cleanCacheForHash(hash: string): void {
         if (this.argCache[hash]) {
             try {
-                this.argCache[hash].delete();
+                const shape = this.argCache[hash];
+                this.occ.BRepTools.Clean(shape, true);
+                this.occ.BRepTools.CleanGeometry(shape);
+                shape.delete();
             }
             catch {
             }

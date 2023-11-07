@@ -41,7 +41,6 @@ export class OCCTWorkerManager {
                     promise.reject(data.error);
                 }
                 this.promisesMade = this.promisesMade.filter(i => i.uid !== data.uid);
-
                 if (this.promisesMade.length === 0) {
                     this.occWorkerState$.next({
                         state: OccStateEnum.loaded,

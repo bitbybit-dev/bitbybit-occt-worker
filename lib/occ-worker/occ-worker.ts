@@ -15,7 +15,7 @@ export const initializationComplete = (occ: OpenCascadeInstance, plugins: any, d
     openCascade = new OCCTService(occ, new OccHelper(vecService, shapesService, occ));
     if (plugins) {
         openCascade.plugins = plugins;
-        if(dependencies){
+        if (dependencies) {
             Object.keys(dependencies).forEach(c => {
                 openCascade.plugins.dependencies[c] = dependencies[c];
             });
@@ -49,6 +49,7 @@ export const onMessageInput = (d: DataInput, postMessage) => {
         // as we don't need to render things and when we do need, we call tessellation methods with these hashes
         // and receive real objects. This cache is useful in modeling operations throughout 'run' sessions.
         if (d.action.functionName !== "shapeToMesh" &&
+            d.action.functionName !== "shapesToMeshes" &&
             d.action.functionName !== "deleteShape" &&
             d.action.functionName !== "deleteShapes" &&
             d.action.functionName !== "startedTheRun" &&
@@ -107,6 +108,14 @@ export const onMessageInput = (d: DataInput, postMessage) => {
         if (d.action.functionName === "shapeToMesh") {
             d.action.inputs.shape = cacheHelper.checkCache(d.action.inputs.shape.hash);
             result = openCascade.shapeToMesh(d.action.inputs.shape, d.action.inputs.precision, d.action.inputs.adjustYtoZ);
+        }
+        if (d.action.functionName === "shapesToMeshes") {
+            if (d.action.inputs.shapes && d.action.inputs.shapes.length > 0) {
+                d.action.inputs.shapes = d.action.inputs.shapes.map(shape => cacheHelper.checkCache(shape.hash));
+            } else {
+                throw new Error("No shapes detected");
+            }
+            result = openCascade.shapesToMeshes(d.action.inputs.shapes, d.action.inputs.precision, d.action.inputs.adjustYtoZ);
         }
         if (d.action.functionName === "deleteShape") {
             cacheHelper.cleanCacheForHash(d.action.inputs.shape.hash);

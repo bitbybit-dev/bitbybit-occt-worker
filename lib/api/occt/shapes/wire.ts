@@ -19,6 +19,55 @@ export class OCCTWire {
     createPolygonWire(inputs: Inputs.OCCT.PolygonDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createPolygonWire", inputs);
     }
+
+    /**
+     * Creates OpenCascade Polygons
+     * @param inputs Polygon points
+     * @returns OpenCascade polygon wires shapes
+     * @group multiple
+     * @shortname polygons
+     * @drawable true
+     */
+    createPolygons(inputs: Inputs.OCCT.PolygonsDto): Promise<Inputs.OCCT.TopoDSWirePointer[] | Inputs.OCCT.TopoDSCompoundPointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createPolygons", inputs);
+    }
+
+    /**
+     * Creates OpenCascade line wire
+     * @param inputs line start and end point
+     * @returns OpenCascade line wire shape
+     * @group via points
+     * @shortname line
+     * @drawable true
+     */
+    createLineWire(inputs: Inputs.OCCT.LineDto): Promise<Inputs.OCCT.TopoDSWirePointer | Inputs.OCCT.TopoDSCompoundPointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createLineWire", inputs);
+    }
+
+    /**
+     * Creates OpenCascade lines
+     * @param inputs lines with start and end points
+     * @returns OpenCascade line wire shapes
+     * @group multiple
+     * @shortname lines
+     * @drawable true
+     */
+    createLines(inputs: Inputs.OCCT.LinesDto): Promise<Inputs.OCCT.TopoDSWirePointer[] | Inputs.OCCT.TopoDSCompoundPointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createLines", inputs);
+    }
+
+    /**
+     * Splits a wire on a set of given points
+     * @param inputs wire and a list of points
+     * @returns OpenCascade line wire shapes
+     * @group extract
+     * @shortname split on points
+     * @drawable true
+     */
+    splitOnPoints(inputs: Inputs.OCCT.SplitWireOnPointsDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSWirePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.splitOnPoints", inputs);
+    }
+
     /**
      * Creates OpenCascade polyline wire
      * @param inputs polyline points
@@ -31,6 +80,18 @@ export class OCCTWire {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createPolylineWire", inputs);
     }
     /**
+     * Creates OpenCascade polyline wires
+     * @param inputs polylines
+     * @returns OpenCascade polyline wire shapes
+     * @group multiple
+     * @shortname polylines
+     * @drawable true
+     */
+    createPolylines(inputs: Inputs.OCCT.PolylinesDto): Promise<Inputs.OCCT.TopoDSWirePointer[] | Inputs.OCCT.TopoDSCompoundPointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createPolylines", inputs);
+    }
+
+    /**
     * Creates OpenCascade Bezier wire
     * @param inputs Points through which to make bezier curve
     * @returns OpenCascade Bezier wire
@@ -40,6 +101,18 @@ export class OCCTWire {
     */
     createBezier(inputs: Inputs.OCCT.BezierDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createBezier", inputs);
+    }
+
+    /**
+    * Creates OpenCascade Bezier wires
+    * @param inputs Multiple bezier wire definitions
+    * @returns OpenCascade Bezier wires
+    * @group multiple
+    * @shortname bezier wires
+    * @drawable true
+    */
+    createBezierWires(inputs: Inputs.OCCT.BezierWiresDto): Promise<Inputs.OCCT.TopoDSWirePointer[] | Inputs.OCCT.TopoDSCompoundPointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createBezierWires", inputs);
     }
 
     /**
@@ -55,6 +128,18 @@ export class OCCTWire {
     }
 
     /**
+     * Creates OpenCascade multiple interpolated wires
+     * @param inputs Interpolated wire definitions
+     * @returns OpenCascade BSpline wires
+     * @group multiple
+     * @shortname interpolate wires
+     * @drawable true
+     */
+    interpolateWires(inputs: Inputs.OCCT.InterpolateWiresDto): Promise<Inputs.OCCT.TopoDSWirePointer[] | Inputs.OCCT.TopoDSCompoundPointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.interpolateWires", inputs);
+    }
+
+    /**
      * Creates OpenCascade BSPline wire
      * @param inputs Points through which to make BSpline
      * @returns OpenCascade BSpline wire
@@ -64,6 +149,18 @@ export class OCCTWire {
      */
     createBSpline(inputs: Inputs.OCCT.BSplineDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createBSpline", inputs);
+    }
+
+    /**
+     * Creates OpenCascade BSPline wires
+     * @param inputs Points through which to make BSpline
+     * @returns OpenCascade BSpline wires
+     * @group multiple
+     * @shortname bsplines
+     * @drawable true
+     */
+    createBSplines(inputs: Inputs.OCCT.BSplinesDto): Promise<Inputs.OCCT.TopoDSWirePointer[] | Inputs.OCCT.TopoDSCompoundPointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createBSplines", inputs);
     }
 
     /**
@@ -103,6 +200,18 @@ export class OCCTWire {
     }
 
     /**
+    * Divides OpenCascade wires to points blindly following its parametric space
+    * @param inputs Describes into how many points should the wires be divided
+    * @returns Points on wire
+    * @group extract from wires
+    * @shortname points by params
+    * @drawable true
+    */
+    divideWiresByParamsToPoints(inputs: Inputs.OCCT.DivideShapesDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3[][]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.divideWiresByParamsToPoints", inputs);
+    }
+
+    /**
     * Divides OpenCascade wire to equal distance points
     * @param inputs Describes into how many points should the wire be divided
     * @returns Points on wire
@@ -112,6 +221,18 @@ export class OCCTWire {
     */
     divideWireByEqualDistanceToPoints(inputs: Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.divideWireByEqualDistanceToPoints", inputs);
+    }
+
+    /**
+    * Divides OpenCascade wires to equal distance points
+    * @param inputs Describes into how many points should the wires be divided
+    * @returns Points on wire
+    * @group extract from wires
+    * @shortname points by distance
+    * @drawable true
+    */
+    divideWiresByEqualDistanceToPoints(inputs: Inputs.OCCT.DivideShapesDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.divideWiresByEqualDistanceToPoints", inputs);
     }
 
     /**
