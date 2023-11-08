@@ -452,14 +452,14 @@ export class OCCTWire {
     }
 
     /**
-     * Gets the wires by providing an index from the shape
+     * Gets all the wires from the shape
      * @param inputs Shape
      * @returns OpenCascade wires
      * @group get
      * @shortname wires
      * @drawable true
      */
-    getWires(inputs: Inputs.OCCT.ShapeIndexDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSWirePointer[]> {
+    getWires(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSWirePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.getWires", inputs);
     }
 
