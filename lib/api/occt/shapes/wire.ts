@@ -524,4 +524,39 @@ export class OCCTWire {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.placeWiresOnFace", inputs);
     }
 
+    /**
+     * Closes the open wire with additional straight edge joining start and end points
+     * @param inputs Shape
+     * @returns OpenCascade wire
+     * @group edit
+     * @shortname close open wire
+     * @drawable true
+     */
+    closeOpenWire(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.closeOpenWire", inputs);
+    }
+
+    /**
+     * Project wire on the shape
+     * @param inputs wire and shape
+     * @returns OpenCascade compound
+     * @group place
+     * @shortname project
+     * @drawable true
+     */
+    project(inputs: Inputs.OCCT.ProjectWireDto<Inputs.OCCT.TopoDSWirePointer, Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSCompoundPointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.project", inputs);
+    }
+
+    /**
+     * Project multiple wires on the shape
+     * @param inputs wire and shape
+     * @returns OpenCascade compound
+     * @group place
+     * @shortname project wires
+     * @drawable true
+     */
+    projectWires(inputs: Inputs.OCCT.ProjectWiresDto<Inputs.OCCT.TopoDSWirePointer, Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSCompoundPointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.projectWires", inputs);
+    }
 }

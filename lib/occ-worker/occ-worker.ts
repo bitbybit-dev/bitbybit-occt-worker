@@ -59,12 +59,16 @@ export const onMessageInput = (d: DataInput, postMessage) => {
             // if inputs have shape or shapes properties, these are hashes on which the operations need to be performed.
             // We thus replace these hashes to real objects from the cache before functions are called,
             // this probably looks like smth generic but isn't, so will need to check if it works
-            if (d.action.inputs.shape) {
-                d.action.inputs.shape = cacheHelper.checkCache(d.action.inputs.shape.hash);
-            }
-            if (d.action.inputs.shapes && d.action.inputs.shapes.length > 0) {
-                d.action.inputs.shapes = d.action.inputs.shapes.map(shape => cacheHelper.checkCache(shape.hash));
-            }
+            Object.keys(d.action.inputs).forEach(key => {
+                const val = d.action.inputs[key];
+                if (val.type && val.type === "occ-shape" && val.hash) {
+                    d.action.inputs[key] = cacheHelper.checkCache(d.action.inputs[key].hash);
+                }
+                if (Array.isArray(val) && val.length > 0 && val[0].type && val[0].type === "occ-shape" && val[0].hash) {
+                    d.action.inputs[key] = d.action.inputs[key].map(shape => cacheHelper.checkCache(shape.hash));
+                }
+            });
+          
             const path = d.action.functionName.split(".");
             let res;
             if (path.length === 3) {

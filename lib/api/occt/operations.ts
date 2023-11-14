@@ -225,4 +225,17 @@ export class OCCTOperations {
     makeThickSolidByJoin(inputs: Inputs.OCCT.ThickSolidByJoinDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise("operations.makeThickSolidByJoin", inputs);
     }
+
+    /**
+     * Slices the shape
+     * @param inputs OpenCascade shape and options for slicing
+     * @returns OpenCascade shape
+     * @group divisions
+     * @shortname slice
+     * @drawable true
+     */
+    slice(inputs: Inputs.OCCT.SliceDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSCompoundPointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.slice", inputs);
+    }
+
 }
