@@ -260,6 +260,6 @@ export class OCCTOperations {
      * @drawable true
      */
     offset3DWire(inputs: Inputs.OCCT.Offset3DWireDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise("shapes.operations.offset3DWire", inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.offset3DWire", inputs);
     }
 }
