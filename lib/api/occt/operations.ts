@@ -249,5 +249,17 @@ export class OCCTOperations {
     sliceInStepPattern(inputs: Inputs.OCCT.SliceInStepPatternDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSCompoundPointer> {
         return this.occWorkerManager.genericCallToWorkerPromise("operations.sliceInStepPattern", inputs);
     }
-    
+
+    /**
+     * Offset the 3D wire. When using this method consider using it on filleted wires that do not contain sharp corners.
+     * You can use fillet 3D on it.
+     * @param inputs wire and shape
+     * @returns OpenCascade compound
+     * @group offsets
+     * @shortname offset 3d wire
+     * @drawable true
+     */
+    offset3DWire(inputs: Inputs.OCCT.Offset3DWireDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.operations.offset3DWire", inputs);
+    }
 }

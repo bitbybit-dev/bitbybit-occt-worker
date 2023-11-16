@@ -21,7 +21,10 @@ export class OCCTFillets {
     }
 
     /**
-    * Fillets OpenCascade 3d wire, this algorithm takes one guiding direction for fillets to be formed. It does not respect tangent directions on each filleted corner.
+    * Fillets OpenCascade 3d wire, this algorithm takes one guiding direction for fillets to be formed. 
+    * It does not respect tangent directions on each filleted corner. This algorithm is based on extruding wire along the given direction
+    * to form a shell, then filleting the shell and finally extracting the filleted wire from the shell itself.
+    * Make sure you provide a direction that is not parallel to the wire and that forms high enough extrusion for the fillet to succeed.
     * @param inputs Shape, radius and edge indexes to fillet
     * @returns OpenCascade shape with filleted edges
     * @group 3d
