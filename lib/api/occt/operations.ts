@@ -238,4 +238,16 @@ export class OCCTOperations {
         return this.occWorkerManager.genericCallToWorkerPromise("operations.slice", inputs);
     }
 
+    /**
+     * Slices the shape in step pattern
+     * @param inputs OpenCascade shape and options for slicing
+     * @returns OpenCascade shape
+     * @group divisions
+     * @shortname slice in step pattern
+     * @drawable true
+     */
+    sliceInStepPattern(inputs: Inputs.OCCT.SliceInStepPatternDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSCompoundPointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.sliceInStepPattern", inputs);
+    }
+    
 }

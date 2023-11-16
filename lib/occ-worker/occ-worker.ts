@@ -61,10 +61,10 @@ export const onMessageInput = (d: DataInput, postMessage) => {
             // this probably looks like smth generic but isn't, so will need to check if it works
             Object.keys(d.action.inputs).forEach(key => {
                 const val = d.action.inputs[key];
-                if (val.type && val.type === "occ-shape" && val.hash) {
+                if (val && val.type && val.type === "occ-shape" && val.hash) {
                     d.action.inputs[key] = cacheHelper.checkCache(d.action.inputs[key].hash);
                 }
-                if (Array.isArray(val) && val.length > 0 && val[0].type && val[0].type === "occ-shape" && val[0].hash) {
+                if (val && Array.isArray(val) && val.length > 0 && val[0].type && val[0].type === "occ-shape" && val[0].hash) {
                     d.action.inputs[key] = d.action.inputs[key].map(shape => cacheHelper.checkCache(shape.hash));
                 }
             });
