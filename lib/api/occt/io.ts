@@ -11,17 +11,16 @@ export class OCCTIO {
     /**
      * Saves the step file
      * @param inputs STEP filename and shape to be saved
-     * @returns String of a step file
      * @group io
      * @shortname save step
      * @drawable false
      */
-    saveShapeSTEP(inputs: Inputs.OCCT.SaveStepDto<Inputs.OCCT.TopoDSShapePointer>): Promise<string> {
+    saveShapeSTEP(inputs: Inputs.OCCT.SaveStepDto<Inputs.OCCT.TopoDSShapePointer>): Promise<void> {
         return this.occWorkerManager.genericCallToWorkerPromise("io.saveShapeSTEP", inputs).then(s => {
             const blob = new Blob([s], { type: "text/plain" });
             const blobUrl = URL.createObjectURL(blob);
 
-            const fileName = inputs.filename ? inputs.filename : "bitbybit-dev.step";
+            const fileName = inputs.fileName ? inputs.fileName : "bitbybit-dev.step";
 
             const fileLink = document.createElement("a");
             fileLink.href = blobUrl;
@@ -29,7 +28,6 @@ export class OCCTIO {
             fileLink.download = fileName;
             fileLink.click();
             fileLink.remove();
-            return s;
         });
     }
 

@@ -102,8 +102,7 @@ export class OCCTEdge {
      * @shortname 2d curve and surface
      * @drawable true
      */
-    makeEdgeFromGeom2dCurveAndSurface(inputs: Inputs.OCCT.EdgeFromGeom2dCurveAndSurfaceDto<Inputs.OCCT.Geom2dCurvePointer, Inputs.OCCT.GeomSurfacePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
-        inputs.shapes = [inputs.curve, inputs.surface];
+    makeEdgeFromGeom2dCurveAndSurface(inputs: Inputs.OCCT.CurveAndSurfaceDto<Inputs.OCCT.Geom2dCurvePointer, Inputs.OCCT.GeomSurfacePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.makeEdgeFromGeom2dCurveAndSurface", inputs);
     }
 
