@@ -519,7 +519,7 @@ export class OCCTWire {
      * @shortname wires on face
      * @drawable true
      */
-    placeWiresOnFace(inputs: Inputs.OCCT.WiresOnFaceDto<Inputs.OCCT.TopoDSFacePointer, Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSWirePointer[]> {
+    placeWiresOnFace(inputs: Inputs.OCCT.WiresOnFaceDto<Inputs.OCCT.TopoDSWirePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSWirePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.placeWiresOnFace", inputs);
     }
 
