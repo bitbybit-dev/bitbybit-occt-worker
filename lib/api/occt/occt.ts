@@ -8,6 +8,7 @@ import { OCCTGeom } from "./geom/geom";
 // import { OCCTAssembly } from './assembly/assembly';
 import { OCCTFillets } from "./fillets";
 import { Inputs } from "@bitbybit-dev/occt";
+import { OCCTShapeFix } from "./shape-fix";
 
 /**
  * Contains various methods for OpenCascade implementation
@@ -19,6 +20,7 @@ export class OCCT {
     public readonly transforms: OCCTTransforms;
     public readonly operations: OCCTOperations;
     public readonly booleans: OCCTBooleans;
+    public readonly shapeFix: OCCTShapeFix;
     public io: OCCTIO;
 
     constructor(
@@ -30,6 +32,7 @@ export class OCCT {
         this.operations = new OCCTOperations(occWorkerManager);
         this.booleans = new OCCTBooleans(occWorkerManager);
         this.fillets = new OCCTFillets(occWorkerManager);
+        this.shapeFix = new OCCTShapeFix(occWorkerManager);
         this.io = new OCCTIO(occWorkerManager);
     }
 

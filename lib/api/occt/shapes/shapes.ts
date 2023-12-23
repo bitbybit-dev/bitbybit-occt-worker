@@ -6,6 +6,7 @@ import { OCCTSolid } from "./solid";
 import { OCCTWire } from "./wire";
 import { OCCTWorkerManager } from "../../../occ-worker/occ-worker-manager";
 import { OCCTShell } from "./shell";
+import { OCCTShape } from "./shape";
 
 export class OCCTShapes {
     public readonly edge: OCCTEdge;
@@ -14,6 +15,7 @@ export class OCCTShapes {
     public readonly shell: OCCTShell;
     public readonly solid: OCCTSolid;
     public readonly compound: OCCTCompound;
+    public readonly shape: OCCTShape;
     
     constructor(
         occWorkerManager: OCCTWorkerManager
@@ -24,6 +26,7 @@ export class OCCTShapes {
         this.shell = new OCCTShell(occWorkerManager);
         this.solid = new OCCTSolid(occWorkerManager);
         this.compound = new OCCTCompound(occWorkerManager);
+        this.shape = new OCCTShape(occWorkerManager);
     }
 
 }

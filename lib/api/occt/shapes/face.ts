@@ -12,7 +12,7 @@ export class OCCTFace {
      * @param inputs OpenCascade wire shape and indication if face should be planar
      * @returns OpenCascade face shape
      * @group from
-     * @shortname wire
+     * @shortname face from wire
      * @drawable true
      */
     createFaceFromWire(inputs: Inputs.OCCT.FaceFromWireDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
@@ -20,11 +20,23 @@ export class OCCTFace {
     }
 
     /**
+     * Creates a face from wires. This can produce hollow faces.
+     * @param inputs OpenCascade wire shapes and indication if face should be planar
+     * @returns OpenCascade face shape
+     * @group from
+     * @shortname face from wires
+     * @drawable true
+     */
+    createFaceFromWires(inputs: Inputs.OCCT.FaceFromWiresDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createFaceFromWires", inputs);
+    }
+
+    /**
      * Creates faces from wires
      * @param inputs OpenCascade wire shape and indication if face should be planar
      * @returns OpenCascade face shape
      * @group from
-     * @shortname wires
+     * @shortname faces from wires
      * @drawable true
      */
     createFacesFromWires(inputs: Inputs.OCCT.FacesFromWiresDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSFacePointer[]> {
@@ -345,7 +357,7 @@ export class OCCTFace {
     }
 
     /**
-     * Get the face center of mass point
+     * Get the center of mass points for faces
      * @param inputs OCCT Faces
      * @returns points
      * @group get

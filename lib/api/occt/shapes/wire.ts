@@ -176,6 +176,18 @@ export class OCCTWire {
     }
 
     /**
+     * Creates wire from edge
+     * @param inputs An edge to transform into a wire
+     * @returns OpenCascade wire
+     * @group build
+     * @shortname wire from edge
+     * @drawable true
+     */
+    createWireFromEdge(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createWireFromEdge", inputs);
+    }
+
+    /**
      * Adds OpenCascade edges and wires into another wire
      * @param inputs List of shapes of edges and wires and a single shape wire to which edges need to be added
      * @returns OpenCascade wire
@@ -461,6 +473,30 @@ export class OCCTWire {
      */
     getWires(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSWirePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.getWires", inputs);
+    }
+
+    /**
+     * Get the wire center of mass point
+     * @param inputs OCCT Wire
+     * @returns point
+     * @group get
+     * @shortname center of mass
+     * @drawable true
+     */
+    getWireCenterOfMass(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.getWireCenterOfMass", inputs);
+    }
+
+    /**
+     * Get the wires centers of mass point
+     * @param inputs OCCT Wires
+     * @returns points
+     * @group get
+     * @shortname centers of mass
+     * @drawable true
+     */
+    getWiresCentersOfMass(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.getWiresCentersOfMass", inputs);
     }
 
     /**

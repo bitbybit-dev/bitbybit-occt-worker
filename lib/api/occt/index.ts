@@ -7,3 +7,5 @@ export * from "./io";
 export * from "./occt";
 export * from "./operations";
 export * from "./transforms";
+export * from "./shape-fix";
+
