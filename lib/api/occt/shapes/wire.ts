@@ -320,7 +320,7 @@ export class OCCTWire {
     }
 
     /**
-    * Computes the star point on the wire at param 0
+    * Computes the start point on the wire at param 0
     * @param inputs Wire shape
     * @returns The length of the wire
     * @group extract
@@ -377,6 +377,18 @@ export class OCCTWire {
      */
     createStarWire(inputs: Inputs.OCCT.StarDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createStarWire", inputs);
+    }
+
+    /**
+     * Creates Christmas tree wire
+     * @param inputs christmas tree parameters
+     * @returns OpenCascade christmas tree wire
+     * @group primitives
+     * @shortname christmas tree
+     * @drawable true
+     */
+    createChristmasTreeWire(inputs: Inputs.OCCT.ChristmasTreeDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createChristmasTreeWire", inputs);
     }
 
     /**
