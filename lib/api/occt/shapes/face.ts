@@ -368,4 +368,15 @@ export class OCCTFace {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.getFacesCentersOfMass", inputs);
     }
 
+    /**
+     * Filters points on face
+     * @param inputs face and collection of points with options
+     * @returns filtered points
+     * @group filter
+     * @shortname filter face points
+     * @drawable true
+     */
+    filterFacePoints(inputs: Inputs.OCCT.FilterFacePointsDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.filterFacePoints", inputs);
+    }
 }

@@ -78,7 +78,7 @@ export class CacheHelper {
     }
 
     isOCCTObject(obj): boolean {
-        return obj !== undefined && obj !== null && (!Array.isArray(obj) && obj.$$ !== undefined) || (Array.isArray(obj) && obj[0].$$ !== undefined);
+        return obj !== undefined && obj !== null && (!Array.isArray(obj) && obj.$$ !== undefined) || (Array.isArray(obj) && obj.length > 0 && obj[0].$$ !== undefined);
     }
 
     /** Hashes input arguments and checks the cache for that hash.

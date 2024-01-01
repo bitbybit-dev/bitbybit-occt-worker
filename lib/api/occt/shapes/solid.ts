@@ -176,4 +176,16 @@ export class OCCTSolid {
     getSolids(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSSolidPointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.getSolids", inputs);
     }
+
+    /**
+     * Filters collection of points based on relationship with the solid. You can choose whether to output in, on or out points.
+     * @param inputs OpenCascade solid and collection of points with options
+     * @returns filtered points
+     * @group filter
+     * @shortname filter solid points
+     * @drawable true
+     */
+    filterSolidPoints(inputs: Inputs.OCCT.FilterSolidPointsDto<Inputs.OCCT.TopoDSSolidPointer>): Promise<Inputs.Base.Point3[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.solid.filterSolidPoints", inputs);
+    }
 }
