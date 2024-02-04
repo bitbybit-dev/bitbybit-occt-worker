@@ -9,6 +9,30 @@ export class OCCTShape {
     }
 
     /**
+     * Purges internal edges of the shape
+     * @param inputs shape
+     * @returns purged shape
+     * @group edit
+     * @shortname purge internal edges
+     * @drawable true
+     */
+    purgeInternalEdges(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.shape.purgeInternalEdges", inputs);
+    }
+
+    /**
+     * Unifies faces, edges in the same domain and has possibility to concatinate bsplines
+     * @param inputs shape
+     * @returns unified shape
+     * @group edit
+     * @shortname unify same domain
+     * @drawable true
+     */
+    unifySameDomain(inputs: Inputs.OCCT.UnifySameDomainDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.shape.unifySameDomain", inputs);
+    }
+
+    /**
      * Check if the shape is closed
      * @param inputs shape
      * @returns boolean answer
