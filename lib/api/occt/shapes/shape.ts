@@ -9,7 +9,7 @@ export class OCCTShape {
     }
 
     /**
-     * Purges internal edges of the shape
+     * Remove internal edges that are not connected to any face in the shape
      * @param inputs shape
      * @returns purged shape
      * @group edit
