@@ -179,6 +179,18 @@ export class OCCTEdge {
     }
 
     /**
+     * Computes reversed edge from input edge
+     * @param inputs Shape
+     * @returns OpenCascade edge
+     * @group get
+     * @shortname reversed edge
+     * @drawable true
+     */
+    reversedEdge(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.reverseEdge", inputs);
+    }
+
+    /**
      * Gets the tangent vector on edge at param
      * @param input edge
      * @returns Tangent vector on param
