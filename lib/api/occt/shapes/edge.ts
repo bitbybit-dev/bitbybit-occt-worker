@@ -71,30 +71,6 @@ export class OCCTEdge {
     }
 
     /**
-     * Gets the edge by providing an index from the shape
-     * @param inputs Shape
-     * @returns OpenCascade edge
-     * @group shapes
-     * @shortname get edge
-     * @drawable true
-     */
-    getEdge(inputs: Inputs.OCCT.ShapeIndexDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdge", inputs);
-    }
-
-    /**
-     * Gets the edges of a shape in a list
-     * @param inputs Shape
-     * @returns OpenCascade edge list
-     * @group shapes
-     * @shortname get edges
-     * @drawable true
-     */
-    getEdges(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer[]> {
-        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdges", inputs);
-    }
-
-    /**
      * Creates an edge from geom curve and geom surface
      * @param inputs shapes are expected to contain 2 array elements - first is geom curve, second geom surface
      * @returns OpenCascade TopoDS_Edge
@@ -106,6 +82,41 @@ export class OCCTEdge {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.makeEdgeFromGeom2dCurveAndSurface", inputs);
     }
 
+    /**
+     * Gets the edge by providing an index from the shape
+     * @param inputs Shape
+     * @returns OpenCascade edge
+     * @group get
+     * @shortname get edge
+     * @drawable true
+     */
+    getEdge(inputs: Inputs.OCCT.ShapeIndexDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdge", inputs);
+    }
+    /**
+     * Gets the edges of a shape in a list
+     * @param inputs Shape
+     * @returns OpenCascade edge list
+     * @group get
+     * @shortname get edges
+     * @drawable true
+     */
+    getEdges(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdges", inputs);
+    }
+
+    /**
+     * Gets the edges of a wire ordered along the direction of the wire
+     * @param inputs wire shape
+     * @returns OpenCascade edge list
+     * @group get
+     * @shortname get edges along wire
+     * @drawable true
+     */
+    getEdgesAlongWire(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdgesAlongWire", inputs);
+    }
+    
     /**
      * Gets corner points of edges for a shape. There's no order guarantee here. All duplicates are removed, so when three edges form one corner, that will be represented by a single point in the list. 
      * @param inputs Shape that contains edges - wire, face, shell, solid
@@ -176,6 +187,18 @@ export class OCCTEdge {
      */
     pointOnEdgeAtParam(inputs: Inputs.OCCT.DataOnGeometryAtParamDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.pointOnEdgeAtParam", inputs);
+    }
+
+    /**
+     * Gets the points of all edges from a shape in separate lists for each edge
+     * @param inputs Shape
+     * @returns OpenCascade points lists
+     * @group extract
+     * @shortname edges to points
+     * @drawable false
+     */
+    edgesToPoints(inputs: Inputs.OCCT.EdgesToPointsDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3[][]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.edgesToPoints", inputs);
     }
 
     /**

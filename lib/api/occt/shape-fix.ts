@@ -33,4 +33,16 @@ export class OCCTShapeFix {
         return this.occWorkerManager.genericCallToWorkerPromise("shapeFix.fixSmallEdgeOnWire", inputs);
     }
 
+    /**
+     * Fix edge orientations along wire
+     * @param inputs the wire to be fixed and some options
+     * @returns OpenCascade fixed wire
+     * @group wire
+     * @shortname fix edge orientations
+     * @drawable true
+     */
+    fixEdgeOrientationsAlongWire(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapeFix.fixEdgeOrientationsAlongWire", inputs);
+    }
+
 }

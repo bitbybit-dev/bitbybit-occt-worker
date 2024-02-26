@@ -69,6 +69,20 @@ export class OCCTWire {
     }
 
     /**
+     * Transform shape wires to points ordered in lists. 
+     * This also removes duplicated points between start end end points of 
+     * consecutive edges on the wire
+     * @param inputs OCCT shape
+     * @returns point lists for wires
+     * @group extract
+     * @shortname wires to points
+     * @drawable false
+     */
+    wiresToPoints(inputs: Inputs.OCCT.WiresToPointsDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.Base.Point3[][]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.wiresToPoints", inputs);
+    }
+
+    /**
      * Creates OpenCascade polyline wire
      * @param inputs polyline points
      * @returns OpenCascade polyline wire shape
