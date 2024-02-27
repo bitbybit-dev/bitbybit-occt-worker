@@ -41,7 +41,6 @@ export class OCCTOperations {
      * @drawable true
      */
     closestPointsBetweenTwoShapes(inputs: Inputs.OCCT.ClosestPointsBetweenTwoShapesDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.Base.Point3[]> {
-        inputs.shapes = [inputs.shape1, inputs.shape2];
         return this.occWorkerManager.genericCallToWorkerPromise("operations.closestPointsBetweenTwoShapes", inputs);
     }
 

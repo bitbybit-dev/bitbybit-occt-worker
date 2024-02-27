@@ -68,7 +68,6 @@ export class OCCTFillets {
      * @drawable true
      */
     filletTwoEdgesInPlaneIntoAWire(inputs: Inputs.OCCT.FilletTwoEdgesInPlaneDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
-        inputs.shapes = [inputs.edge1, inputs.edge2];
         return this.occWorkerManager.genericCallToWorkerPromise("fillets.filletTwoEdgesInPlaneIntoAWire", inputs);
 
     }
