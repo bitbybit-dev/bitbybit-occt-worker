@@ -90,7 +90,7 @@ export class OCCTEdge {
      * @shortname get edge
      * @drawable true
      */
-    getEdge(inputs: Inputs.OCCT.ShapeIndexDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
+    getEdge(inputs: Inputs.OCCT.EdgeIndexDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdge", inputs);
     }
     /**
