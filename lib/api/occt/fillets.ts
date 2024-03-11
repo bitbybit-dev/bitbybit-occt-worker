@@ -108,6 +108,78 @@ export class OCCTFillets {
     }
 
     /**
+    * Chamfers edges list with different distance on each edge.
+    * @param inputs Shape, edges and distance list
+    * @returns OpenCascade shape with chamfered edges
+    * @group 3d chamfers
+    * @shortname chamfer edges list
+    * @drawable true
+    */
+    chamferEdgesList(inputs: Inputs.OCCT.ChamferEdgesListDto<Inputs.OCCT.TopoDSShapePointer, Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.chamferEdgesList", inputs);
+    }
+
+    /**
+    * Chamfers edge by a by two distances. Face indicates the first distance to be applied
+    * @param inputs Shape, edge, face, distance1 and distance2
+    * @returns OpenCascade shape with chamfered edges
+    * @group 3d chamfers
+    * @shortname chamfer edge 2 dist
+    * @drawable true
+    */
+    chamferEdgeTwoDistances(inputs: Inputs.OCCT.ChamferEdgeTwoDistancesDto<Inputs.OCCT.TopoDSShapePointer, Inputs.OCCT.TopoDSEdgePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.chamferEdgeTwoDistances", inputs);
+    }
+
+    /**
+    * Chamfers edges by a by two distances. Face indicates the first distance to be applied
+    * @param inputs Shape, edges, faces, distance1 and distance2
+    * @returns OpenCascade shape with chamfered edges
+    * @group 3d chamfers
+    * @shortname chamfer edges 2 dist
+    * @drawable true
+    */
+    chamferEdgesTwoDistances(inputs: Inputs.OCCT.ChamferEdgesTwoDistancesDto<Inputs.OCCT.TopoDSShapePointer, Inputs.OCCT.TopoDSEdgePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.chamferEdgesTwoDistances", inputs);
+    }
+
+    /**
+    * Chamfers edges by two distances. Face indicates the first distance to be applied
+    * @param inputs Shape, edges, faces, distance1 list and distance2 list
+    * @returns OpenCascade shape with chamfered edges
+    * @group 3d chamfers
+    * @shortname chamfer edges 2 dist lists
+    * @drawable true
+    */
+    chamferEdgesTwoDistancesLists(inputs: Inputs.OCCT.ChamferEdgesTwoDistancesListsDto<Inputs.OCCT.TopoDSShapePointer, Inputs.OCCT.TopoDSEdgePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.chamferEdgesTwoDistancesLists", inputs);
+    }
+
+    /**
+    * Chamfers edge by a given distance and angle from the face
+    * @param inputs Shape, edge, face, distance and angle
+    * @returns OpenCascade shape with chamfered edges
+    * @group 3d chamfers
+    * @shortname chamfer edge angle
+    * @drawable true
+    */
+    chamferEdgeAngle(inputs: Inputs.OCCT.ChamferEdgeAngleDto<Inputs.OCCT.TopoDSShapePointer, Inputs.OCCT.TopoDSEdgePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.chamferEdgeAngle", inputs);
+    }
+
+    /**
+    * Chamfers edges by a given distances and angles from the faces
+    * @param inputs Shape, edges, faces, distances and angles
+    * @returns OpenCascade shape with chamfered edges
+    * @group 3d chamfers
+    * @shortname chamfer edges angles
+    * @drawable true
+    */
+    chamferEdgesAngles(inputs: Inputs.OCCT.ChamferEdgesAnglesDto<Inputs.OCCT.TopoDSShapePointer, Inputs.OCCT.TopoDSEdgePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.chamferEdgesAngles", inputs);
+    }
+
+    /**
      * Fillets 2d wires or faces
      * @param inputs Shape
      * @returns OpenCascade filleted shape result
