@@ -163,8 +163,20 @@ export class OCCTFillets {
     * @shortname chamfer edge angle
     * @drawable true
     */
-    chamferEdgeAngle(inputs: Inputs.OCCT.ChamferEdgeAngleDto<Inputs.OCCT.TopoDSShapePointer, Inputs.OCCT.TopoDSEdgePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise("fillets.chamferEdgeAngle", inputs);
+    chamferEdgeDistAngle(inputs: Inputs.OCCT.ChamferEdgeDistAngleDto<Inputs.OCCT.TopoDSShapePointer, Inputs.OCCT.TopoDSEdgePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.chamferEdgeDistAngle", inputs);
+    }
+
+    /**
+    * Chamfers multiple edges by a given distance and angle from the faces
+    * @param inputs Shape, edge, face, distance and angle
+    * @returns OpenCascade shape with chamfered edges
+    * @group 3d chamfers
+    * @shortname chamfer edges angle
+    * @drawable true
+    */
+    chamferEdgesDistAngle(inputs: Inputs.OCCT.ChamferEdgesDistAngleDto<Inputs.OCCT.TopoDSShapePointer, Inputs.OCCT.TopoDSEdgePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.chamferEdgesDistAngle", inputs);
     }
 
     /**
@@ -175,8 +187,8 @@ export class OCCTFillets {
     * @shortname chamfer edges angles
     * @drawable true
     */
-    chamferEdgesAngles(inputs: Inputs.OCCT.ChamferEdgesAnglesDto<Inputs.OCCT.TopoDSShapePointer, Inputs.OCCT.TopoDSEdgePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise("fillets.chamferEdgesAngles", inputs);
+    chamferEdgesDistsAngles(inputs: Inputs.OCCT.ChamferEdgesDistsAnglesDto<Inputs.OCCT.TopoDSShapePointer, Inputs.OCCT.TopoDSEdgePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("fillets.chamferEdgesDistsAngles", inputs);
     }
 
     /**
