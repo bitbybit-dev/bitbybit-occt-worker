@@ -56,7 +56,6 @@ export class OCCTOperations {
         return this.occWorkerManager.genericCallToWorkerPromise("operations.closestPointsOnShapeFromPoints", inputs);
     }
 
-
     /**
      * Computes closest points between a list of points and shapes
      * @param inputs a list of points and a list of shapes
@@ -67,6 +66,18 @@ export class OCCTOperations {
      */
     closestPointsOnShapesFromPoints(inputs: Inputs.OCCT.ClosestPointsOnShapesFromPointsDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("operations.closestPointsOnShapesFromPoints", inputs);
+    }
+
+    /**
+     * Computes distances between a list of points and a corresponding closest points on shapes.
+     * @param inputs a list of points and a shapes
+     * @returns Resulting distances
+     * @group measure
+     * @shortname distances points to shape
+     * @drawable false
+     */
+    distancesToShapeFromPoints(inputs: Inputs.OCCT.ClosestPointsOnShapeFromPointsDto<Inputs.OCCT.TopoDSShapePointer>): Promise<number[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("operations.distancesToShapeFromPoints", inputs);
     }
 
     /**
