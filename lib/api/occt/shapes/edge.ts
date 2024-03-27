@@ -210,7 +210,7 @@ export class OCCTEdge {
      * @drawable true
      */
     reversedEdge(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
-        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.reverseEdge", inputs);
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.reversedEdge", inputs);
     }
 
     /**

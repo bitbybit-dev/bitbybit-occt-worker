@@ -538,6 +538,18 @@ export class OCCTWire {
     }
 
     /**
+     * Computes reversed wire by reversing all edges and combining them into a new wire
+     * @param inputs Shape
+     * @returns OpenCascade wire
+     * @group get
+     * @shortname reversed wire by rev edges
+     * @drawable true
+     */
+    reversedWireFromReversedEdges(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.reversedWireFromReversedEdges", inputs);
+    }
+
+    /**
      * Gets the wire length
      * @param inputs wire
      * @returns Length
