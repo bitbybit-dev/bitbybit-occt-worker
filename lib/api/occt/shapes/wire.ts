@@ -93,6 +93,19 @@ export class OCCTWire {
     createPolylineWire(inputs: Inputs.OCCT.PolylineDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createPolylineWire", inputs);
     }
+
+    /**
+     * Creates zig zag between two wires
+     * @param inputs two wires and zig zag parameters
+     * @returns OpenCascade polyline wire shape
+     * @group via wires
+     * @shortname zig zag between two wires
+     * @drawable true
+     */
+    createZigZagBetweenTwoWires(inputs: Inputs.OCCT.ZigZagBetweenTwoWiresDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createZigZagBetweenTwoWires", inputs);
+    }
+
     /**
      * Creates OpenCascade polyline wires
      * @param inputs polylines

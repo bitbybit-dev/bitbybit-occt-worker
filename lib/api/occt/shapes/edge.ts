@@ -23,7 +23,7 @@ export class OCCTEdge {
 
     /**
      * Creates arc edge between three points
-     * @param inputs Shape, radius and edge indexes to fillet
+     * @param inputs three points
      * @returns OpenCascade edge
      * @group primitives
      * @shortname arc 3 points
@@ -31,6 +31,54 @@ export class OCCTEdge {
      */
     arcThroughThreePoints(inputs: Inputs.OCCT.ArcEdgeThreePointsDto): Promise<Inputs.OCCT.TopoDSEdgePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.arcThroughThreePoints", inputs);
+    }
+
+    /**
+     * Creates arc edge between two points given the tangent direction vector on first point.
+     * @param inputs two points and tangent vector
+     * @returns OpenCascade edge
+     * @group primitives
+     * @shortname arc 2 points tangent
+     * @drawable true
+     */
+    arcThroughTwoPointsAndTangent(inputs: Inputs.OCCT.ArcEdgeTwoPointsTangentDto): Promise<Inputs.OCCT.TopoDSEdgePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.arcThroughTwoPointsAndTangent", inputs);
+    }
+
+    /**
+     * Creates an arc edge between two points on a circle
+     * @param inputs two points and circle edge
+     * @returns OpenCascade edge
+     * @group primitives
+     * @shortname arc from circle and points
+     * @drawable true
+     */
+    arcFromCircleAndTwoPoints(inputs: Inputs.OCCT.ArcEdgeCircleTwoPointsDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.arcFromCircleAndTwoPoints", inputs);
+    }
+
+    /**
+     * Creates an arc edge between two alpha angles on a circle
+     * @param inputs two angles and circle edge
+     * @returns OpenCascade edge
+     * @group primitives
+     * @shortname arc from circle and angles
+     * @drawable true
+     */
+    arcFromCircleAndTwoAngles(inputs: Inputs.OCCT.ArcEdgeCircleTwoAnglesDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.arcFromCircleAndTwoAngles", inputs);
+    }
+
+    /**
+     * Creates an arc edge between the point on a circle and a given alpha angle
+     * @param inputs point, circle edge and alpha angle
+     * @returns OpenCascade edge
+     * @group primitives
+     * @shortname arc from circle point and angle
+     * @drawable true
+     */
+    arcFromCirclePointAndAngle(inputs: Inputs.OCCT.ArcEdgeCirclePointAngleDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.arcFromCirclePointAndAngle", inputs);
     }
 
     /**
@@ -116,7 +164,7 @@ export class OCCTEdge {
     getEdgesAlongWire(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdgesAlongWire", inputs);
     }
-    
+
     /**
      * Gets corner points of edges for a shape. There's no order guarantee here. All duplicates are removed, so when three edges form one corner, that will be represented by a single point in the list. 
      * @param inputs Shape that contains edges - wire, face, shell, solid
@@ -175,6 +223,42 @@ export class OCCTEdge {
      */
     getEdgesCentersOfMass(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getEdgesCentersOfMass", inputs);
+    }
+
+    /**
+     * Gets the center point of the circular edge. If edge is not circular, point will not be returned.
+     * @param inputs edge
+     * @returns Point representing center of the circular edge
+     * @group get circular edge
+     * @shortname get center of circular edge
+     * @drawable true
+     */
+    getCircularEdgeCenterPoint(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getCircularEdgeCenterPoint", inputs);
+    }
+
+    /**
+     * Gets the radius of the circular edge. If edge is not circular, radius will not be returned.
+     * @param inputs edge
+     * @returns Radius of the circular edge
+     * @group get circular edge
+     * @shortname get radius of circular edge
+     * @drawable false
+     */
+    getCircularEdgeRadius(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<number> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getCircularEdgeRadius", inputs);
+    }
+
+    /**
+     * Gets the direction vector of the plane of the circular edge. If edge is not circular, direction vector will not be returned.
+     * @param inputs edge
+     * @returns Direction vector of the circular edge
+     * @group get circular edge
+     * @shortname get plane direction of circular edge
+     * @drawable true
+     */
+    getCircularEdgePlaneDirection(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Vector3> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getCircularEdgePlaneDirection", inputs);
     }
 
     /**
