@@ -7,8 +7,10 @@ import { OCCTWire } from "./wire";
 import { OCCTWorkerManager } from "../../../occ-worker/occ-worker-manager";
 import { OCCTShell } from "./shell";
 import { OCCTShape } from "./shape";
+import { OCCTVertex } from "./vertex";
 
 export class OCCTShapes {
+    public readonly vertex: OCCTVertex;
     public readonly edge: OCCTEdge;
     public readonly wire: OCCTWire;
     public readonly face: OCCTFace;
@@ -16,10 +18,11 @@ export class OCCTShapes {
     public readonly solid: OCCTSolid;
     public readonly compound: OCCTCompound;
     public readonly shape: OCCTShape;
-    
+
     constructor(
         occWorkerManager: OCCTWorkerManager
     ) {
+        this.vertex = new OCCTVertex(occWorkerManager);
         this.edge = new OCCTEdge(occWorkerManager);
         this.wire = new OCCTWire(occWorkerManager);
         this.face = new OCCTFace(occWorkerManager);

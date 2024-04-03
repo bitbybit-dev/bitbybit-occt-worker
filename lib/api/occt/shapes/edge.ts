@@ -166,6 +166,30 @@ export class OCCTEdge {
     }
 
     /**
+     * Gets circular edges of a wire ordered along the direction of the wire
+     * @param inputs wire shape
+     * @returns OpenCascade edge list
+     * @group get
+     * @shortname get circular edges along wire
+     * @drawable true
+     */
+    getCircularEdgesAlongWire(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getCircularEdgesAlongWire", inputs);
+    }
+
+    /**
+     * Gets linear edges of a wire ordered along the direction of the wire
+     * @param inputs wire shape
+     * @returns OpenCascade edge list
+     * @group get
+     * @shortname get linear edges along wire
+     * @drawable true
+     */
+    getLinearEdgesAlongWire(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.getLinearEdgesAlongWire", inputs);
+    }
+
+    /**
      * Gets corner points of edges for a shape. There's no order guarantee here. All duplicates are removed, so when three edges form one corner, that will be represented by a single point in the list. 
      * @param inputs Shape that contains edges - wire, face, shell, solid
      * @returns List of points
@@ -293,7 +317,7 @@ export class OCCTEdge {
      * @shortname reversed edge
      * @drawable true
      */
-    reversedEdge(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
+    reversedEdge(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSEdgePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.reversedEdge", inputs);
     }
 
@@ -379,5 +403,41 @@ export class OCCTEdge {
      */
     divideEdgeByEqualDistanceToPoints(inputs: Inputs.OCCT.DivideDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.divideEdgeByEqualDistanceToPoints", inputs);
+    }
+
+    /**
+     * Creates lines from two given points till circle tangent locations
+     * @param input resulting lines
+     * @returns lines
+     * @group constraint
+     * @shortname tan lines from 2 pts to circle
+     * @drawable true
+     */
+    constraintTanLinesFromTwoPtsToCircle(inputs: Inputs.OCCT.ConstraintTanLinesFromTwoPtsToCircleDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.constraintTanLinesFromTwoPtsToCircle", inputs);
+    }
+
+    /**
+     * Creates lines from a given point till circle tangent locations
+     * @param input resulting lines
+     * @returns lines
+     * @group constraint
+     * @shortname tan lines from pt to circle
+     * @drawable true
+     */
+    constraintTanLinesFromPtToCircle(inputs: Inputs.OCCT.ConstraintTanLinesFromPtToCircleDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.constraintTanLinesFromPtToCircle", inputs);
+    }
+
+    /**
+     * Creates tangent lines between two circles.
+     * @param input resulting lines
+     * @returns lines
+     * @group constraint
+     * @shortname tan lines between two circles
+     * @drawable true
+     */
+    constraintTanLinesOnTwoCircles(inputs: Inputs.OCCT.ConstraintTanLinesOnTwoCirclesDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.constraintTanLinesOnTwoCircles", inputs);
     }
 }
