@@ -107,6 +107,18 @@ export class OCCTWire {
     }
 
     /**
+     * Creates a tangent wire enclosing two planar circles
+     * @param inputs two circle wires and tolerance
+     * @returns OpenCascade wire shape
+     * @group via wires
+     * @shortname tangent wire from two circles
+     * @drawable true
+     */
+    createWireFromTwoCirclesTan(inputs: Inputs.OCCT.WireFromTwoCirclesTanDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createWireFromTwoCirclesTan", inputs);
+    }
+
+    /**
      * Creates OpenCascade polyline wires
      * @param inputs polylines
      * @returns OpenCascade polyline wire shapes

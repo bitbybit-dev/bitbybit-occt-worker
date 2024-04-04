@@ -41,6 +41,30 @@ export class OCCTFace {
      */
     createFacesFromWires(inputs: Inputs.OCCT.FacesFromWiresDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSFacePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createFacesFromWires", inputs);
+}
+
+    /**
+     * Creates face from multiple circle tangent wires
+     * @param inputs OpenCascade circle wire shapes
+     * @returns OpenCascade face shape
+     * @group from
+     * @shortname face from circles tan
+     * @drawable true
+     */
+    createFaceFromMultipleCircleTanWires(inputs: Inputs.OCCT.FaceFromMultipleCircleTanWiresDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createFaceFromMultipleCircleTanWires", inputs);
+    }
+
+    /**
+     * Creates face from multiple circle tangent wire collections
+     * @param inputs OpenCascade circle wire shapes
+     * @returns OpenCascade face shape
+     * @group from
+     * @shortname face from multiple circle tan collections
+     * @drawable true
+     */
+    createFaceFromMultipleCircleTanWireCollections(inputs: Inputs.OCCT.FaceFromMultipleCircleTanWireCollectionsDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSShapePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createFaceFromMultipleCircleTanWireCollections", inputs);
     }
 
     /**

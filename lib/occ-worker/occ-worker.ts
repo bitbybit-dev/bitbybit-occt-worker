@@ -64,11 +64,15 @@ export const onMessageInput = (d: DataInput, postMessage) => {
                 if (val && val.type && val.type === "occ-shape" && val.hash) {
                     d.action.inputs[key] = cacheHelper.checkCache(d.action.inputs[key].hash);
                 }
-                if (val && Array.isArray(val) && val.length > 0 && val[0].type && val[0].type === "occ-shape" && val[0].hash) {
-                    d.action.inputs[key] = d.action.inputs[key].map(shape => cacheHelper.checkCache(shape.hash));
+                if (val && Array.isArray(val) && val.length > 0) {
+                    if ((val[0].type && val[0].type === "occ-shape" && val[0].hash)) {
+                        d.action.inputs[key] = d.action.inputs[key].map(shape => cacheHelper.checkCache(shape.hash));
+                    } else if ((Array.isArray(val[0]) && val[0][0].type && val[0][0].type === "occ-shape" && val[0][0].hash)) {
+                        d.action.inputs[key] = d.action.inputs[key].map(shapes => shapes.map(shape => cacheHelper.checkCache(shape.hash)));
+                    }
                 }
             });
-          
+
             const path = d.action.functionName.split(".");
             let res;
             if (path.length === 3) {
