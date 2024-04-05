@@ -434,10 +434,34 @@ export class OCCTEdge {
      * @param input resulting lines
      * @returns lines
      * @group constraint
-     * @shortname tan lines between two circles
+     * @shortname tan lines on two circles
      * @drawable true
      */
     constraintTanLinesOnTwoCircles(inputs: Inputs.OCCT.ConstraintTanLinesOnTwoCirclesDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.constraintTanLinesOnTwoCircles", inputs);
+    }
+
+    /**
+     * Creates tangent circles between two circles.
+     * @param input resulting circles
+     * @returns circles
+     * @group constraint
+     * @shortname tan circles on two circles
+     * @drawable true
+     */
+    constraintTanCirclesOnTwoCircles(inputs: Inputs.OCCT.ConstraintTanCirclesOnTwoCirclesDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.constraintTanCirclesOnTwoCircles", inputs);
+    }
+
+    /**
+     * Creates tangent circles between a point and a circle.
+     * @param input resulting circles
+     * @returns circles
+     * @group constraint
+     * @shortname tan circles on circle and pnt
+     * @drawable true
+     */
+    constraintTanCirclesOnCircleAndPnt(inputs: Inputs.OCCT.ConstraintTanCirclesOnCircleAndPntDto<Inputs.OCCT.TopoDSEdgePointer>): Promise<Inputs.OCCT.TopoDSShapePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.edge.constraintTanCirclesOnCircleAndPnt", inputs);
     }
 }
