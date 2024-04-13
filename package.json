@@ -54,6 +54,7 @@
     "author": "Bit by bit developers",
     "license": "MIT",
     "types": "./index.d.ts",
+    "type": "module",
     "dependencies": {
         "@bitbybit-dev/occt": "0.15.8",
         "rxjs": "7.5.5"

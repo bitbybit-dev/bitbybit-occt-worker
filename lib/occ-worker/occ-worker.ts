@@ -115,7 +115,7 @@ export const onMessageInput = (d: DataInput, postMessage) => {
         }
         if (d.action.functionName === "shapeToMesh") {
             d.action.inputs.shape = cacheHelper.checkCache(d.action.inputs.shape.hash);
-            result = openCascade.shapeToMesh(d.action.inputs.shape, d.action.inputs.precision, d.action.inputs.adjustYtoZ);
+            result = openCascade.shapeToMesh(d.action.inputs);
         }
         if (d.action.functionName === "shapesToMeshes") {
             if (d.action.inputs.shapes && d.action.inputs.shapes.length > 0) {
@@ -123,7 +123,7 @@ export const onMessageInput = (d: DataInput, postMessage) => {
             } else {
                 throw new Error("No shapes detected");
             }
-            result = openCascade.shapesToMeshes(d.action.inputs.shapes, d.action.inputs.precision, d.action.inputs.adjustYtoZ);
+            result = openCascade.shapesToMeshes(d.action.inputs);
         }
         if (d.action.functionName === "deleteShape") {
             cacheHelper.cleanCacheForHash(d.action.inputs.shape.hash);

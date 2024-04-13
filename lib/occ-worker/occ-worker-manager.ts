@@ -1,6 +1,7 @@
 import { Subject } from "rxjs";
 import { OccInfo } from "./occ-info";
 import { OccStateEnum } from "./occ-state.enum";
+import { OCCTWorkerMock } from "./occ-worker-mock";
 
 /**
  * This is a manager of OpenCascade worker. Promisified API allows to deal with the worker in a more natural way
@@ -11,14 +12,14 @@ export class OCCTWorkerManager {
 
     occWorkerState$: Subject<OccInfo> = new Subject();
     errorCallback: (err: string) => void;
-    private occWorker: Worker;
+    private occWorker: Worker | OCCTWorkerMock;
     private promisesMade: { promise?: Promise<any>, uid: string, resolve?, reject?}[] = [];
 
     occWorkerAlreadyInitialised(): boolean {
         return this.occWorker ? true : false;
     }
 
-    setOccWorker(worker: Worker): void {
+    setOccWorker(worker: Worker | OCCTWorkerMock): void {
         this.occWorker = worker;
         this.occWorker.onmessage = ({ data }) => {
             if (data === "occ-initialised") {
