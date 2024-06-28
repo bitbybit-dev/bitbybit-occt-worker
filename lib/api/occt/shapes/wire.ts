@@ -143,6 +143,18 @@ export class OCCTWire {
     }
 
     /**
+    * Creates OpenCascade Bezier wire with weights
+    * @param inputs Points through which to make bezier curve and weights on those points which are used to control the curve
+    * @returns OpenCascade Bezier wire
+    * @group via points
+    * @shortname bezier weights
+    * @drawable true
+    */
+    createBezierWeights(inputs: Inputs.OCCT.BezierWeightsDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createBezierWeights", inputs);
+    }
+    
+    /**
     * Creates OpenCascade Bezier wires
     * @param inputs Multiple bezier wire definitions
     * @returns OpenCascade Bezier wires
