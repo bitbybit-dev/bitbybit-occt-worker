@@ -153,7 +153,7 @@ export class OCCTWire {
     createBezierWeights(inputs: Inputs.OCCT.BezierWeightsDto): Promise<Inputs.OCCT.TopoDSWirePointer> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.createBezierWeights", inputs);
     }
-    
+
     /**
     * Creates OpenCascade Bezier wires
     * @param inputs Multiple bezier wire definitions
@@ -320,6 +320,42 @@ export class OCCTWire {
     */
     pointOnWireAtLength(inputs: Inputs.OCCT.DataOnGeometryAtLengthDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.pointOnWireAtLength", inputs);
+    }
+
+    /**
+    * Evaluates points on a wire at certain lengths
+    * @param inputs Wire shape and lengths array
+    * @returns Points as arrays of 3 numbers
+    * @group extract
+    * @shortname points at lengths
+    * @drawable true
+    */
+    pointsOnWireAtLengths(inputs: Inputs.OCCT.DataOnGeometryAtLengthsDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.pointsOnWireAtLengths", inputs);
+    }
+
+    /**
+    * Evaluates points on a wire at equal length
+    * @param inputs Wire shape and length
+    * @returns Points as arrays of 3 numbers
+    * @group extract
+    * @shortname points at equal length
+    * @drawable true
+    */
+    pointsOnWireAtEqualLength(inputs: Inputs.OCCT.PointsOnWireAtEqualLengthDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.pointsOnWireAtEqualLength", inputs);
+    }
+
+    /**
+     * Evaluates points on a wire at pattern of lengths
+     * @param inputs Wire shape and lengths pattern
+     * @returns Points as arrays of 3 numbers
+     * @group extract
+     * @shortname points at pattern of lengths
+     * @drawable true
+     */
+    pointsOnWireAtPatternOfLengths(inputs: Inputs.OCCT.PointsOnWireAtPatternOfLengthsDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.Base.Point3> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.wire.pointsOnWireAtPatternOfLengths", inputs);
     }
 
     /**
