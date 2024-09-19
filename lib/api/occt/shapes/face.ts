@@ -7,6 +7,31 @@ export class OCCTFace {
         private readonly occWorkerManager: OCCTWorkerManager,
     ) {
     }
+
+    /**
+     * Creates a faces from wires on face
+     * @param inputs OpenCascade wires and guiding face
+     * @returns OpenCascade faces
+     * @group from
+     * @shortname faces from wires on face
+     * @drawable true
+     */
+    createFacesFromWiresOnFace(inputs: Inputs.OCCT.FacesFromWiresOnFaceDto<Inputs.OCCT.TopoDSWirePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createFacesFromWiresOnFace", inputs);
+    }
+
+    /**
+     * Creates a face from wire on face
+     * @param inputs OpenCascade wire shape and guiding face
+     * @returns OpenCascade face shape
+     * @group from
+     * @shortname face from wire on face
+     * @drawable true
+     */
+    createFaceFromWireOnFace(inputs: Inputs.OCCT.FaceFromWireOnFaceDto<Inputs.OCCT.TopoDSWirePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createFaceFromWireOnFace", inputs);
+    }
+
     /**
      * Creates a face from wire
      * @param inputs OpenCascade wire shape and indication if face should be planar
@@ -41,7 +66,7 @@ export class OCCTFace {
      */
     createFacesFromWires(inputs: Inputs.OCCT.FacesFromWiresDto<Inputs.OCCT.TopoDSWirePointer>): Promise<Inputs.OCCT.TopoDSFacePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createFacesFromWires", inputs);
-}
+    }
 
     /**
      * Creates face from multiple circle tangent wires
@@ -189,7 +214,7 @@ export class OCCTFace {
 
     /**
      * Subdivides a face to point grid
-     * @param inputs Face and params for subdivision
+     * @param inputs Face and options for subdivision
      * @returns points
      * @group extract
      * @shortname points
@@ -197,6 +222,42 @@ export class OCCTFace {
      */
     subdivideToPoints(inputs: Inputs.OCCT.FaceSubdivisionDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.subdivideToPoints", inputs);
+    }
+
+    /**
+     * Subdivides a face to wires
+     * @param inputs Face and options for subdivision
+     * @returns wires
+     * @group extract
+     * @shortname wires
+     * @drawable true
+     */
+    subdivideToWires(inputs: Inputs.OCCT.FaceSubdivisionToWiresDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSWirePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.subdivideToWires", inputs);
+    }
+
+    /**
+     * Subdivides a face to rectangle wires
+     * @param inputs Face and options for subdivision
+     * @returns wires
+     * @group patterns
+     * @shortname rectangle wires on face
+     * @drawable true
+     */
+    subdivideToRectangleWires(inputs: Inputs.OCCT.FaceSubdivisionToRectanglesDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSWirePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.subdivideToRectangleWires", inputs);
+    }
+
+    /**
+     * Subdivides a face to rectangle wires
+     * @param inputs Face and options for subdivision
+     * @returns wires
+     * @group patterns
+     * @shortname rectangle holes on face
+     * @drawable true
+     */
+    subdivideToRectangleHoles(inputs: Inputs.OCCT.FaceSubdivisionToRectanglesDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSFacePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.subdivideToRectangleHoles", inputs);
     }
 
     /**
@@ -293,6 +354,30 @@ export class OCCTFace {
      */
     subdivideToPointsOnParam(inputs: Inputs.OCCT.FaceLinearSubdivisionDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.Base.Point3[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.subdivideToPointsOnParam", inputs);
+    }
+
+    /**
+     * Gets the wire along the parameter on the face
+     * @param inputs Face and param
+     * @returns wire
+     * @group extract
+     * @shortname wire along param
+     * @drawable true
+     */
+    wireAlongParam(inputs: Inputs.OCCT.WireAlongParamDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSWirePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.wireAlongParam", inputs);
+    }
+
+    /**
+     * Gets the wires along the parameters on the face
+     * @param inputs Face and params
+     * @returns wires
+     * @group extract
+     * @shortname wires along params
+     * @drawable true
+     */
+    wiresAlongParams(inputs: Inputs.OCCT.WiresAlongParamsDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSWirePointer[]> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.wiresAlongParams", inputs);
     }
 
     /**
