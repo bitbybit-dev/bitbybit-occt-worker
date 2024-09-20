@@ -8,7 +8,18 @@ export class OCCTVertex {
         private readonly occWorkerManager: OCCTWorkerManager,
     ) {
     }
-
+    /**
+     * Creates vertex shape from x y z coordinates
+     * @param inputs x y z coordinates
+     * @returns OpenCascade vertex
+     * @group from
+     * @shortname vertex from xyz
+     * @drawable true
+     */
+    vertexFromXYZ(inputs: Inputs.OCCT.XYZDto): Promise<Inputs.OCCT.TopoDSVertexPointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.vertex.vertexFromXYZ", inputs);
+    }
+    
     /**
      * Creates vertex shape from point
      * @param inputs a point
