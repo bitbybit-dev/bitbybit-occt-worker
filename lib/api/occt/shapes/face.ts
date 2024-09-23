@@ -57,6 +57,18 @@ export class OCCTFace {
     }
 
     /**
+       * Creates a face from wires on the guiding face. This can produce hollow faces.
+       * @param inputs OpenCascade wire shapes and indication if wire is inside the face
+       * @returns OpenCascade face shape
+       * @group from
+       * @shortname face from wires on face
+       * @drawable true
+       */
+    createFaceFromWiresOnFace(inputs: Inputs.OCCT.FaceFromWiresOnFaceDto<Inputs.OCCT.TopoDSWirePointer, Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSFacePointer> {
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.createFaceFromWiresOnFace", inputs);
+    }
+
+    /**
      * Creates faces from wires
      * @param inputs OpenCascade wire shape and indication if face should be planar
      * @returns OpenCascade face shape
@@ -244,7 +256,7 @@ export class OCCTFace {
      * @shortname rectangle wires on face
      * @drawable true
      */
-    subdivideToRectangleWires(inputs: Inputs.OCCT.FaceSubdivisionToRectanglesDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSWirePointer[]> {
+    subdivideToRectangleWires(inputs: Inputs.OCCT.FaceSubdivideToRectangleWiresDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSWirePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.subdivideToRectangleWires", inputs);
     }
 
@@ -256,7 +268,7 @@ export class OCCTFace {
      * @shortname rectangle holes on face
      * @drawable true
      */
-    subdivideToRectangleHoles(inputs: Inputs.OCCT.FaceSubdivisionToRectanglesDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSFacePointer[]> {
+    subdivideToRectangleHoles(inputs: Inputs.OCCT.FaceSubdivideToRectangleHolesDto<Inputs.OCCT.TopoDSFacePointer>): Promise<Inputs.OCCT.TopoDSFacePointer[]> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.face.subdivideToRectangleHoles", inputs);
     }
 
