@@ -13,7 +13,7 @@ export class OCCTSolid {
      * @param inputs Closed shell to make into solid
      * @returns OpenCascade Solid
      * @group from
-     * @shortname shell
+     * @shortname solid from closed shell
      * @drawable true
      */
     fromClosedShell(inputs: Inputs.OCCT.ShapeDto<Inputs.OCCT.TopoDSShellPointer>): Promise<Inputs.OCCT.TopoDSSolidPointer> {
