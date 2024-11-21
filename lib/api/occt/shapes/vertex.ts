@@ -103,4 +103,16 @@ export class OCCTVertex {
     vertexToPoint(inputs: Inputs.OCCT.ShapesDto<Inputs.OCCT.TopoDSVertexPointer>): Promise<Inputs.Base.Point3> {
         return this.occWorkerManager.genericCallToWorkerPromise("shapes.vertex.vertexToPoint", inputs);
     }
+
+    /**
+     * Project points on a shape and return the projected points - length of the vector is important
+     * @param inputs points, shape and direction that includes the length
+     * @returns Points
+     * @group place
+     * @shortname project points
+     * @drawable true
+     */
+    projectPoints(inputs: Inputs.OCCT.ProjectPointsOnShapeDto<Inputs.OCCT.TopoDSShapePointer>): Promise<Inputs.Base.Point3[]>{
+        return this.occWorkerManager.genericCallToWorkerPromise("shapes.vertex.projectPoints", inputs);
+    }
 }
