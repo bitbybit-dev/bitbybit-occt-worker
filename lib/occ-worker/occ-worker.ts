@@ -140,17 +140,6 @@ export const onMessageInput = (d: DataInput, postMessage) => {
                 cacheHelper.cleanAllCache();
             }
             result = {};
-            // if (Object.keys(cacheHelper.hashesFromPreviousRun).length > 0) {
-            //     cacheHelper.cleanUpCache();
-            //     result = {
-            //         argCache: Object.keys(cacheHelper.argCache),
-            //         hashesFromPreviousRun: Object.keys(cacheHelper.hashesFromPreviousRun),
-            //         usedHashes: Object.keys(cacheHelper.usedHashes),
-            //     };
-            // }
-            // else {
-            //     result = {};
-            // }
         }
 
         if (d.action.functionName === "cleanAllCache") {
@@ -173,11 +162,11 @@ export const onMessageInput = (d: DataInput, postMessage) => {
         if (d && d.action && d.action.functionName) {
             fun = `- ${d.action.functionName}`;
         }
-        const message =
-            postMessage({
-                uid: d.uid,
-                result: undefined,
-                error: `OCCT computation failed. ${e} While executing function ${fun}. ${props}`
-            });
+
+        postMessage({
+            uid: d.uid,
+            result: undefined,
+            error: `OCCT computation failed. ${e} While executing function ${fun}. ${props}`
+        });
     }
 };
